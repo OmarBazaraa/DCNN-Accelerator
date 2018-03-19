@@ -29,26 +29,27 @@ ARCHITECTURE arch_controller OF controller IS
     -- State Signals
     --
     SIGNAL CurState             : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    SIGNAL Load                 : STD_LOGIC;    -- Read from RAM
-    SIGNAL LoadWind             : STD_LOGIC;    -- Read window
-    SIGNAL Store                : STD_LOGIC;    -- Store in RAM
-    SIGNAL StartCalc            : STD_LOGIC;    -- Calculate signal to start calculating the convolution or pooling
+    SIGNAL LoadFilterState      : STD_LOGIC;    -- Read filter from RAM
+    SIGNAL LoadWindowState      : STD_LOGIC;    -- Read window from RAM
+    SIGNAL CalcState            : STD_LOGIC;    -- Calculate signal to start calculating the convolution or pooling
+    SIGNAL StoreState           : STD_LOGIC;    -- StoreState in RAM
 
     SIGNAL NxtState             : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    SIGNAL NxtLoad              : STD_LOGIC;
-    SIGNAL NxtLoadWind          : STD_LOGIC;
-    SIGNAL NxtStore             : STD_LOGIC;
-    SIGNAL NxtStartCalc         : STD_LOGIC;
+    SIGNAL NxtLoadFilterState   : STD_LOGIC;
+    SIGNAL NxtLoadWindowState   : STD_LOGIC;
+    SIGNAL NxtCalcState         : STD_LOGIC;
+    SIGNAL NxtStoreState        : STD_LOGIC;
 
     --
     -- Control Signals
     --
+    SIGNAL IsFirstRun           : STD_LOGIC;
     SIGNAL IsRunning            : STD_LOGIC;
     SIGNAL IsDone               : STD_LOGIC;
-    SIGNAL IsFilterLoaded       : STD_LOGIC;
     SIGNAL IsWindowLoaded       : STD_LOGIC;
     SIGNAL IsCalcTurn           : STD_LOGIC;
     SIGNAL IsCalcFinished       : STD_LOGIC;    -- Accelerator finish calculation
+    SIGNAL Load                 : STD_LOGIC;    -- Memory Read Signal
     SIGNAL CntRST, CntEN        : STD_LOGIC;
 
     --
@@ -93,33 +94,36 @@ BEGIN
     PORT MAP(CLK => CLK, RST => RST, EN => '1', Din => NxtState, Dout => CurState);
 
     -- Current state
-    Load            <= CurState(0);
-    LoadWind        <= CurState(1);
-    Store           <= CurState(2);
-    StartCalc       <= CurState(3);
-    Done            <= CurState(4);
+    LoadFilterState     <= CurState(0);
+    LoadWindowState     <= CurState(1);
+    StoreState          <= CurState(2);
+    CalcState           <= CurState(3);
+    Done                <= CurState(4);
 
     -- Next state
-    NxtLoad         <= (Start AND (NOT IsRunning));
-    NxtLoadWind     <= (NxtLoad AND Instr) OR (IsFilterLoaded) OR (Store AND (NOT IsDone));
-    NxtStartCalc    <= (LoadWind AND IsWindowLoaded AND IsCalcTurn);
-    NxtStore        <= (StartCalc AND IsCalcFinished);
-    NxtState        <= (IsDone & NxtStartCalc & NxtStore & NxtLoadWind & NxtLoad);
+    NxtLoadFilterState  <= (IsFirstRun AND (NOT Instr)) OR (LoadFilterState AND (NOT IsWindowLoaded));
+    NxtLoadWindowState  <= (IsFirstRun AND Instr) OR (LoadFilterState AND IsWindowLoaded) OR (StoreState AND (NOT IsDone)) OR (LoadWindowState AND (NOT NxtCalcState));
+    NxtCalcState        <= (LoadWindowState AND IsCalcTurn) OR (CalcState AND (NOT IsCalcFinished));
+    NxtStoreState       <= (CalcState AND IsCalcFinished);
+
+    NxtState            <= (IsDone & NxtCalcState & NxtStoreState & NxtLoadWindowState & NxtLoadFilterState);
 
     --===============================================================
     --
     -- Control Signals
     --
 
-    IsRunning       <= Load OR Store OR StartCalc;
+    IsFirstRun      <= Start AND (NOT IsRunning);
+    IsRunning       <= Load OR StoreState OR CalcState;
     IsDone          <= SizePlusCol(8);
 
     IsWindowLoaded  <= '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';
-    IsFilterLoaded  <= (Load AND (NOT LoadWind) AND IsWindowLoaded); 
-    IsCalcTurn      <= (Stride NAND CurRow(0)); -- IsCalcTurn= Stride=0 OR Even Row
+    IsCalcTurn      <= IsWindowLoaded AND (Stride NAND CurRow(0)); -- IsCalcTurn = (Stride=0 OR Even Row)
 
-    CntRST          <= RST OR Start; -- OR (LoadFilter -> LoadWind)
-    CntEN           <= (Load AND (IsWindowLoaded NAND IsCalcTurn)) OR Store;
+    Load            <= LoadFilterState OR LoadWindowState;
+
+    CntRST          <= (RST OR IsFirstRun OR (LoadFilterState AND NxtLoadWindowState));
+    CntEN           <= (Load AND (NOT IsCalcTurn)) OR StoreState;
 
     --===============================================================
     --
@@ -168,7 +172,7 @@ BEGIN
     WindowAddr  <= "00" & (CurRow & CurCol);
     StoreAddr   <= "01" & (StoreRow & StoreCol);
     FilterAddr  <= "10" & (15 DOWNTO 8 => '0') & CurRow;
-    LoadAddr    <= WindowAddr   WHEN LoadWind='1'   ELSE    FilterAddr;
+    LoadAddr    <= WindowAddr   WHEN LoadWindowState='1'   ELSE    FilterAddr;
     MemAddr     <= LoadAddr     WHEN Load='1'       ELSE    StoreAddr;
 
     --===============================================================

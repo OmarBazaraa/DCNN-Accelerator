@@ -15,10 +15,12 @@ BEGIN
 
     PROCESS(CLK, RST)
     BEGIN
-        IF RST='1' THEN
-            Dout <= (OTHERS => '0');
-        ELSIF EN='1' AND RISING_EDGE(CLK) THEN
-            Dout <= Din;
+        IF RISING_EDGE(CLK) THEN
+            IF RST='1' THEN
+                Dout <= (OTHERS => '0');
+            ELSIF EN='1' THEN
+                Dout <= Din;
+            END IF;
         END IF;
     END PROCESS;
 END ARCHITECTURE;
