@@ -1,0 +1,19 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY mux_2x1 IS
+    GENERIC(n: INTEGER := 32);
+    PORT(
+        A, B:   IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        S:      IN  STD_LOGIC;
+        Dout:	OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+    );
+END ENTITY;
+
+ARCHITECTURE arch_mux_2x1 OF mux_2x1 IS
+BEGIN
+
+    WITH S SELECT
+        Dout <= A WHEN '0',
+                B WHEN OTHERS;
+END ARCHITECTURE;

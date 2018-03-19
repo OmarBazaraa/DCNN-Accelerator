@@ -1,0 +1,11 @@
+# User-specific files
+*.bak
+*.mti
+*.qdb
+*.qpg
+*.qtl
+*.mpf
+*.wlf
+*.DS_Store
+work
+transcript
