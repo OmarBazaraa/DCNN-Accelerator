@@ -6,18 +6,17 @@ USE WORK.utilities.ALL;
 ENTITY cache IS
     PORT(
         CLK             : IN  STD_LOGIC;
-        FilterAddr      : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
         FilterWR        : IN  STD_LOGIC;
         WindowWR        : IN  STD_LOGIC;
         ResultWR        : IN  STD_LOGIC;
-        Din             : IN  STD_LOGIC_VECTOR(CACHE_DATA_WIDTH-1 DOWNTO 0);
-        Result          : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+        Din             : IN  STD_LOGIC_VECTOR(39 DOWNTO 0);
+        Result          : OUT STD_LOGIC_VECTOR( 7 DOWNTO 0)
     );
 END ENTITY;
 
 ARCHITECTURE arch_cache OF cache IS
 
-    TYPE memory IS ARRAY(0 TO 4) OF STD_LOGIC_VECTOR(CACHE_DATA_WIDTH-1 DOWNTO 0);
+    TYPE memory IS ARRAY(0 TO 4) OF STD_LOGIC_VECTOR(39 DOWNTO 0);
     
     SIGNAL filter, window : memory;
 BEGIN
@@ -25,9 +24,12 @@ BEGIN
     PROCESS(CLK)
     BEGIN
         IF RISING_EDGE(CLK) THEN
-
             IF FilterWR='1' THEN
-                filter(to_integer(unsigned(FilterAddr))) <= Din;
+                filter(0) <= window(1);
+                filter(1) <= window(2);
+                filter(2) <= window(3);
+                filter(3) <= window(4);
+                filter(4) <= Din;
             END IF;
 
             IF WindowWR='1' THEN
@@ -39,10 +41,8 @@ BEGIN
             END IF;
 
             IF ResultWR='1' THEN
-                Result <= Din(DATA_WIDTH-1 DOWNTO 0);
+                Result <= Din(7 DOWNTO 0);
             END IF;
-
         END IF;
     END PROCESS;
-
 END ARCHITECTURE;

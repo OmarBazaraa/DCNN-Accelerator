@@ -8,22 +8,24 @@ ENTITY controller IS
     PORT(
         CLK, RST            : IN  STD_LOGIC;
         Start               : IN  STD_LOGIC;
-        FilterSize          : IN  STD_LOGIC; -- 0: 3x3, 1: 5x5
-        Stride              : IN  STD_LOGIC; -- Step = Stride + 1
-        Instr               : IN  STD_LOGIC; -- 0: Convolution, 1: Pooling
+        FilterSize          : IN  STD_LOGIC;    -- 0: 3x3, 1: 5x5
+        Stride              : IN  STD_LOGIC;    -- Step = Stride + 1
+        Instr               : IN  STD_LOGIC;    -- 0: Convolution, 1: Pooling
+        
+        CalcFinished        : IN  STD_LOGIC;    -- Calculation finished handshaking signal
+        Calc                : OUT STD_LOGIC;    -- Start calculating the current loaded window
+
+        MemRD               : OUT STD_LOGIC;
+        MemWR               : OUT STD_LOGIC;
+        MemAddr             : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+        CacheFilterWR       : OUT STD_LOGIC;
+        CacheWindowWR       : OUT STD_LOGIC;
+
         Done                : OUT STD_LOGIC
     );
 END ENTITY;
 
 ARCHITECTURE arch_controller OF controller IS
-
-    --
-    -- General Signal
-    --
-    SIGNAL SizePlusOne          : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL SizeVal              : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 3 OR 5
-    SIGNAL SizeMaxIdx           : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 2 OR 4
-    SIGNAL SizePlusCol          : STD_LOGIC_VECTOR(8 DOWNTO 0);
 
     --
     -- State Signals
@@ -41,6 +43,14 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL NxtStoreState        : STD_LOGIC;
 
     --
+    -- General Signal
+    --
+    SIGNAL SizePlusOne          : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL SizeVal              : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 3 OR 5
+    SIGNAL SizeMaxIdx           : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 2 OR 4
+    SIGNAL SizePlusCol          : STD_LOGIC_VECTOR(8 DOWNTO 0);
+
+    --
     -- Control Signals
     --
     SIGNAL IsFirstRun           : STD_LOGIC;
@@ -48,8 +58,8 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL IsDone               : STD_LOGIC;
     SIGNAL IsWindowLoaded       : STD_LOGIC;
     SIGNAL IsCalcTurn           : STD_LOGIC;
-    SIGNAL IsCalcFinished       : STD_LOGIC;    -- Accelerator finish calculation
     SIGNAL Load                 : STD_LOGIC;    -- Memory Read Signal
+    SIGNAL Restart              : STD_LOGIC;
     SIGNAL CntRST, CntEN        : STD_LOGIC;
 
     --
@@ -65,22 +75,12 @@ ARCHITECTURE arch_controller OF controller IS
     --
     -- Memory Addresses
     --
-    SIGNAL MemAddr              : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL WindowAddr           : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL FilterAddr           : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL LoadAddr             : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL StoreAddr            : STD_LOGIC_VECTOR(17 DOWNTO 0);
-    SIGNAL CacheAddr            : STD_LOGIC_VECTOR( 2 DOWNTO 0);
 
 BEGIN
-
-    --
-    -- General Signal
-    --
-    SizeVal     <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3; SizeVal = (Size='1') ? 5 : 3
-    SizePlusOne <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
-    SizeMaxIdx  <= (SizePlusOne(6 DOWNTO 0) & '0');
-    SizePlusCol <= (('0' & CurCol) + ('0' & SizeVal));
 
     --===============================================================
     --
@@ -91,7 +91,7 @@ BEGIN
     STATE:
     ENTITY work.register_edge
     GENERIC MAP(n => 5)
-    PORT MAP(CLK => CLK, RST => RST, EN => '1', Din => NxtState, Dout => CurState);
+    PORT MAP(CLK => CLK, RST => Restart, EN => '1', Din => NxtState, Dout => CurState);
 
     -- Current state
     LoadFilterState     <= CurState(0);
@@ -102,11 +102,19 @@ BEGIN
 
     -- Next state
     NxtLoadFilterState  <= (IsFirstRun AND (NOT Instr)) OR (LoadFilterState AND (NOT IsWindowLoaded));
-    NxtLoadWindowState  <= (IsFirstRun AND Instr) OR (LoadFilterState AND IsWindowLoaded) OR (StoreState AND (NOT IsDone)) OR (LoadWindowState AND (NOT NxtCalcState));
-    NxtCalcState        <= (LoadWindowState AND IsCalcTurn) OR (CalcState AND (NOT IsCalcFinished));
-    NxtStoreState       <= (CalcState AND IsCalcFinished);
-
+    NxtLoadWindowState  <= (IsFirstRun AND Instr) OR (LoadFilterState AND IsWindowLoaded) OR (StoreState AND (NOT IsDone)) OR (LoadWindowState AND (NOT IsCalcTurn));
+    NxtCalcState        <= (LoadWindowState AND IsCalcTurn) OR (CalcState AND (NOT CalcFinished));
+    NxtStoreState       <= (CalcState AND CalcFinished);
     NxtState            <= (IsDone & NxtCalcState & NxtStoreState & NxtLoadWindowState & NxtLoadFilterState);
+
+    --===============================================================
+    --
+    -- General Signal
+    --
+    SizeVal     <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3; SizeVal = (Size='1') ? 5 : 3
+    SizePlusOne <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
+    SizeMaxIdx  <= (SizePlusOne(6 DOWNTO 0) & '0');
+    SizePlusCol <= (('0' & CurCol) + ('0' & SizeVal));
 
     --===============================================================
     --
@@ -116,14 +124,22 @@ BEGIN
     IsFirstRun      <= Start AND (NOT IsRunning);
     IsRunning       <= Load OR StoreState OR CalcState;
     IsDone          <= SizePlusCol(8);
-
     IsWindowLoaded  <= '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';
     IsCalcTurn      <= IsWindowLoaded AND (Stride NAND CurRow(0)); -- IsCalcTurn = (Stride=0 OR Even Row)
-
     Load            <= LoadFilterState OR LoadWindowState;
-
-    CntRST          <= (RST OR IsFirstRun OR (LoadFilterState AND NxtLoadWindowState));
+    Restart         <= RST OR (Start AND IsDone);
+    CntRST          <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
     CntEN           <= (Load AND (NOT IsCalcTurn)) OR StoreState;
+
+    --===============================================================
+    --
+    -- Interfacing Signals
+    --
+    Calc            <= CalcState;
+    MemRD           <= Load;
+    MemWR           <= StoreState;
+    CacheFilterWR   <= LoadFilterState;
+    CacheWindowWR   <= LoadWindowState;
 
     --===============================================================
     --
@@ -166,28 +182,13 @@ BEGIN
 
     --===============================================================
     --
-    -- RAM Addresses
+    -- Memory Addresses
     --
 
     WindowAddr  <= "00" & (CurRow & CurCol);
     StoreAddr   <= "01" & (StoreRow & StoreCol);
     FilterAddr  <= "10" & (15 DOWNTO 8 => '0') & CurRow;
-    LoadAddr    <= WindowAddr   WHEN LoadWindowState='1'   ELSE    FilterAddr;
-    MemAddr     <= LoadAddr     WHEN Load='1'       ELSE    StoreAddr;
-
-    --===============================================================
-    --
-    -- Accelerator
-    --
-
-    --===============================================================
-    --
-    -- RAM
-    --
-
-    --===============================================================
-    --
-    -- Cache
-    --
+    LoadAddr    <= WindowAddr   WHEN LoadWindowState='1'    ELSE    FilterAddr;
+    MemAddr     <= StoreAddr    WHEN StoreState='1'         ELSE    LoadAddr;
 
 END ARCHITECTURE;
