@@ -2,7 +2,6 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
-USE WORK.utilities.ALL;
 
 ENTITY controller IS
     PORT(
@@ -18,10 +17,11 @@ ENTITY controller IS
         MemRD               : OUT STD_LOGIC;
         MemWR               : OUT STD_LOGIC;
         MemAddr             : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+
         CacheFilterWR       : OUT STD_LOGIC;
         CacheWindowWR       : OUT STD_LOGIC;
 
-        Done                : OUT STD_LOGIC
+        Done                : OUT STD_LOGIC     -- Finish the whole operation
     );
 END ENTITY;
 
@@ -82,7 +82,7 @@ ARCHITECTURE arch_controller OF controller IS
 
 BEGIN
 
-    --===============================================================
+    --===================================================================================
     --
     -- State Transitions
     --
@@ -107,7 +107,7 @@ BEGIN
     NxtStoreState       <= (CalcState AND CalcFinished);
     NxtState            <= (IsDone & NxtCalcState & NxtStoreState & NxtLoadWindowState & NxtLoadFilterState);
 
-    --===============================================================
+    --===================================================================================
     --
     -- General Signal
     --
@@ -116,7 +116,7 @@ BEGIN
     SizeMaxIdx  <= (SizePlusOne(6 DOWNTO 0) & '0');
     SizePlusCol <= (('0' & CurCol) + ('0' & SizeVal));
 
-    --===============================================================
+    --===================================================================================
     --
     -- Control Signals
     --
@@ -131,7 +131,7 @@ BEGIN
     CntRST          <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
     CntEN           <= (Load AND (NOT IsCalcTurn)) OR StoreState;
 
-    --===============================================================
+    --===================================================================================
     --
     -- Interfacing Signals
     --
@@ -141,7 +141,7 @@ BEGIN
     CacheFilterWR   <= LoadFilterState;
     CacheWindowWR   <= LoadWindowState;
 
-    --===============================================================
+    --===================================================================================
     --
     -- Row/Col Indices
     --
@@ -180,7 +180,7 @@ BEGIN
     StoreRow    <= '0' & WindRow(6 DOWNTO 0) WHEN Stride='1' ELSE WindRow(7 DOWNTO 0);
     StoreCol    <= '0' & WindCol(6 DOWNTO 0) WHEN Stride='1' ELSE WindCol(7 DOWNTO 0);
 
-    --===============================================================
+    --===================================================================================
     --
     -- Memory Addresses
     --
