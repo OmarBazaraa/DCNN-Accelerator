@@ -43,12 +43,12 @@ BEGIN
 
             -- Enable
             IF_EN_0:
-            IF i>=2 OR j<=2 GENERATE
+            IF i>=2 AND j<=2 GENERATE
                 FilterEN(i, j)  <= FilterWR;
                 WindowEN(i, j)  <= WindowWR;
             END GENERATE;
             IF_EN_1:
-            IF i<2 AND j>2 GENERATE
+            IF i<2 OR j>2 GENERATE
                 FilterEN(i, j)  <= FilterWR AND FilterSize;
                 WindowEN(i, j)  <= WindowWR AND FilterSize;
             END GENERATE;
@@ -57,7 +57,7 @@ BEGIN
             IF_Din_0:
             IF i<4 GENERATE
                 FilterDin(i, j) <= Filter(i+1, j);
-                WindowDin(i, j) <= Filter(i+1, j);
+                WindowDin(i, j) <= Window(i+1, j);
             END GENERATE;
             IF_Din_1:
             IF i>=4 GENERATE
