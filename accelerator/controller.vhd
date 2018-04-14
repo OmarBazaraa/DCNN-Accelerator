@@ -111,35 +111,35 @@ BEGIN
     --
     -- General Signal
     --
-    SizeVal     <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3; SizeVal = (Size='1') ? 5 : 3
-    SizePlusOne <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
-    SizeMaxIdx  <= (SizePlusOne(6 DOWNTO 0) & '0');
-    SizePlusCol <= (('0' & CurCol) + ('0' & SizeVal));
+    SizeVal             <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3;
+    SizePlusOne         <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
+    SizeMaxIdx          <= (SizePlusOne(6 DOWNTO 0) & '0');
+    SizePlusCol         <= (('0' & CurCol) + ('0' & SizeVal));
 
     --===================================================================================
     --
     -- Control Signals
     --
 
-    IsFirstRun      <= Start AND (NOT IsRunning);
-    IsRunning       <= Load OR StoreState OR CalcState;
-    IsDone          <= SizePlusCol(8);
-    IsWindowLoaded  <= '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';
-    IsCalcTurn      <= IsWindowLoaded AND (Stride NAND CurRow(0)); -- IsCalcTurn = (Stride=0 OR Even Row)
-    Load            <= LoadFilterState OR LoadWindowState;
-    Restart         <= RST OR (Start AND IsDone);
-    CntRST          <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
-    CntEN           <= (Load AND (NOT IsCalcTurn)) OR StoreState;
+    IsFirstRun          <= Start AND (NOT IsRunning);
+    IsRunning           <= Load OR StoreState OR CalcState;
+    IsDone              <= SizePlusCol(8);
+    IsWindowLoaded      <= '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';
+    IsCalcTurn          <= IsWindowLoaded AND (Stride NAND CurRow(0)); -- IsCalcTurn = (Stride=0 OR Even Row)
+    Load                <= LoadFilterState OR LoadWindowState;
+    Restart             <= RST OR (Start AND IsDone);
+    CntRST              <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
+    CntEN               <= (Load AND (NOT IsCalcTurn)) OR StoreState;
 
     --===================================================================================
     --
     -- Interfacing Signals
     --
-    Calc            <= CalcState;
-    MemRD           <= Load;
-    MemWR           <= StoreState;
-    CacheFilterWR   <= LoadFilterState;
-    CacheWindowWR   <= LoadWindowState;
+    Calc                <= CalcState;
+    MemRD               <= Load;
+    MemWR               <= StoreState;
+    CacheFilterWR       <= LoadFilterState;
+    CacheWindowWR       <= LoadWindowState;
 
     --===================================================================================
     --
@@ -157,7 +157,7 @@ BEGIN
     ENTITY work.adder
     GENERIC MAP(n => 8)
     PORT MAP(A => CurRow, B => (OTHERS => '0'), Cin => '1', Sum => NxtRow, Cout => RowCout);
-    ------------------------------
+    -------------------------------------------------------
 
     -- Col Register
     COL:
@@ -170,7 +170,7 @@ BEGIN
     ENTITY work.adder
     GENERIC MAP(n => 8)
     PORT MAP(A => CurCol, B => ColInc, Cin => RowCout, Sum => NxtCol);
-    ------------------------------
+    -------------------------------------------------------
 
     ColInc      <= ((7 DOWNTO 1 => '0') & (Stride AND RowCout));
 

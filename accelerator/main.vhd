@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE WORK.COMMON.ALL;
 
 ENTITY main IS
     PORT(
@@ -23,6 +24,9 @@ ARCHITECTURE arch_main OF main IS
     SIGNAL CacheFilterWR    : STD_LOGIC;
     SIGNAL CacheWindowWR    : STD_LOGIC;
     SIGNAL CacheResultWR    : STD_LOGIC;
+
+    SIGNAL CacheFilter      : MATRIX_BYTE(0 TO 4, 0 TO 4);
+    SIGNAL CacheWindow      : MATRIX_BYTE(0 TO 4, 0 TO 4);
 
     SIGNAL AccStartCalc     : STD_LOGIC;
     SIGNAL AccFinishCalc    : STD_LOGIC;
@@ -71,6 +75,10 @@ BEGIN
         Start               => AccStartCalc,
         FilterSize          => FilterSize,
         Instr               => Instr,
+
+        FilterDin           => CacheFilter,
+        WindowDin           => CacheWindow,
+
         Done                => AccFinishCalc,
         Result              => AccResult
     );
@@ -95,10 +103,15 @@ BEGIN
     ENTITY work.cache
     PORT MAP(
         CLK                 => CLK,
+        RST                 => RST,
 
+        FilterSize          => FilterSize,
         FilterWR            => CacheFilterWR,
         WindowWR            => CacheWindowWR,
         Din                 => MemDout,
+
+        FilterDout          => CacheFilter,
+        WindowDout          => CacheWindow,
 
         ResultWR            => CacheResultWR,
         ResultDin           => AccResult,
