@@ -21,6 +21,7 @@ ENTITY controller IS
         CacheFilterWR       : OUT STD_LOGIC;
         CacheWindowWR       : OUT STD_LOGIC;
 
+        FirstCycle          : OUT STD_LOGIC;    -- True during only the first cycle of running
         Done                : OUT STD_LOGIC     -- Finish the whole operation
     );
 END ENTITY;
@@ -53,7 +54,7 @@ ARCHITECTURE arch_controller OF controller IS
     --
     -- Control Signals
     --
-    SIGNAL IsFirstRun           : STD_LOGIC;
+    SIGNAL IsFirstCycle         : STD_LOGIC;
     SIGNAL IsRunning            : STD_LOGIC;
     SIGNAL IsDone               : STD_LOGIC;
     SIGNAL IsWindowLoaded       : STD_LOGIC;
@@ -101,8 +102,8 @@ BEGIN
     Done                <= CurState(4);
 
     -- Next state
-    NxtLoadFilterState  <= (IsFirstRun AND (NOT Instr)) OR (LoadFilterState AND (NOT IsWindowLoaded));
-    NxtLoadWindowState  <= (IsFirstRun AND Instr) OR (LoadFilterState AND IsWindowLoaded) OR (StoreState AND (NOT IsDone)) OR (LoadWindowState AND (NOT IsCalcTurn));
+    NxtLoadFilterState  <= (IsFirstCycle AND (NOT Instr)) OR (LoadFilterState AND (NOT IsWindowLoaded));
+    NxtLoadWindowState  <= (IsFirstCycle AND Instr) OR (LoadFilterState AND IsWindowLoaded) OR (StoreState AND (NOT IsDone)) OR (LoadWindowState AND (NOT IsCalcTurn));
     NxtCalcState        <= (LoadWindowState AND IsCalcTurn) OR (CalcState AND (NOT CalcFinished));
     NxtStoreState       <= (CalcState AND CalcFinished);
     NxtState            <= (IsDone & NxtCalcState & NxtStoreState & NxtLoadWindowState & NxtLoadFilterState);
@@ -121,7 +122,8 @@ BEGIN
     -- Control Signals
     --
 
-    IsFirstRun          <= Start AND (NOT IsRunning);
+    IsFirstCycle        <= Start AND (NOT IsRunning);
+    FirstCycle          <= IsFirstCycle;
     IsRunning           <= Load OR StoreState OR CalcState;
     IsDone              <= SizePlusCol(8);
     IsWindowLoaded      <= '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';

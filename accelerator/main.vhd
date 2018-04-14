@@ -15,11 +15,15 @@ END ENTITY;
 
 ARCHITECTURE arch_main OF main IS
 
+    SIGNAL FirstCycle       : STD_LOGIC;
+
     SIGNAL MemRD            : STD_LOGIC;
     SIGNAL MemWR            : STD_LOGIC;
     SIGNAL MemAddr          : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL MemDin           : STD_LOGIC_VECTOR( 7 DOWNTO 0);
     SIGNAL MemDout          : STD_LOGIC_VECTOR(39 DOWNTO 0);
+
+    SIGNAL CacheRST         : STD_LOGIC;
 
     SIGNAL CacheFilterWR    : STD_LOGIC;
     SIGNAL CacheWindowWR    : STD_LOGIC;
@@ -59,6 +63,7 @@ BEGIN
         CacheFilterWR       => CacheFilterWR,
         CacheWindowWR       => CacheWindowWR,
 
+        FirstCycle          => FirstCycle,
         Done                => Done
     );
 
@@ -99,11 +104,13 @@ BEGIN
         Dout                => MemDout
     );
 
+    CacheRST <= RST OR FirstCycle;
+
     CACHE:
     ENTITY work.cache
     PORT MAP(
         CLK                 => CLK,
-        RST                 => RST,
+        RST                 => CacheRST,
 
         FilterSize          => FilterSize,
         FilterWR            => CacheFilterWR,
