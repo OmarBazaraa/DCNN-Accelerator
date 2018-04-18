@@ -23,7 +23,7 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     --
     SIGNAL CounterCLK             	: STD_LOGIC;
     SIGNAL CounterRST             	: STD_LOGIC;
-    SIGNAL CounterOut			: STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL CounterOut			: STD_LOGIC_VECTOR(3 DOWNTO 0);
 
     SIGNAL ResultReady             	: STD_LOGIC;
     SIGNAL LoopingAndResultNotReady     : STD_LOGIC;

@@ -9,8 +9,7 @@ ENTITY booth_adder IS
 	BoothOperand	    : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 	BoothP		    : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
-	SelFirstOperand     : IN STD_LOGIC;
-        SelSecondOperand    : IN STD_LOGIC;
+	SelOperand     	    : IN STD_LOGIC;
         ShiftP		    : IN STD_LOGIC;
 
         AdderResult    	    : INOUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
@@ -26,18 +25,19 @@ ARCHITECTURE arch_booth_adder OF booth_adder IS
     SIGNAL PBeforeShift	    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
 BEGIN
+
     AdderCin <= '0';
     AdderBoothResult <= '0' & PBeforeShift(n-1 DOWNTO 1);
 
     FIRST_OPERAND_MUX:
     ENTITY work.mux_2x1
     GENERIC MAP(n => 17)
-    PORT MAP(A => AdderFirstOperand, B => BoothOperand, S => SelFirstOperand, Dout => FirstOperand);
+    PORT MAP(A => AdderFirstOperand, B => BoothOperand, S => SelOperand, Dout => FirstOperand);
 
     SECOND_OPERAND_MUX:
     ENTITY work.mux_2x1
     GENERIC MAP(n => 17)
-    PORT MAP(A => AdderSecondOperand, B => BoothP, S => SelSecondOperand, Dout => SecondOperand);
+    PORT MAP(A => AdderSecondOperand, B => BoothP, S => SelOperand, Dout => SecondOperand);
 
     BOOTH_P_OUTPUT_MUX:
     ENTITY work.mux_2x1
@@ -47,5 +47,5 @@ BEGIN
     ADDER:
     ENTITY work.adder
     GENERIC MAP(n => 17)  
-    PORT MAP(A => FirstOperand, B => SecondOperand, Cin => AdderCin, Sum => AdderResult, Cout => OPEN); --TODO @Samir55
+    PORT MAP(A => FirstOperand, B => SecondOperand, Cin => AdderCin, Sum => AdderResult, Cout => OPEN); --TODO @Samir55 Change into +
 END ARCHITECTURE;
