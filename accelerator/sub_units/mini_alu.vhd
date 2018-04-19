@@ -90,7 +90,7 @@ BEGIN
 	BoothP		    => BoothP,
 
 	SelOperand     	    => SelOperand,
-        PassP		    => BoothXORCheck,
+        Operation	    => BoothXORCheck,
 
         AdderResult    	    => AdderResult,
         AdderBoothResult    => AdderBoothResult);

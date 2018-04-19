@@ -62,7 +62,11 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     SIGNAL L5OperationResults		: ARRAY_CLEN(0 TO 1);    
 
 BEGIN
-
+    --
+    -- Outputs
+    --
+    Done <= ResultReady OR Instr;
+    Result <= L5Results(1);
     --
     -- Accelerator Counter
     --
