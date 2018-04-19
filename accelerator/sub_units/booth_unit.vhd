@@ -42,6 +42,7 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     SIGNAL SelPInput		: STD_LOGIC_VECTOR(1 DOWNTO 0);
     SIGNAL PMuxInputC	    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL PMuxInputD    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxOutput    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
 BEGIN
 
@@ -49,7 +50,7 @@ BEGIN
     -- Output
     --
     BoothXORCheck 	<= RegisterPDout(0) XOR RegisterPDout(1);
-    BoothResult 	<= '0' & RegisterPDout(7 DOWNTO 1);
+    BoothResult 	<= RegisterPDout(8 DOWNTO 1);
     BoothP 		<= RegisterPDout;
     LargeWindowShifted 	<= PMuxInputC;
 
@@ -59,18 +60,19 @@ BEGIN
     RegisterPEN 	<= Start OR LoopingAndResultNotReady;
     RegisterADin 	<= Filter & "000000000";
     RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(NOT(Filter))) + 1, 8)) & "000000000";
+    RegisterPDin	<= PMuxOutput;
 
     --
     -- Booth Operands (A/S) Mux Signals.
     --
-    SelBoothOperand <= RegisterPDout(0);
+    SelBoothOperand <= NOT(RegisterPDout(0));
 
     --
     -- P DataIn 4-1 Mux Signals.
     --
     PMuxInputC 	<= "00000000" & Window & '0';
     PMuxInputD 	<= "000000000" & Window;
-    SelPInput	<= Instr & Start;
+    SelPInput	<= Start & Instr;
 
     --
     -- A, S & P Registers.
@@ -104,5 +106,5 @@ BEGIN
     P_INPUT_DATA_MUX:
     ENTITY work.mux_4x1
     GENERIC MAP(n => 17)
-    PORT MAP(A => AdderBoothResult, B => AdderBoothResult, C => PMuxInputC, D => PMuxInputD, S => SelPInput, Dout => RegisterPDin);
+    PORT MAP(A => AdderBoothResult, B => AdderBoothResult, C => PMuxInputC, D => PMuxInputD, S => SelPInput, Dout => PMuxOutput);
 END ARCHITECTURE;
