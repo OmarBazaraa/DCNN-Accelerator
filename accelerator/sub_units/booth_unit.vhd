@@ -48,9 +48,10 @@ BEGIN
     --
     -- Output
     --
-    BoothXORCheck <= RegisterPDout(0) XOR RegisterPDout(1);
-    BoothP <= RegisterPDout;
-    LargeWindowShifted <= PMuxInputC;
+    BoothXORCheck 	<= RegisterPDout(0) XOR RegisterPDout(1);
+    BoothResult 	<= '0' & RegisterPDout(7 DOWNTO 1);
+    BoothP 		<= RegisterPDout;
+    LargeWindowShifted 	<= PMuxInputC;
 
     --
     -- A, S & P Register Signals.
@@ -67,9 +68,9 @@ BEGIN
     --
     -- P DataIn 4-1 Mux Signals.
     --
-    PMuxInputC <= "00000000" & Window & '0';
-    PMuxInputD <= "000000000" & Window;
-    SelPInput <= Instr & Start;
+    PMuxInputC 	<= "00000000" & Window & '0';
+    PMuxInputD 	<= "000000000" & Window;
+    SelPInput	<= Instr & Start;
 
     --
     -- A, S & P Registers.
