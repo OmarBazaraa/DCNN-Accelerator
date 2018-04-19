@@ -56,9 +56,9 @@ BEGIN
     --
     -- A, S & P Register Signals.
     --
-    RegisterPEN <= Start OR LoopingAndResultNotReady;
-    RegisterADin <= Filter & "000000000";
-    RegisterSDin <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(NOT(Filter))) + 1, 8)) & "000000000";
+    RegisterPEN 	<= Start OR LoopingAndResultNotReady;
+    RegisterADin 	<= Filter & "000000000";
+    RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(NOT(Filter))) + 1, 8)) & "000000000";
 
     --
     -- Booth Operands (A/S) Mux Signals.
