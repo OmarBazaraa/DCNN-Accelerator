@@ -5,13 +5,11 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY mini_alu IS
     GENERIC(n : INTEGER := 17);
     PORT(
-	CLK				: IN STD_LOGIC;
-	RST				: IN STD_LOGIC;
+	CLK, RST			: IN STD_LOGIC;
 	Start				: IN STD_LOGIC;
 	Instr				: IN STD_LOGIC;
 	Size				: IN STD_LOGIC;
 	ResultReady			: IN STD_LOGIC;
-	RseultNotReady			: IN STD_LOGIC;
 	LoopingAndResultNotReady	: IN STD_LOGIC;
         Filter   			: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	Window   			: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -78,6 +76,26 @@ BEGIN
     PoolingShiftMuxInputB <= "00000" & AdderResult(7 DOWNTO 5);
 
     --
+    -- Booth Adder.
+    --
+    SelOperand <= NOT(Instr) AND NOT(ResultReady);
+
+    BOOTH_ADDER:
+    ENTITY work.booth_adder
+    GENERIC MAP(n => 17)
+    PORT MAP( 
+	AdderFirstOperand   => AdderFirstOperand,
+	AdderSecondOperand  => AdderSecondOperand,
+	BoothOperand	    => BoothOperand,
+	BoothP		    => BoothP,
+
+	SelOperand     	    => SelOperand,
+        PassP		    => BoothXORCheck,
+
+        AdderResult    	    => AdderResult,
+        AdderBoothResult    => AdderBoothResult);
+
+    --
     -- Booth Unit.
     --
     BOOTH_UNIT:
@@ -97,24 +115,6 @@ BEGIN
 	BoothAddingOperand 		=> BoothOperand,
 	BoothP				=> BoothP, 
 	LargeWindowShifted 		=> LargeWindowShifted);
-
-    --
-    -- Booth Adder.
-    --
-    BOOTH_ADDER:
-    ENTITY work.booth_adder
-    GENERIC MAP(n => 17)
-    PORT MAP( 
-	AdderFirstOperand   => AdderFirstOperand,
-	AdderSecondOperand  => AdderSecondOperand,
-	BoothOperand	    => BoothOperand,
-	BoothP		    => BoothP,
-
-	SelOperand     	    => SelOperand,
-        ShiftP		    => BoothXORCheck,
-
-        AdderResult    	    => AdderResult,
-        AdderBoothResult    => AdderBoothResult);
 
     --
     -- Operation Result Mux.

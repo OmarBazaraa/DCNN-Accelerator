@@ -10,7 +10,7 @@ ENTITY booth_adder IS
 	BoothP		    : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
 	SelOperand     	    : IN STD_LOGIC;
-        ShiftP		    : IN STD_LOGIC;
+        PassP		    : IN STD_LOGIC;
 
         AdderResult    	    : INOUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         AdderBoothResult    : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
@@ -42,7 +42,7 @@ BEGIN
     BOOTH_P_OUTPUT_MUX:
     ENTITY work.mux_2x1
     GENERIC MAP(n => 17)
-    PORT MAP(A => BoothP, B => AdderResult, S => ShiftP, Dout => PBeforeShift); 
+    PORT MAP(A => BoothP, B => AdderResult, S => PassP, Dout => PBeforeShift); 
 
     ADDER:
     ENTITY work.adder
