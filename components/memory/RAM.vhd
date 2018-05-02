@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY RAM IS
-    GENERIC(n: INTEGER := 8; m: INTEGER := 18);
+    GENERIC(n: INTEGER := 8; m: INTEGER := 5);
     PORT(
         CLK             : IN  STD_LOGIC;
         WR              : IN  STD_LOGIC;
@@ -30,8 +30,10 @@ BEGIN
     
     PROCESS(CLK)
     BEGIN
-        IF WR='1' AND RISING_EDGE(CLK) THEN
-            Mem(to_integer(unsigned(Address))) <= Din;
+        IF RISING_EDGE(CLK) THEN
+		IF WR='1' THEN
+	            Mem(to_integer(unsigned(Address))) <= Din;
+		END IF;
         END IF;
     END PROCESS;
 
