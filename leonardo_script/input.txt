@@ -1,0 +1,16 @@
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer mux_2x1 arch_mux_2x1
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder full_adder arch_full_adder
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder adder arch_adder
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units booth_adder arch_booth_adder
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/register register_edge arch_register_edge
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer mux_4x1 arch_mux_4x1
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units booth_unit arch_booth_unit
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units mini_alu arch_mini_alu
+#TODO/home/ayman/Desktop/repo/DCNN-Accelerator/utilities common arch_common
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter counter arch_counter
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator accelerator arch_accelerator
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator cache arch_cache
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator controller arch_controller
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory RAM arch_RAM
+/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator main arch_main
+
