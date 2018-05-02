@@ -1,0 +1,887 @@
+LeonardoSpectrum Level 3 - 2017a.2 (Release Production Release, compiled Jul 18 2017 at 03:19:48)
+Copyright 1990-2017 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2017 Compuware Corporation
+
+Session history will be logged to file '/home/ayman/leospec.his'
+--
+-- Welcome to LeonardoSpectrum Level 3
+-- Run Started On Wed May 02 09:47:41 PDT 2018
+--
+Reading library file `/home/ayman/mgc/Leonardo/lib/tsmc035_typ.syn`...
+Library version = 3.0 Release : Patch (a) : 09/13/04
+Delays assume: Process=typical Temp= 27.0 C  Voltage=3.30 V  
+Info: setting encoding to auto
+Info, Working Directory is now '/home/ayman/Desktop/repo/DCNN-Accelerator/generated_files'
+Info, History file moved to new working directory
+Info, Log file moved to new working directory
+Info, Library tsmc035_typ is already loaded. Setting it as target
+Info: setting encoding to auto
+-- Reading file /home/ayman/mgc/Leonardo/data/standard.vhd for unit standard
+-- Loading package standard into library std
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/utilities/common.vhd into library work
+-- Reading file /home/ayman/mgc/Leonardo/data/std_1164.vhd for unit STD_LOGIC_1164
+-- Loading package std_logic_1164 into library IEEE
+-- Loading package common into library work
+Info: "/home/ayman/Desktop/repo/DCNN-Accelerator/utilities/common.vhd" Nothing to synthesize
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_2x1.vhd into library work
+-- Loading entity mux_2x1 into library work
+-- Loading architecture arch_mux_2x1 of mux_2x1 into library work
+-- Compiling root entity mux_2x1(arch_mux_2x1)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_2x1.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1.arch_mux_2x1
+-- Compiling root entity mux_2x1(arch_mux_2x1)
+-- Info, replacing mux_2x1(arch_mux_2x1)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_2x1.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1.arch_mux_2x1
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.mux_2x1.arch_mux_2x1
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.mux_2x1.arch_mux_2x1
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog mux_2x1.v
+-- Writing file mux_2x1.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/full_adder.vhd into library work
+-- Loading entity full_adder into library work
+-- Loading architecture arch_full_adder of full_adder into library work
+-- Compiling root entity full_adder(arch_full_adder)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Compiling root entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.full_adder.arch_full_adder
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.full_adder.arch_full_adder
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog full_adder.v
+-- Writing file full_adder.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd into library work
+-- Loading entity adder into library work
+-- Loading architecture arch_adder of adder into library work
+-- Compiling root entity adder(arch_adder)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.adder.arch_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.adder.arch_adder
+-- Compiling root entity adder(arch_adder)
+-- Compiling entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Info, replacing adder(arch_adder)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.adder.arch_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.adder.arch_adder
+Info, Instances dissolved by autodissolve in View .work.adder.arch_adder
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_0_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_1_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_2_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_3_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_4_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_5_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_8_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_9_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_10_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_11_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_12_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_13_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_14_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_15_FAi (full_adder)
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.adder.arch_adder
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.adder.arch_adder
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog adder.v
+-- Writing file adder.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd into library work
+-- Loading entity booth_adder into library work
+-- Loading architecture arch_booth_adder of booth_adder into library work
+-- Compiling root entity booth_adder(arch_booth_adder)
+-- Compiling entity mux_2x1_17(arch_mux_2x1) as black box
+-- Compiling entity adder_17(arch_adder) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.booth_adder.arch_booth_adder
+-- Start pre-optimization for design .work.booth_adder.arch_booth_adder
+-- Compiling root entity booth_adder(arch_booth_adder)
+-- Compiling entity mux_2x1_17(arch_mux_2x1)
+-- Info, replacing mux_2x1_17(arch_mux_2x1)
+-- Compiling entity adder_17(arch_adder)
+-- Compiling entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Info, replacing adder_17(arch_adder)
+-- Info, replacing booth_adder(arch_booth_adder)
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2622
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1814
+-- Start pre-optimization for design .work.booth_adder.arch_booth_adder
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2622
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1814
+-- Start pre-optimization for design .work.booth_adder.arch_booth_adder
+Info, Instances dissolved by autodissolve in View .work.adder_17.arch_adder_unfold_1814
+Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
+Info, Instances dissolved by autodissolve in View .work.booth_adder.arch_booth_adder
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.adder_17.arch_adder_unfold_1814
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.booth_adder.arch_booth_adder
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.adder_17.arch_adder_unfold_1814
+Starting Timing Characterization...
+Starting Timing Analysis...
+NO wire table is found
+Timing analysis done, time = 0 CPU secs.
+Timing characterization done, time = 0 CPU secs.
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog booth_adder.v
+-- Writing file booth_adder.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd into library work
+-- Loading entity register_edge into library work
+-- Loading architecture arch_register_edge of register_edge into library work
+-- Compiling root entity register_edge(arch_register_edge)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Compiling root entity register_edge(arch_register_edge)
+-- Info, replacing register_edge(arch_register_edge)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Start pre-optimization for design .work.register_edge.arch_register_edge
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.register_edge.arch_register_edge
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.register_edge.arch_register_edge
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog register_edge.v
+-- Writing file register_edge.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd into library work
+-- Loading entity mux_4x1 into library work
+-- Loading architecture arch_mux_4x1 of mux_4x1 into library work
+-- Compiling root entity mux_4x1(arch_mux_4x1)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_4x1.arch_mux_4x1
+-- Start pre-optimization for design .work.mux_4x1.arch_mux_4x1
+-- Compiling root entity mux_4x1(arch_mux_4x1)
+-- Info, replacing mux_4x1(arch_mux_4x1)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_4x1.arch_mux_4x1
+-- Start pre-optimization for design .work.mux_4x1.arch_mux_4x1
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.mux_4x1.arch_mux_4x1
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.mux_4x1.arch_mux_4x1
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog mux_4x1.v
+-- Writing file mux_4x1.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd into library work
+-- Reading file /home/ayman/mgc/Leonardo/data/numeric_std.vhd for unit NUMERIC_STD
+-- Loading package NUMERIC_STD into library IEEE
+-- Loading entity booth_unit into library work
+-- Loading architecture arch_booth_unit of booth_unit into library work
+-- Compiling root entity booth_unit(arch_booth_unit)
+-- Compiling entity register_edge_17(arch_register_edge) as black box
+-- Compiling entity mux_4x1_17(arch_mux_4x1) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.booth_unit.arch_booth_unit
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.booth_unit.arch_booth_unit
+-- Compiling root entity booth_unit(arch_booth_unit)
+-- Compiling entity register_edge_17(arch_register_edge)
+-- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity mux_2x1_17(arch_mux_2x1)
+-- Info, replacing mux_2x1_17(arch_mux_2x1)
+-- Compiling entity mux_4x1_17(arch_mux_4x1)
+-- Info, replacing mux_4x1_17(arch_mux_4x1)
+-- Info, replacing booth_unit(arch_booth_unit)
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
+-- Start pre-optimization for design .work.booth_unit.arch_booth_unit
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
+-- Start pre-optimization for design .work.booth_unit.arch_booth_unit
+Info, Instances dissolved by autodissolve in View .work.booth_unit.arch_booth_unit
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.mux_4x1_17.arch_mux_4x1_unfold_2461
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+
+Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing netlist .work.booth_unit.arch_booth_unit
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.register_edge_17.arch_register_edge
+Starting Timing Characterization...
+Starting Timing Analysis...
+NO wire table is found
+Timing analysis done, time = 0 CPU secs.
+Timing characterization done, time = 0 CPU secs.
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog booth_unit.v
+-- Writing file booth_unit.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd into library work
+-- Loading entity mini_alu into library work
+-- Loading architecture arch_mini_alu of mini_alu into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd",line 31: Warning, signal BoothResult is never used.
+-- Compiling root entity mini_alu(arch_mini_alu)
+-- Compiling entity booth_adder_17(arch_booth_adder) as black box
+-- Compiling entity booth_unit_17(arch_booth_unit) as black box
+-- Compiling entity mux_2x1_17(arch_mux_2x1) as black box
+-- Compiling entity mux_2x1_8(arch_mux_2x1) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mini_alu.arch_mini_alu
+-- Start pre-optimization for design .work.mini_alu.arch_mini_alu
+-- Compiling root entity mini_alu(arch_mini_alu)
+-- Compiling entity booth_adder_17(arch_booth_adder)
+-- Compiling entity mux_2x1_17(arch_mux_2x1)
+-- Info, replacing mux_2x1_17(arch_mux_2x1)
+-- Compiling entity adder_17(arch_adder)
+-- Compiling entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Info, replacing booth_adder_17(arch_booth_adder)
+-- Compiling entity booth_unit_17(arch_booth_unit)
+-- Compiling entity register_edge_17(arch_register_edge)
+-- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity mux_4x1_17(arch_mux_4x1)
+-- Info, replacing booth_unit_17(arch_booth_unit)
+-- Compiling entity mux_2x1_8(arch_mux_2x1)
+-- Info, replacing mux_2x1_8(arch_mux_2x1)
+-- Info, replacing mini_alu(arch_mini_alu)
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2725
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2469
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2290
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2315
+-- Start pre-optimization for design .work.mini_alu.arch_mini_alu
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2725
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2469
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2290
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2315
+-- Start pre-optimization for design .work.mini_alu.arch_mini_alu
+Info, Instances dissolved by autodissolve in View .work.adder_17.arch_adder_unfold_1917
+Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
+Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_booth_adder_unfold_2335
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2303
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.mini_alu.arch_mini_alu
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 130: RESULT_SHIFT_MUX (mux_2x1_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 138: POOLING_SHIFT_MUX (mux_2x1_8)
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.adder_17.arch_adder_unfold_1917
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.booth_adder_17.arch_booth_adder_unfold_2335
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.mux_4x1_17.arch_mux_4x1_unfold_2564
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+
+Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing netlist .work.booth_unit_17.arch_booth_unit_unfold_2303
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.mini_alu.arch_mini_alu
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.adder_17.arch_adder_unfold_1917
+Starting Timing Characterization...
+Starting Timing Analysis...
+NO wire table is found
+Timing analysis done, time = 0 CPU secs.
+Timing characterization done, time = 0 CPU secs.
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog mini_alu.v
+-- Writing file mini_alu.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd into library work
+-- Loading entity counter into library work
+-- Loading architecture arch_counter of counter into library work
+-- Compiling root entity counter(arch_counter)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 22: Warning, Dout should be declared on the sensitivity list of the process.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 10: Warning, Dout is not always assigned. Storage may be needed..
+-- Boundary optimization.
+-- Start pre-optimization for design .work.counter.arch_counter
+-- Start pre-optimization for design .work.counter.arch_counter
+-- Compiling root entity counter(arch_counter)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 22: Warning, Dout should be declared on the sensitivity list of the process.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 10: Warning, Dout is not always assigned. Storage may be needed..
+-- Info, replacing counter(arch_counter)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.counter.arch_counter
+-- Start pre-optimization for design .work.counter.arch_counter
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.counter.arch_counter
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+-- Start timing optimization for design .work.counter.arch_counter
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog counter.v
+-- Writing file counter.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd into library work
+-- Loading entity accelerator into library work
+-- Loading architecture arch_accelerator of accelerator into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd",line 32: Warning, signal L1Results is never used.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd",line 39: Warning, signal L2Results is never used.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd",line 46: Warning, signal L3Results is never used.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd",line 48: Warning, signal L3OperationResults is never used.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd",line 53: Warning, signal L4Results is never used.
+-- Compiling root entity accelerator(arch_accelerator)
+-- Compiling entity counter_4(arch_counter) as black box
+-- Compiling entity mini_alu_17(arch_mini_alu) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.accelerator.arch_accelerator
+-- Start pre-optimization for design .work.accelerator.arch_accelerator
+-- Compiling root entity accelerator(arch_accelerator)
+-- Compiling entity counter_4(arch_counter)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 22: Warning, Dout should be declared on the sensitivity list of the process.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd",line 10: Warning, Dout is not always assigned. Storage may be needed..
+-- Info, replacing counter_4(arch_counter)
+-- Compiling entity mini_alu_17(arch_mini_alu)
+-- Compiling entity booth_adder_17(arch_booth_adder)
+-- Compiling entity mux_2x1_17(arch_mux_2x1)
+-- Info, replacing mux_2x1_17(arch_mux_2x1)
+-- Compiling entity adder_17(arch_adder)
+-- Compiling entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Compiling entity booth_unit_17(arch_booth_unit)
+-- Compiling entity register_edge_17(arch_register_edge)
+-- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity mux_4x1_17(arch_mux_4x1)
+-- Compiling entity mux_2x1_8(arch_mux_2x1)
+-- Info, replacing mini_alu_17(arch_mini_alu)
+-- Info, replacing accelerator(arch_accelerator)
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.counter_4.arch_counter
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2725_0
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2572_0
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2762_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_2
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1999
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_1
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_1
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2766
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_3
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_2
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2768_0
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2771_0
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_3
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2393
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2418
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2774
+-- Start pre-optimization for design .work.accelerator.arch_accelerator
+-- Start pre-optimization for design .work.counter_4.arch_counter
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2725_0
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1998
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
+-- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2572_0
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2762_0
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_1
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_2
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1999
+-- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_1
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_1
+-- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2766
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2618_3
+-- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_2
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2768_0
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2771_0
+-- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_3
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2393
+-- Start pre-optimization for design .work.mux_2x1_8.arch_mux_2x1_unfold_2418
+-- Start pre-optimization for design .work.mini_alu_17.arch_mini_alu_unfold_2774
+-- Start pre-optimization for design .work.accelerator.arch_accelerator
+Info, Instances dissolved by autodissolve in View .work.adder_17.arch_adder_unfold_1917_0
+Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
+Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_booth_adder_unfold_2438_0
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406_0
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2762_0
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.adder_17.arch_adder_unfold_1917_1
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_5_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_8_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_9_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_10_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_11_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_12_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_13_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_14_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_15_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_16_FAi (full_adder)
+Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_booth_adder_unfold_2438_1
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2766
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_booth_adder_unfold_2438_2
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2768_0
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_booth_adder_unfold_2438_3
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 33: FIRST_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
+Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2774
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 130: RESULT_SHIFT_MUX (mux_2x1_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 138: POOLING_SHIFT_MUX (mux_2x1_8)
+Info, Instances dissolved by autodissolve in View .work.accelerator.arch_accelerator
+Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.adder_17.arch_adder_unfold_1917_0
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.booth_adder_17.arch_booth_adder_unfold_2438_0
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+
+Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing netlist .work.booth_unit_17.arch_booth_unit_unfold_2406_0
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.adder_17.arch_adder_unfold_1917_1
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.booth_adder_17.arch_booth_adder_unfold_2438_1
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+
+Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing netlist .work.booth_unit_17.arch_booth_unit_unfold_2406
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.booth_adder_17.arch_booth_adder_unfold_2438_2
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.booth_adder_17.arch_booth_adder_unfold_2438_3
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.accelerator.arch_accelerator
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.adder_17.arch_adder_unfold_1917_0
+Starting Timing Characterization...
+Starting Timing Analysis...
+NO wire table is found
+Timing analysis done, time = 0 CPU secs.
+Timing characterization done, time = 0 CPU secs.
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog accelerator.v
+-- Writing file accelerator.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/cache.vhd into library work
+-- Loading entity cache into library work
+-- Loading architecture arch_cache of cache into library work
+-- Compiling root entity cache(arch_cache)
+-- Compiling entity register_edge_8(arch_register_edge) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.cache.arch_cache
+-- Start pre-optimization for design .work.cache.arch_cache
+-- Compiling root entity cache(arch_cache)
+-- Compiling entity register_edge_8(arch_register_edge)
+-- Info, replacing register_edge_8(arch_register_edge)
+-- Info, replacing cache(arch_cache)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.cache.arch_cache
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.cache.arch_cache
+Info, Instances dissolved by autodissolve in View .work.cache.arch_cache
+Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.cache.arch_cache
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.cache.arch_cache
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog cache.v
+-- Writing file cache.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd into library work
+-- Searching for SYNOPSYS package STD_LOGIC_UNSIGNED..
+-- Reading file /home/ayman/mgc/Leonardo/data/syn_unsi.vhd for unit STD_LOGIC_UNSIGNED
+-- Searching for SYNOPSYS package std_logic_arith..
+-- Reading file /home/ayman/mgc/Leonardo/data/syn_arit.vhd for unit std_logic_arith
+-- Loading package std_logic_arith into library IEEE
+-- Loading package STD_LOGIC_UNSIGNED into library IEEE
+-- Loading entity controller into library work
+-- Loading architecture arch_controller of controller into library work
+-- Compiling root entity controller(arch_controller)
+-- Compiling entity register_edge_5(arch_register_edge) as black box
+-- Compiling entity adder_8(arch_adder) as black box
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.controller.arch_controller
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.controller.arch_controller
+-- Compiling root entity controller(arch_controller)
+-- Compiling entity register_edge_5(arch_register_edge)
+-- Info, replacing register_edge_5(arch_register_edge)
+-- Compiling entity register_edge_8(arch_register_edge)
+-- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity adder_8(arch_adder)
+-- Compiling entity full_adder(arch_full_adder)
+-- Info, replacing full_adder(arch_full_adder)
+-- Info, replacing adder_8(arch_adder)
+-- Info, replacing controller(arch_controller)
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
+-- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1989
+-- Start pre-optimization for design .work.adder_8.arch_adder_unfold_1980
+-- Start pre-optimization for design .work.controller.arch_controller
+-- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
+-- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
+-- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
+-- Start pre-optimization for design .work.full_adder.arch_full_adder
+-- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1989
+-- Start pre-optimization for design .work.adder_8.arch_adder_unfold_1980
+-- Start pre-optimization for design .work.controller.arch_controller
+Info, Instances dissolved by autodissolve in View .work.adder_8.arch_adder_unfold_2006
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_0_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_1_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_2_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_3_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_4_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_5_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
+Info, Instances dissolved by autodissolve in View .work.adder_8.arch_adder_unfold_1980
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_0_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_1_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_2_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_3_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_4_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_5_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
+Info, Instances dissolved by autodissolve in View .work.controller.arch_controller
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_5)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 161: ROW_ADDER (adder_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 174: COL_ADDER (adder_8)
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.controller.arch_controller
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.controller.arch_controller
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog controller.v
+-- Writing file controller.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd into library work
+-- Loading entity RAM into library work
+-- Loading architecture arch_RAM of RAM into library work
+-- Compiling root entity RAM(arch_RAM)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 22: Warning, initial value for Mem is ignored for synthesis.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 26: Warning, index value 1 TO 32 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 27: Warning, index value 2 TO 33 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 28: Warning, index value 3 TO 34 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 29: Warning, index value 4 TO 35 could be out of prefix index constraint 0 TO 31.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.RAM.arch_RAM
+-- Start pre-optimization for design .work.RAM.arch_RAM
+-- Compiling root entity RAM(arch_RAM)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 22: Warning, initial value for Mem is ignored for synthesis.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 26: Warning, index value 1 TO 32 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 27: Warning, index value 2 TO 33 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 28: Warning, index value 3 TO 34 could be out of prefix index constraint 0 TO 31.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 29: Warning, index value 4 TO 35 could be out of prefix index constraint 0 TO 31.
+-- Info, replacing RAM(arch_RAM)
+-- Boundary optimization.
+-- Start pre-optimization for design .work.RAM.arch_RAM
+-- Start pre-optimization for design .work.RAM.arch_RAM
+->set wire_table "" 
+Info: setting wire_table to 
+NO wire table is found
+-- Optimizing netlist .work.RAM.arch_RAM
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:01 Mapping
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+-- Start timing optimization for design .work.RAM.arch_RAM
+No critical paths to optimize at this level
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog RAM.v
+-- Writing file RAM.v
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/main.vhd into library work
+-- Loading entity main into library work
+-- Loading architecture arch_main of main into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/main.vhd",line 20: Warning, signal MemRD is never used.
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/main.vhd",line 30: Warning, signal CacheResultWR is never assigned a value.
+-- Compiling root entity main(arch_main)
+-- Compiling entity RAM_8_18(arch_RAM) as black box
+Info: setting novendor_constraint_file to FALSE
+AutoWrite args are : -format Verilog main.v
+-- Writing file main.v
+Info, Command 'auto_write' finished successfully

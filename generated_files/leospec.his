@@ -1,3 +1,7 @@
+#
+#
+# 
+# Wed May  2 09:47:41 2018
 load_library tsmc035_typ 
  set_working_dir "/home/ayman/Desktop/repo/DCNN-Accelerator/generated_files"
 load_library tsmc035_typ
@@ -135,3 +139,17 @@ auto_write -format Verilog RAM.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/main.vhd }
 set novendor_constraint_file FALSE
 auto_write -format Verilog main.v
+
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
+ set wire_table "" 
