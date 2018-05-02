@@ -20,14 +20,18 @@ int main() {
 	while(cin>>filePath>>fileName>>archName) {
 		if (filePath[0] == '#') continue;
 		cout << "read -technology \"tsmc035_typ\"  { " + filePath + "/" + fileName + ".vhd }\n";
-		cout<< "pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize \n";
-		cout<<"pre_optimize -extract \n";
-		cout<<"elaborate " + fileName + " -architecture " + archName + " \n";
-		cout<<"pre_optimize .work." + fileName + "." + archName + " -common_logic -unused_logic -boundary -xor_comparator_optimize \n";
-		cout<<"pre_optimize .work." + fileName + "." + archName + " -extract \n";
-		cout<<"optimize .work." + fileName + "." + archName + " -target tsmc035_typ -macro -area -effort quick -hierarchy auto \n";
-		cout<<"optimize_timing .work." + fileName + "." + archName + " \n";
+		
+		if (fileName != "main") {
+ 
+			cout<< "pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize \n";
+			cout<<"pre_optimize -extract \n";
+			cout<<"elaborate " + fileName + " -architecture " + archName + " \n";
+			cout<<"pre_optimize .work." + fileName + "." + archName + " -common_logic -unused_logic -boundary -xor_comparator_optimize \n";
+			cout<<"pre_optimize .work." + fileName + "." + archName + " -extract \n";
+			cout<<"optimize .work." + fileName + "." + archName + " -target tsmc035_typ -macro -area -effort quick -hierarchy auto \n";
+			cout<<"optimize_timing .work." + fileName + "." + archName + " \n";
+		}		
 		cout<<"set novendor_constraint_file FALSE\n";
-		cout<<"auto_write " + fileName + ".vhd\n";
+		cout<<"auto_write -format Verilog " + fileName + ".v\n";
 	}
 }

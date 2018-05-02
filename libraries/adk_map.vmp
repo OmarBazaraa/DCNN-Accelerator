@@ -1,0 +1,107 @@
+// 
+// ADK Verilog map file for use with DA-IC import verilog
+//
+// 1.0 Initial release
+//
+
+p portin $ADK/technology/ic/symbols/portin X
+p portout $ADK/technology/ic/symbols/portout X
+p portbi $ADK/technology/ic/symbols/portbi X
+p ripper $MGC_IC_GENERIC_LIB/rip/1X1 bundle wire
+p pagein $MGC_IC_GENERIC_LIB/offpag.in IN
+p pageout $MGC_IC_GENERIC_LIB/offpag.out OUT
+p netcon $ADK/technology/ic/symbols/netcon IN OUT
+p ground $ADK/technology/ic/symbols/gnd X
+p power $ADK/technology/ic/symbols/vdd X
+//
+m aoi21 $ADK/parts/aoi21 Y A0 A1 B0
+m aoi22 $ADK/parts/aoi22 Y A0 A1 B0 B1
+m aoi221 $ADK/parts/aoi221 Y A0 A1 B0 B1 C0
+m aoi222 $ADK/parts/aoi222 Y A0 A1 B0 B1 C0 C1
+m aoi32 $ADK/parts/aoi32 Y A0 A1 A2 B0 B1
+m aoi321 $ADK/parts/aoi321 Y A0 A1 A2 B0 B1 C0
+m aoi322 $ADK/parts/aoi322 Y A0 A1 A2 B0 B1 C0 C1
+m aoi33 $ADK/parts/aoi33 Y A0 A1 A2 B0 B1 B2
+m aoi332 $ADK/parts/aoi332 Y A0 A1 A2 B0 B1 B2 C0 C1
+m aoi333 $ADK/parts/aoi333 Y A0 A1 A2 B0 B1 B2 C0 C1 C2
+m aoi422 $ADK/parts/aoi422 Y A0 A1 A2 A3 B0 B1 C0 C1
+m aoi43 $ADK/parts/aoi43 Y A0 A1 A2 A3 B0 B1 B2
+m aoi44 $ADK/parts/aoi44 Y A0 A1 A2 A3 B0 B1 B2 B3
+m buf02 $ADK/parts/buf02 Y A
+m buf04 $ADK/parts/buf04 Y A
+m buf08 $ADK/parts/buf08 Y A
+m buf12 $ADK/parts/buf12 Y A
+m buf16 $ADK/parts/buf16 Y A
+m dff $ADK/parts/dff Q QB D CLK
+m dffr $ADK/parts/dffr Q QB D CLK R
+m dffs $ADK/parts/dffs Q QB D CLK S
+m dffs_ni $ADK/parts/dffs_ni Q QB D CLK S
+m dffsr $ADK/parts/dffsr Q QB D CLK S R
+m dffsr_ni $ADK/parts/dffsr_ni Q QB D CLK S R
+m fadd1 $ADK/parts/fadd1 S CO A B CI
+m hadd1 $ADK/parts/hadd1 S CO A B
+m inv01 $ADK/parts/inv01 Y A
+m inv02 $ADK/parts/inv02 Y A
+m inv04 $ADK/parts/inv04 Y A
+m inv08 $ADK/parts/inv08 Y A
+m inv12 $ADK/parts/inv12 Y A
+m inv16 $ADK/parts/inv16 Y A
+m latch $ADK/parts/latch Q D CLK
+m latchr $ADK/parts/latchr QB D CLK R
+m latchs $ADK/parts/latchs QB D CLK S
+m latchs_ni $ADK/parts/latchs_ni QB D CLK S
+m latchsr $ADK/parts/latchsr QB D CLK S R
+m latchsr_ni $ADK/parts/latchsr_ni QB D CLK S R
+m mux21 $ADK/parts/mux21 Y A0 A1 S0
+m mux21_ni $ADK/parts/mux21_ni Y A0 A1 S0
+m nand04 $ADK/parts/nand04 Y A0 A1 A2 A3
+m nor04 $ADK/parts/nor04 Y A0 A1 A2 A3
+m nand04_2x $ADK/parts/nand04_2x Y A0 A1 A2 A3
+m nor04_2x $ADK/parts/nor04_2x Y A0 A1 A2 A3
+m oai222 $ADK/parts/oai222 Y A0 A1 B0 B1 C0 C1
+m oai321 $ADK/parts/oai321 Y A0 A1 A2 B0 B1 C0
+m oai322 $ADK/parts/oai322 Y A0 A1 A2 B0 B1 C0 C1
+m oai33 $ADK/parts/oai33 Y A0 A1 A2 B0 B1 B2
+m oai332 $ADK/parts/oai332 Y A0 A1 A2 B0 B1 B2 C0 C1
+m oai333 $ADK/parts/oai333 Y A0 A1 A2 B0 B1 B2 C0 C1 C2
+m oai422 $ADK/parts/oai422 Y A0 A1 A2 A3 B0 B1 C0 C1
+m oai43 $ADK/parts/oai43 Y A0 A1 A2 A3 B0 B1 B2
+m oai44 $ADK/parts/oai44 Y A0 A1 A2 A3 B0 B1 B2 B3
+m sff $ADK/parts/sff Q QB D SI SE CLK
+m sffr $ADK/parts/sffr Q QB D SI SE CLK R
+m sffr_ni $ADK/parts/sffr_ni Q QB D SI SE CLK R
+m sffs $ADK/parts/sffs Q QB D SI SE CLK S
+m sffsr $ADK/parts/sffsr Q QB D SI SE CLK S R
+m sffsr_ni $ADK/parts/sffsr_ni Q QB D SI SE CLK S R
+m tri01 $ADK/parts/tri01 Y A E
+m trib04 $ADK/parts/trib04 Y A E
+m trib08 $ADK/parts/trib08 Y A E
+m fake_gnd $ADK/technology/ic/symbols/gnd Y
+m fake_vcc $ADK/technology/ic/symbols/vdd Y
+m nor02 $ADK/parts/nor02 Y A0 A1
+m nor03 $ADK/parts/nor03 Y A0 A1 A2
+m nor02_2x $ADK/parts/nor02_2x Y A0 A1
+m nor03_2x $ADK/parts/nor03_2x Y A0 A1 A2
+m nor02ii $ADK/parts/nor02ii Y A0 A1
+m oai21 $ADK/parts/oai21 Y A0 A1 B0
+m oai22 $ADK/parts/oai22 Y A0 A1 B0 B1
+m oai221 $ADK/parts/oai221 Y A0 A1 B0 B1 C0
+m oai32 $ADK/parts/oai32 Y A0 A1 A2 B0 B1
+m or02 $ADK/parts/or02 Y A0 A1
+m or03 $ADK/parts/or03 Y A0 A1 A2
+m or04 $ADK/parts/or04 Y A0 A1 A2 A3
+m and02 $ADK/parts/and02 Y A0 A1
+m and03 $ADK/parts/and03 Y A0 A1 A2
+m and04 $ADK/parts/and04 Y A0 A1 A2 A3
+m ao21 $ADK/parts/ao21 Y A0 A1 B0
+m ao22 $ADK/parts/ao22 Y A0 A1 B0 B1
+m ao221 $ADK/parts/ao221 Y A0 A1 B0 B1 C0
+m ao32 $ADK/parts/ao32 Y A0 A1 A2 B0 B1
+m nand02 $ADK/parts/nand02 Y A0 A1
+m nand03 $ADK/parts/nand03 Y A0 A1 A2
+m xnor2 $ADK/parts/xnor2 Y A0 A1
+m xor2 $ADK/parts/xor2 Y A0 A1
+m nand02_2x $ADK/parts/nand02_2x Y A0 A1
+m nand03_2x $ADK/parts/nand03_2x Y A0 A1 A2
+m xnor2_2x $ADK/parts/xnor2_2x Y A0 A1
+m xor2_2x $ADK/parts/xor2_2x Y A0 A1

@@ -11,7 +11,7 @@ pre_optimize .work.mux_2x1.arch_mux_2x1 -extract
 optimize .work.mux_2x1.arch_mux_2x1 -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.mux_2x1.arch_mux_2x1 
 set novendor_constraint_file FALSE
-auto_write mux_2x1.vhd
+auto_write -format Verilog mux_2x1.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/full_adder.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -21,7 +21,7 @@ pre_optimize .work.full_adder.arch_full_adder -extract
 optimize .work.full_adder.arch_full_adder -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.full_adder.arch_full_adder 
 set novendor_constraint_file FALSE
-auto_write full_adder.vhd
+auto_write -format Verilog full_adder.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -31,7 +31,7 @@ pre_optimize .work.adder.arch_adder -extract
 optimize .work.adder.arch_adder -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.adder.arch_adder 
 set novendor_constraint_file FALSE
-auto_write adder.vhd
+auto_write -format Verilog adder.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -41,7 +41,7 @@ pre_optimize .work.booth_adder.arch_booth_adder -extract
 optimize .work.booth_adder.arch_booth_adder -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.booth_adder.arch_booth_adder 
 set novendor_constraint_file FALSE
-auto_write booth_adder.vhd
+auto_write -format Verilog booth_adder.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -51,7 +51,7 @@ pre_optimize .work.register_edge.arch_register_edge -extract
 optimize .work.register_edge.arch_register_edge -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.register_edge.arch_register_edge 
 set novendor_constraint_file FALSE
-auto_write register_edge.vhd
+auto_write -format Verilog register_edge.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -61,7 +61,7 @@ pre_optimize .work.mux_4x1.arch_mux_4x1 -extract
 optimize .work.mux_4x1.arch_mux_4x1 -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.mux_4x1.arch_mux_4x1 
 set novendor_constraint_file FALSE
-auto_write mux_4x1.vhd
+auto_write -format Verilog mux_4x1.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -71,7 +71,7 @@ pre_optimize .work.booth_unit.arch_booth_unit -extract
 optimize .work.booth_unit.arch_booth_unit -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.booth_unit.arch_booth_unit 
 set novendor_constraint_file FALSE
-auto_write booth_unit.vhd
+auto_write -format Verilog booth_unit.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -81,7 +81,7 @@ pre_optimize .work.mini_alu.arch_mini_alu -extract
 optimize .work.mini_alu.arch_mini_alu -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.mini_alu.arch_mini_alu 
 set novendor_constraint_file FALSE
-auto_write mini_alu.vhd
+auto_write -format Verilog mini_alu.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/counter/counter.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -91,7 +91,7 @@ pre_optimize .work.counter.arch_counter -extract
 optimize .work.counter.arch_counter -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.counter.arch_counter 
 set novendor_constraint_file FALSE
-auto_write counter.vhd
+auto_write -format Verilog counter.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/accelerator.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -101,7 +101,7 @@ pre_optimize .work.accelerator.arch_accelerator -extract
 optimize .work.accelerator.arch_accelerator -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.accelerator.arch_accelerator 
 set novendor_constraint_file FALSE
-auto_write accelerator.vhd
+auto_write -format Verilog accelerator.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/cache.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -111,7 +111,7 @@ pre_optimize .work.cache.arch_cache -extract
 optimize .work.cache.arch_cache -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.cache.arch_cache 
 set novendor_constraint_file FALSE
-auto_write cache.vhd
+auto_write -format Verilog cache.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -121,7 +121,7 @@ pre_optimize .work.controller.arch_controller -extract
 optimize .work.controller.arch_controller -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.controller.arch_controller 
 set novendor_constraint_file FALSE
-auto_write controller.vhd
+auto_write -format Verilog controller.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -131,14 +131,7 @@ pre_optimize .work.RAM.arch_RAM -extract
 optimize .work.RAM.arch_RAM -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
 optimize_timing .work.RAM.arch_RAM 
 set novendor_constraint_file FALSE
-auto_write RAM.vhd
+auto_write -format Verilog RAM.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/main.vhd }
-pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
-pre_optimize -extract 
-elaborate main -architecture arch_main 
-pre_optimize .work.main.arch_main -common_logic -unused_logic -boundary -xor_comparator_optimize 
-pre_optimize .work.main.arch_main -extract 
-optimize .work.main.arch_main -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
-optimize_timing .work.main.arch_main 
 set novendor_constraint_file FALSE
-auto_write main.vhd
+auto_write -format Verilog main.v

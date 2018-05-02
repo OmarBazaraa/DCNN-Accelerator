@@ -1,0 +1,893 @@
+//******************************************************
+//
+// DFT Library for the Asic Design Kit (ADK)
+//
+// 3.0 New cells added   Jan 2005
+//
+// Copyright 2002 Mentor Graphics Corporation 2001 All Rights Reserved.
+// THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+// WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+// LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+// DISCLAIMER OF WARRANTY:  Unless otherwise agreed in writing,
+// Mentor Graphics software and associated files are provided "as is"
+// and without warranty.  Mentor Graphics has no obligation to support
+// or otherwise maintain software.  Mentor Graphics makes no warranties,
+// express or implied with respect to software including any warranty
+// of merchantability or fitness for a particular purpose.
+//
+// LIMITATION OF LIABILITY: Mentor Graphics is not liable for any property
+// damage, personal injury, loss of profits, interruption of business, or for
+// any other special, consequential or incidental damages, however caused,
+// whether for breach of warranty, contract, tort (including negligence),
+// strict liability or otherwise. In no event shall Mentor Graphics'
+// liability exceed the amount paid for the product giving rise to the claim.
+//
+//******************************************************
+
+model and02(A0, A1, Y) (
+   cell_type = AND;
+  input(A0, A1) ()
+  output(Y) (primitive = _and(A0, A1, Y);)
+)
+
+model and03(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _and(A0, A1, A2, Y);)
+)
+
+model and04(A0, A1, A2, A3, Y) (
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _and(A0, A1, A2, A3, Y);)
+)
+
+model ao21(A0, A1, B0, Y) (
+  input(A0, A1, B0) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  output(Y) (primitive = _or(INT_RES_0, B0, Y);)
+)
+
+model ao22(A0, A1, B0, B1, Y) (
+  input(A0, A1, B0, B1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _or(INT_RES_0, INT_RES_1, Y);)
+)
+
+model ao221(A0, A1, B0, B1, C0, Y) (
+  input(A0, A1, B0, B1, C0) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _or(INT_RES_0, INT_RES_1, C0, Y);)
+)
+
+model ao32(A0, A1, A2, B0, B1, Y) (
+  input(A0, A1, A2, B0, B1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _or(INT_RES_0, INT_RES_1, Y);)
+)
+
+model aoi21(A0, A1, B0, Y) (
+  input(A0, A1, B0) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  output(Y) (primitive = _nor(INT_RES_0, B0, Y);)
+)
+
+model aoi22(A0, A1, B0, B1, Y) (
+  input(A0, A1, B0, B1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, Y);)
+)
+
+model aoi221(A0, A1, B0, B1, C0, Y) (
+  input(A0, A1, B0, B1, C0) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, C0, Y);)
+)
+
+model aoi222(A0, A1, B0, B1, C0, C1, Y) (
+  input(A0, A1, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model aoi32(A0, A1, A2, B0, B1, Y) (
+  input(A0, A1, A2, B0, B1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, Y);)
+)
+
+model aoi321(A0, A1, A2, B0, B1, C0, Y) (
+  input(A0, A1, A2, B0, B1, C0) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, C0, Y);)
+)
+
+model aoi322(A0, A1, A2, B0, B1, C0, C1, Y) (
+  input(A0, A1, A2, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model aoi33(A0, A1, A2, B0, B1, B2, Y) (
+  input(A0, A1, A2, B0, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, B2, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, Y);)
+)
+
+model aoi332(A0, A1, A2, B0, B1, B2, C0, C1, Y) (
+  input(A0, A1, A2, B0, B1, B2, C0, C1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model aoi333(A0, A1, A2, B0, B1, B2, C0, C1, C2, Y) (
+  input(A0, A1, A2, B0, B1, B2, C0, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C0, C1, C2, INT_RES_2);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model aoi422(A0, A1, A2, A3, B0, B1, C0, C1, Y) (
+  input(A0, A1, A2, A3, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model aoi43(A0, A1, A2, A3, B0, B1, B2, Y) (
+  input(A0, A1, A2, A3, B0, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, B2, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, Y);)
+)
+
+model aoi44(A0, A1, A2, A3, B0, B1, B2, B3, Y) (
+  input(A0, A1, A2, A3, B0, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B0, B1, B2, B3, INT_RES_1);)
+  output(Y) (primitive = _nor(INT_RES_0, INT_RES_1, Y);)
+)
+
+model buf02(A, Y) (
+  cell_type = BUF;
+  input(A) ()
+  output(Y) (primitive = _buf(A, Y);)
+)
+
+model buf04(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _buf(A, Y);)
+)
+
+model buf08(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _buf(A, Y);)
+)
+
+model buf12(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _buf(A, Y);)
+)
+
+model buf16(A, Y) (
+  cell_type = CLKBUF;
+  input(A) ()
+  output(Y) (primitive = _buf(A, Y);)
+)
+
+model dff (D, CLK, Q, QB) (
+  input (D, CLK) ()
+  output(Q, QB) (primitive = _dff(, , CLK, D, Q, QB);)
+)
+
+model dffr (D, CLK, R, Q, QB) (
+  input (D, CLK, R) ()
+  output(Q, QB) (primitive = _dff(, R, CLK, D, Q, QB);)
+)
+
+model dffs (D, CLK, S, Q, QB) (
+  input (D, CLK, S) ()
+  intern(INT_RES_0) (primitive = _inv(S, INT_RES_0);)
+  output(Q, QB) (primitive = _dff(INT_RES_0, , CLK, D, Q, QB);)
+)
+
+model dffs_ni (D, CLK, S, Q, QB) (
+  input (D, CLK, S) ()
+  output(Q, QB) (primitive = _dff(S, , CLK, D, Q, QB);)
+)
+
+model dffsr (D, CLK, S, R, Q, QB) (
+  input (D, CLK, S, R) ()
+  intern(INT_RES_0) (primitive = _inv(S, INT_RES_0);)
+  output(Q, QB) (primitive = _dff(INT_RES_0, R, CLK, D, Q, QB);)
+)
+
+model dffsr_ni (D, CLK, S, R, Q, QB) (
+  input (D, CLK, S, R) ()
+  output(Q, QB) (primitive = _dff(S, R, CLK, D, Q, QB);)
+)
+
+model fadd1(A, B, CI, S, CO) (
+  input(A, B, CI) ()
+  output(S) (primitive = _xor(A, B, CI, S);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CI, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CI, INT_RES_2);)
+  output(CO) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, CO);)
+)
+
+model hadd1(A, B, S, CO) (
+  input(A, B) ()
+  output(S) (primitive = _xor(A, B, S);)
+  output(CO) (primitive = _and(A, B, CO);)
+)
+
+model inv01(A, Y) (
+  cell_type = INV;
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model inv02(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model inv04(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model inv08(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model inv12(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model inv16(A, Y) (
+  input(A) ()
+  output(Y) (primitive = _inv(A, Y);)
+)
+
+model latch (D, CLK, Q) (
+  input (D, CLK) ()
+  intern(INT_RES_0) (primitive = _dlat(, , CLK, D, INT_RES_0, );)
+  output(Q) (primitive = _buf(INT_RES_0, Q);)
+)
+
+model latchr (D, CLK, R, QB) (
+  input (D, CLK, R) ()
+  intern(INT_RES_0) (primitive = _dlat(, R, CLK, D, , INT_RES_0);)
+  output(QB) (primitive = _buf(INT_RES_0, QB);)
+)
+
+model latchs (D, CLK, S, QB) (
+  input (D, CLK, S) ()
+  intern(INT_RES_0) (primitive = _inv(S, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _dlat(INT_RES_0, , CLK, D, , INT_RES_1);)
+  output(QB) (primitive = _buf(INT_RES_1, QB);)
+)
+
+model latchs_ni (D, CLK, S, QB) (
+  input (D, CLK, S) ()
+  intern(INT_RES_0) (primitive = _dlat(S, , CLK, D, , INT_RES_0);)
+  output(QB) (primitive = _buf(INT_RES_0, QB);)
+)
+
+model latchsr (D, CLK, S, R, QB) (
+  input (D, CLK, S, R) ()
+  intern(INT_RES_0) (primitive = _inv(S, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _dlat(INT_RES_0, R, CLK, D, , INT_RES_1);)
+  output(QB) (primitive = _buf(INT_RES_1, QB);)
+)
+
+model latchsr_ni (D, CLK, S, R, QB) (
+  input (D, CLK, S, R) ()
+  intern(INT_RES_0) (primitive = _dlat(S, R, CLK, D, , INT_RES_0);)
+  output(QB) (primitive = _inv(INT_RES_0, QB);)
+)
+
+model latch_dualport (D0, CLK0, D1, CLK1, Q) (
+  input (D0, CLK0, D1, CLK1) ()
+  output(Q) (primitive = _dlat( , , CLK0, D0, CLK1, D1, Q,);)
+)
+
+model latch_dualport_sr (D0, CLK0, D1, CLK1, S, R, Q) (
+  input (D0, CLK0, D1, CLK1, S, R) ()
+  output(Q) (primitive = _dlat( S, R, CLK0, D0, CLK1, D1, Q,);)
+)
+
+model lssd_latch (D, SI, CLK, MCLK, SCLK, Q, QB, SO) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latch (D, CLK, Q);
+  )
+  input (D, SI, CLK, MCLK, SCLK ) ()
+  output(Q, SO, QB) (
+      instance = latch_dualport u1 (D, CLK, SI, MCLK, Q);
+      instance = latch u2 (Q, SCLK, SO);
+      instance = inv01 u3 (Q, QB);
+  )
+)
+
+model lssd_latchsr_ni (D, SI, CLK, MCLK, SCLK, S, R, Q, QB, SO) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latchsr_ni (D, CLK, S, R, QB);
+  )
+  input (D, SI, CLK, MCLK, SCLK, S, R) ()
+  output(Q, SO, QB) (
+      instance = latch_dualport_sr u1 (D, CLK, SI, MCLK, S, R, Q);
+      instance = latch u2 (Q, SCLK, SO);
+      instance = inv01 u3 (Q, QB);
+  )
+)
+
+model lssd_latchr (D, SI, CLK, MCLK, SCLK, R, Q, QB, SO ) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latchr (D, CLK, R, QB) ;
+  )
+  input (D, SI, CLK, MCLK, SCLK, R ) ()
+  intern(GND)(instance = fake_gnd GND (GND);)
+  output(Q, SO, QB) (
+      instance = latch_dualport_sr u1 (D, CLK, SI, MCLK, GND, R, Q);
+      instance = latchr u2 (Q, SCLK, R, SO);
+      instance = inv01 u3 (Q, QB);
+  )
+)
+
+model lssd_latchs (D, SI, CLK, MCLK, SCLK, S, Q, QB, SO) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latchs (D, CLK, S, QB);
+  )
+  input (D, SI, CLK, MCLK, SCLK, S ) ()
+  intern(GND)(instance = fake_gnd GND (GND);)
+  intern(nS) (instance = inv01 u1 (S, nS);)
+  output(Q, SO, QB) (
+      instance = latch_dualport_sr u2 (D, CLK, SI, MCLK, nS, GND, Q);
+      instance = latchs u3 (Q, SCLK, S, SO);
+      instance = inv01 u4 (Q, QB);
+  )
+)
+
+model lssd_latchs_ni (D, SI, CLK, MCLK, SCLK, S, Q, QB, SO) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latchs_ni (D, CLK, S, QB);
+  )
+  input (D, SI, CLK, MCLK, SCLK, S ) ()
+  intern(GND)(instance = fake_gnd GND (GND);)
+  output(Q, SO, QB) (
+      instance = latch_dualport_sr u1 (D, CLK, SI, MCLK, S, GND, Q);
+      instance = latchs_ni u2 (Q, SCLK, S, SO);
+      instance = inv01 u3 (Q, QB);
+  )
+)
+
+model lssd_latchsr (D, SI, CLK, MCLK, SCLK, S, R, Q, QB, SO) (
+  scan_definition (
+    type = lssd;
+    data_in = D;
+    scan_in = SI;
+    scan_master_clock = MCLK;
+    scan_slave_clock = SCLK;
+    scan_out = SO;
+    non_scan_model = latchsr (D, CLK, S, R, QB);
+  )
+  input (D, SI, CLK, MCLK, SCLK, S, R ) ()
+  intern(GND)(instance = fake_gnd GND (GND);)
+  intern(nS) (instance = inv01 u1 (S, nS);)
+  output(Q, SO, QB) (
+      instance = latch_dualport_sr u2 (D, CLK, SI, MCLK, nS, R, Q);
+      instance = latchsr u3 (Q, SCLK, S, R, SO);
+      instance = inv01 u4 (Q, QB);
+  )
+)
+
+model mux21(A0, A1, S0, Y) (
+  input(A0, A1, S0) ()
+  intern(mux1) (primitive = _mux(A0, A1, S0, mux1);)
+  output(Y) (primitive = _inv(mux1, Y);)
+)
+
+model mux21_ni(A0, A1, S0, Y) (
+  cell_type = MUX S0 A0 A1;
+  input(A0, A1, S0) ()
+  output(Y) (primitive = _mux(A0, A1, S0, Y);)
+)
+
+model nand02(A0, A1, Y) (
+  cell_type = NAND;
+  input(A0, A1) ()
+  output(Y) (primitive = _nand(A0, A1, Y);)
+)
+
+model nand03(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _nand(A0, A1, A2, Y);)
+)
+
+model nand04(A0, A1, A2, A3, Y) (
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _nand(A0, A1, A2, A3, Y);)
+)
+
+model nand02_2x(A0, A1, Y) (
+  cell_type = NAND;
+  input(A0, A1) ()
+  output(Y) (primitive = _nand(A0, A1, Y);)
+)
+
+model nand03_2x(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _nand(A0, A1, A2, Y);)
+)
+
+model nand04_2x(A0, A1, A2, A3, Y) (
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _nand(A0, A1, A2, A3, Y);)
+)
+
+model nor02(A0, A1, Y) (
+  cell_type = NOR;
+  input(A0, A1) ()
+  output(Y) (primitive = _nor(A0, A1, Y);)
+)
+
+model nor02ii(A0, A1, Y) (
+  input(A0, A1) ()
+  intern(INT_RES_0) (primitive = _inv(A1, INT_RES_0);)
+  output(Y) (primitive = _nor(A0, INT_RES_0, Y);)
+)
+
+model nor03(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _nor(A0, A1, A2, Y);)
+)
+
+model nor04(A0, A1, A2, A3, Y) (
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _nor(A0, A1, A2, A3, Y);)
+)
+
+model nor02_2x(A0, A1, Y) (
+  cell_type = NOR;
+  input(A0, A1) ()
+  output(Y) (primitive = _nor(A0, A1, Y);)
+)
+
+model nor03_2x(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _nor(A0, A1, A2, Y);)
+)
+
+model nor04_2x(A0, A1, A2, A3, Y) (
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _nor(A0, A1, A2, A3, Y);)
+)
+
+model oai21(A0, A1, B0, Y) (
+  input(A0, A1, B0) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, INT_RES_0);)
+  output(Y) (primitive = _nand(INT_RES_0, B0, Y);)
+)
+
+model oai22(A0, A1, B0, B1, Y) (
+  input(A0, A1, B0, B1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, Y);)
+)
+
+model oai221(A0, A1, B0, B1, C0, Y) (
+  input(A0, A1, B0, B1, C0) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, C0, Y);)
+)
+
+model oai222(A0, A1, B0, B1, C0, C1, Y) (
+  input(A0, A1, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model oai32(A0, A1, A2, B0, B1, Y) (
+  input(A0, A1, A2, B0, B1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, Y);)
+)
+
+model oai321(A0, A1, A2, B0, B1, C0, Y) (
+  input(A0, A1, A2, B0, B1, C0) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, C0, Y);)
+)
+
+model oai322(A0, A1, A2, B0, B1, C0, C1, Y) (
+  input(A0, A1, A2, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model oai33(A0, A1, A2, B0, B1, B2, Y) (
+  input(A0, A1, A2, B0, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, B2, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, Y);)
+)
+
+model oai332(A0, A1, A2, B0, B1, B2, C0, C1, Y) (
+  input(A0, A1, A2, B0, B1, B2, C0, C1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model oai333(A0, A1, A2, B0, B1, B2, C0, C1, C2, Y) (
+  input(A0, A1, A2, B0, B1, B2, C0, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C0, C1, C2, INT_RES_2);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model oai422(A0, A1, A2, A3, B0, B1, C0, C1, Y) (
+  input(A0, A1, A2, A3, B0, B1, C0, C1) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C0, C1, INT_RES_2);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Y);)
+)
+
+model oai43(A0, A1, A2, A3, B0, B1, B2, Y) (
+  input(A0, A1, A2, A3, B0, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, B2, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, Y);)
+)
+
+model oai44(A0, A1, A2, A3, B0, B1, B2, B3, Y) (
+  input(A0, A1, A2, A3, B0, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _or(A0, A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B0, B1, B2, B3, INT_RES_1);)
+  output(Y) (primitive = _nand(INT_RES_0, INT_RES_1, Y);)
+)
+
+model or02(A0, A1, Y) (
+  input(A0, A1) ()
+  output(Y) (primitive = _or(A0, A1, Y);)
+)
+
+model or03(A0, A1, A2, Y) (
+  input(A0, A1, A2) ()
+  output(Y) (primitive = _or(A0, A1, A2, Y);)
+)
+
+model or04(A0, A1, A2, A3, Y) (
+  cell_type = OR;
+  input(A0, A1, A2, A3) ()
+  output(Y) (primitive = _or(A0, A1, A2, A3, Y);)
+)
+
+model sff (D, SI, SE, CLK, Q, QB) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QB;
+    non_scan_model = dff (D, CLK, Q, QB);
+  )
+  input (D, SI, SE, CLK) ()
+  intern(_D) (primitive = _mux n2 (D, SI, SE, _D);)
+  output(Q, QB) (instance = dff n3 (_D, CLK, Q, QB);)
+)
+
+model sffr_ni (D, SI, SE, CLK, R, Q, QB) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QB;
+    non_scan_model = dffr (D, CLK, R, Q, QB);
+  )
+  input (D, SI, SE, CLK, R) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QB) (instance = dffr (_D, CLK, R, Q, QB);)
+)
+
+model sffs (D, SI, SE, CLK, S, Q, QB) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QB;
+    non_scan_model = dffs_ni (D, CLK, S, Q, QB);
+  )
+  input (D, SI, SE, CLK, S) ()
+  intern(_D) (primitive = _mux n2 (D, SI, SE, _D);)
+  output(Q, QB) (instance = dffs_ni n3 (_D, CLK, S, Q, QB);)
+)
+
+macro sffs_macro (D, SI, SE, CLK, S, Q, QB) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    offstate_inverted = S;
+    scan_out = Q, QB;
+    non_scan_model = dffs (D, CLK, S, Q, QB);
+  )
+  input (D, SI, SE, CLK, S) ()
+  intern(INT_RES_0) (instance  = inv01 n2 (S, INT_RES_0);)
+  output(Q, QB) (instance = sffs n3 (D, SI, SE, CLK, INT_RES_0, Q, QB);)
+)
+
+model sffsr_ni (D, SI, SE, CLK, S, R, Q, QB) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QB;
+    non_scan_model = dffsr_ni (D, CLK, S, R, Q, QB);
+  )
+  input (D, SI, SE, CLK, S, R) ()
+  intern(_D) (  primitive = _mux (D, SI, SE, _D);)
+  output(Q, QB) (instance = dffsr_ni (_D, CLK, S, R, Q, QB);)
+)
+
+macro sffsr_ni_macro (D, SI, SE, CLK, S, R,
+    Q, QB) (
+  scan_definition (
+    type = mux_scan;
+                data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QB;
+    non_scan_model = dffsr (D, CLK, S, R, Q, QB);
+  )
+  input (D, SI, SE, CLK, S, R) ()
+  intern(INT_RES_0) (instance = inv01 n2 (S, INT_RES_0);)
+  output(Q, QB) (instance = sffsr_ni n3 (D, SI, SE, CLK, INT_RES_0, R, Q, QB);)
+)
+
+
+model tri01(A, E, Y) (
+  input(A, E) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Y) (primitive = _tsh(INT_RES_0, E, Y);)
+)
+
+model trib04(A, E, Y) (
+  input(A, E) ()
+  output(Y) (primitive = _tsh(A, E, Y);)
+)
+
+model trib08(A, E, Y) (
+  input (A, E) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Y) (primitive = _tsh(INT_RES_0, E, Y);)
+)
+
+model xnor2(A0, A1, Y) (
+  input(A0, A1) ()
+  output(Y) (primitive = _xnor(A0, A1, Y);)
+)
+
+model xor2(A0, A1, Y) (
+  cell_type = XOR;
+  input(A0, A1) ()
+  output(Y) (primitive = _xor(A0, A1, Y);)
+)
+
+model xnor2_2x(A0, A1, Y) (
+  input(A0, A1) ()
+  output(Y) (primitive = _xnor(A0, A1, Y);)
+)
+
+model xor2_2x(A0, A1, Y) (
+  cell_type = XOR;
+  input(A0, A1) ()
+  output(Y) (primitive = _xor(A0, A1, Y);)
+)
+// Add VCC and GROUND.
+ 
+alias supply1 fake_vcc 
+alias VCC fake_vcc 
+model fake_vcc(Y)(
+      output(Y) (primitive = _tie1(Y);)
+)
+ 
+alias supply0 fake_gnd 
+alias GND fake_gnd 
+model fake_gnd(Y)(
+       output(Y) (primitive = _tie0(Y);)
+)
+ 
+
+// ===============================================
+//      Clock gating circuits
+// ==============================================
+model clock_gate_and (CLKEN, TEN, CLK, CLK_OUT) (
+  input (CLKEN, CLK, TEN) ()
+  intern (CLKi)      (primitive = _inv i01 (CLK, CLKi);)
+  intern (CLKEN_TEN) (primitive = _nor i02 (CLKEN, TEN, CLKEN_TEN);)
+  intern (CLKQB)     (primitive = _dlat i03 (, , CLKi, CLKEN_TEN, , CLKQB);)
+  output (CLK_OUT)   (primitive = _and i04 (CLKQB, CLK, CLK_OUT);)
+)
+
+model clock_gate_or (CLKEN, TEN, CLK, CLK_OUT) (
+  input (CLKEN, CLK, TEN) ()
+  intern (CLKi)      (primitive = _inv i01 (CLK, CLKi);)
+  intern (CLKEN_TEN) (primitive = _nor i02 (CLKEN, TEN, CLKEN_TEN);)
+  intern (CLKQB)     (primitive = _dlat i03 (, , CLKi, CLKEN_TEN, , CLKQB);)
+  output (CLK_OUT)   (primitive = _or i04 (CLKQB, CLK, CLK_OUT);)
+)
+
+// ===============================================
+//      Simple Ram  1x4
+// ==============================================
+model ramV01_1x4 (clk,      wen, addr, din, dout) (
+//  input(ren)  ()
+  input(wen)  ()
+  input(clk)  ()
+  input(addr) (array = 3:0;)
+  input(din)  ()
+  output(dout) (
+      data_size = 1;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{, , ,H}( , clk,   ,addr,dout),
+          _write{H,H,H}(   clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  4x4
+// ==============================================
+model ramV01_4x4 (clk, ren, wen, addr, din, dout) (
+  input(ren, wen) ()
+  input(clk)()
+  input(addr) (array = 3:0;)
+  input(din) (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      data_size = 4;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addr,dout),
+          _write{H,H,H}(clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  8x8
+// ==============================================
+model ramV01_8x8 (clk, ren, wen, addr, din, dout) (
+  input(ren, wen) ()
+  input(clk)()
+  input(addr) (array = 7:0;)
+  input(din) (array = 7:0;)
+  output(dout) (
+      array = 7:0;
+      data_size = 8;
+      address_size = 8;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addr,dout),
+          _write{H,H,H}(clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  32x4 
+// ==============================================
+model ramV01_32x4 (clk, addr, wen, din, dout ) (
+  input(clk, wen) ()
+  input(addr) (array = 3:0;)
+  input(din) (array = 31:0;)
+  output(dout) (
+      array = 31:0;
+      data_size = 32;
+      address_size = 4;
+      edge_trigger = rw;
+      primitive = _cram(,,
+          _read{,,,H}(,clk, , addr, dout),
+          _write{H,H,H}(clk, wen, addr, din));
+      )
+)
+
+// ==========================================================
+//      Dual Port Ram  2X(4 bit DataIn) 2X(4 bit Address).
+//      Dual data out. 
+// =========================================================
+model ram_2port_V01_4x4 (clk, ren, wenA, addA, dinA, wenB, addB, dinB, dout) (
+  input(ren, wenA, wenB) ()
+  input(clk)()
+  input(addA) (array = 3:0;)
+  input(addB) (array = 3:0;)
+  input(dinA) (array = 3:0;)
+  input(dinB) (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      data_size = 4;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addA,dout),
+          _write{H,H,H}(clk,wenA,addA,dinA),
+          _write{H,H,H}(clk,wenB,addB,dinB));
+      )
+)
+
+
+model ram_bitWr_V01_4x4 (clk, wen, addr, din, dout) (
+  input(wen)  (array = 3:0;)
+  input(clk)  ()
+  input(addr) (array = 3:0;)
+  input(din)  (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      instance = ramV01_1x4 bit0 (clk, wen<0>, addr, din<0>, dout<0>);
+      instance = ramV01_1x4 bit1 (clk, wen<1>, addr, din<1>, dout<1>);
+      instance = ramV01_1x4 bit2 (clk, wen<2>, addr, din<2>, dout<2>);
+      instance = ramV01_1x4 bit3 (clk, wen<3>, addr, din<3>, dout<3>);
+  )
+)
+
