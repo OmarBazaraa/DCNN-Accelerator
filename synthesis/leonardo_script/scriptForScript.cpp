@@ -9,7 +9,7 @@ int main() {
 	freopen("input.txt", "r", stdin);
 	string archName, filePath, fileName;
 
-	cout << "load_library tsmc035_typ \n set_working_dir \"/home/ayman/Desktop/repo/DCNN-Accelerator/generated_files\"\n";
+	cout << "load_library tsmc035_typ \n set_working_dir \"/home/ayman/Desktop/repo/DCNN-Accelerator/synthesis/generated_files\"\n";
 
 	cout<<"load_library tsmc035_typ\n";
 	cout<<"read -technology \"tsmc035_typ\"  { /home/ayman/Desktop/repo/DCNN-Accelerator/utilities/common.vhd }\n";
