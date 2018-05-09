@@ -104,7 +104,8 @@ BEGIN
         Dout                => MemDout
     );
 
-    CacheRST <= RST OR FirstCycle;
+    CacheRST                <= RST OR FirstCycle;
+    CacheResultWR           <= AccFinishCalc;
 
     CACHE:
     ENTITY work.cache

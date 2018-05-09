@@ -5,21 +5,21 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY booth_unit IS
     GENERIC(n : INTEGER := 17);
     PORT(
-	CLK				: IN STD_LOGIC;
-	RST				: IN STD_LOGIC;
-	Start				: IN STD_LOGIC;
-	Instr				: IN STD_LOGIC;
-	LoopingAndResultNotReady	: IN STD_LOGIC;
-
-        Filter   			: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	Window   			: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	AdderBoothResult   		: IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-	
-	BoothXORCheck			: OUT STD_LOGIC;
-	BoothResult	    		: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	BoothAddingOperand  		: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-	BoothP		    		: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-	LargeWindowShifted     		: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+        CLK                         : IN  STD_LOGIC;
+        RST                         : IN  STD_LOGIC;
+        Start                       : IN  STD_LOGIC;
+        Instr                       : IN  STD_LOGIC;
+        LoopingAndResultNotReady    : IN  STD_LOGIC;
+    
+        Filter                      : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+        Window                      : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+        AdderBoothResult            : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        
+        BoothXORCheck               : OUT STD_LOGIC;
+        BoothResult                 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        BoothAddingOperand          : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        BoothP                      : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        LargeWindowShifted          : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
     );
 END ENTITY;
 
@@ -27,33 +27,34 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     --
     -- A, S & P Register Signals.
     --
-    SIGNAL RegisterPEN		: STD_LOGIC;
-    SIGNAL RegisterADin	    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDin	    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDin	    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterADout	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDout	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDout	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPEN      : STD_LOGIC;
+    SIGNAL RegisterADin     : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterSDin     : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPDin     : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterADout    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterSDout    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPDout    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
     --
     -- Muxes Signals.
     --
     SIGNAL SelBoothOperand	: STD_LOGIC;
     SIGNAL SelPInput		: STD_LOGIC_VECTOR(1 DOWNTO 0);
-    SIGNAL PMuxInputC	    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxInputC	    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL PMuxInputD    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL PMuxOutput    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
     SIGNAL StartRising		: STD_LOGIC;
+
 BEGIN
 
     --
     -- Output
     --
-    BoothXORCheck 	<= RegisterPDout(0) XOR RegisterPDout(1);
-    BoothResult 	<= RegisterPDout(8 DOWNTO 1);
-    BoothP 		<= RegisterPDout;
-    LargeWindowShifted 	<= PMuxInputC;
+    BoothXORCheck       <= RegisterPDout(0) XOR RegisterPDout(1);
+    BoothResult         <= RegisterPDout(8 DOWNTO 1);
+    BoothP              <= RegisterPDout;
+    LargeWindowShifted  <= PMuxInputC;
 
     --
     -- A, S & P Register Signals.
@@ -66,7 +67,7 @@ BEGIN
     --
     -- Booth Operands (A/S) Mux Signals.
     --
-    SelBoothOperand <= NOT(RegisterPDout(0));
+    SelBoothOperand <= (NOT RegisterPDout(0));
 
     --
     -- P DataIn 4-1 Mux Signals.

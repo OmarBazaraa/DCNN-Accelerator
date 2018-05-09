@@ -47,7 +47,6 @@ ARCHITECTURE arch_controller OF controller IS
     -- General Signal
     --
     SIGNAL SizePlusOne          : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL SizeVal              : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 3 OR 5
     SIGNAL SizeMaxIdx           : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 2 OR 4
     SIGNAL SizePlusCol          : STD_LOGIC_VECTOR(8 DOWNTO 0);
 
@@ -81,7 +80,7 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL LoadAddr             : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL StoreAddr            : STD_LOGIC_VECTOR(17 DOWNTO 0);
 
-    SIGNAL ZeroByte		: STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL ZeroByte             : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
 
@@ -89,7 +88,6 @@ BEGIN
     --
     -- State Transitions
     --
-    ZeroByte <= (others => '0');
 
     -- State Register
     STATE:
@@ -115,10 +113,9 @@ BEGIN
     --
     -- General Signal
     --
-    SizeVal             <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3;
     SizePlusOne         <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
     SizeMaxIdx          <= (SizePlusOne(6 DOWNTO 0) & '0');
-    SizePlusCol         <= (('0' & CurCol) + ('0' & SizeVal));
+    SizePlusCol         <= (('0' & CurCol) + ('0' & SizeMaxIdx));
 
     --===================================================================================
     --
@@ -136,10 +133,13 @@ BEGIN
     CntRST              <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
     CntEN               <= (Load AND (NOT IsCalcTurn)) OR StoreState;
 
+    ZeroByte            <= (OTHERS => '0');
+
     --===================================================================================
     --
     -- Interfacing Signals
     --
+
     Calc                <= CalcState;
     MemRD               <= Load;
     MemWR               <= StoreState;
@@ -192,7 +192,8 @@ BEGIN
 
     WindowAddr  <= "00" & (CurRow & CurCol);
     StoreAddr   <= "01" & (StoreRow & StoreCol);
-    FilterAddr  <= "10" & (15 DOWNTO 8 => '0') & CurRow;
+    FilterAddr  <= "10" & (15 DOWNTO 11 => '0') & CurRow & (2 DOWNTO 0 => '0');
+
     LoadAddr    <= WindowAddr   WHEN LoadWindowState='1'    ELSE    FilterAddr;
     MemAddr     <= StoreAddr    WHEN StoreState='1'         ELSE    LoadAddr;
 
