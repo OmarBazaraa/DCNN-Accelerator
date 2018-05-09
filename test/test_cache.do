@@ -44,7 +44,7 @@ force -freeze sim:/cache/RST 0 0
 # Start simulating
 #
 
-force -freeze sim:/cache/FilterSize 1 0
+force -freeze sim:/cache/FilterSize 0 0
 force -freeze sim:/cache/WindowWR 1 0
 force -freeze sim:/cache/Din x\"FFEEDDCCBB\" 0
 run

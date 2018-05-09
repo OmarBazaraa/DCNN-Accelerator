@@ -18,7 +18,7 @@ ARCHITECTURE arch_RAM OF RAM IS
     TYPE memory IS ARRAY(0 TO (2**m)-1) OF STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
     SIGNAL Mem : memory := (
-	   OTHERS => "00000000"
+       OTHERS => "00000000"
     );
 BEGIN
 
