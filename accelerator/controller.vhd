@@ -81,12 +81,15 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL LoadAddr             : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL StoreAddr            : STD_LOGIC_VECTOR(17 DOWNTO 0);
 
+    SIGNAL ZeroByte		: STD_LOGIC_VECTOR(7 DOWNTO 0);
+
 BEGIN
 
     --===================================================================================
     --
     -- State Transitions
     --
+    ZeroByte <= (others => '0');
 
     -- State Register
     STATE:
@@ -158,7 +161,7 @@ BEGIN
     ROW_ADDER:
     ENTITY work.adder
     GENERIC MAP(n => 8)
-    PORT MAP(A => CurRow, B => (OTHERS => '0'), Cin => '1', Sum => NxtRow, Cout => RowCout);
+    PORT MAP(A => CurRow, B => ZeroByte, Cin => '1', Sum => NxtRow, Cout => RowCout);
     -------------------------------------------------------
 
     -- Col Register
