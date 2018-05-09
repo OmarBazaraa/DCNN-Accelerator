@@ -65,8 +65,8 @@ BEGIN
     --
     -- Outputs
     --
-    Done <= ResultReady OR Instr;
-    Result <= L5Results(1);
+    Done    <= ResultReady OR Instr;
+    Result  <= L5Results(1);
     --
     -- Accelerator Counter
     --
@@ -75,10 +75,10 @@ BEGIN
     GENERIC MAP(n => 4)
     PORT MAP(CounterCLK, CounterRST, CounterOut);
 
-    CounterCLK                  <= CLK AND NOT(ResultReady) AND NOT(Instr);
+    CounterCLK                  <= CLK AND (NOT ResultReady) AND (NOT Instr);
     CounterRST                  <= Start OR RST;
-    ResultReady                 <= (CounterOut(0) AND NOT(CounterOut(1)) AND NOT(CounterOut(1)) AND CounterOut(3));
-    LoopingAndResultNotReady    <= NOT(ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
+    ResultReady                 <= (CounterOut(0) AND (NOT CounterOut(1)) AND (NOT CounterOut(1)) AND CounterOut(3));
+    LoopingAndResultNotReady    <= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
     -- Mini ALU Units in the Tree
@@ -195,4 +195,5 @@ BEGIN
     L5SecondOperands(0)     <= L3ResultsLarge(2);
     L5FirstOperands(1)      <= L5ResultsLarge(0);
     L5SecondOperands(1)     <= L5OperationResults(1);
+    
 END ARCHITECTURE;

@@ -50,6 +50,7 @@ force -freeze sim:/main/Start 1 0
 force -freeze sim:/main/FilterSize 0 0
 force -freeze sim:/main/Stride 0 0
 force -freeze sim:/main/Instr 0 0
+force -freeze sim:/main/AccFinishCalc 0 0
 run
 
 force -freeze sim:/main/RST 0 0

@@ -47,7 +47,6 @@ ARCHITECTURE arch_controller OF controller IS
     -- General Signal
     --
     SIGNAL SizePlusOne          : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL SizeVal              : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 3 OR 5
     SIGNAL SizeMaxIdx           : STD_LOGIC_VECTOR(7 DOWNTO 0);    -- 2 OR 4
     SIGNAL SizePlusCol          : STD_LOGIC_VECTOR(8 DOWNTO 0);
 
@@ -114,10 +113,9 @@ BEGIN
     --
     -- General Signal
     --
-    SizeVal             <= (7 DOWNTO 3 => '0') & (('0' & FilterSize & '0') + "011"); -- SizeVal = (Size << 1) + 3;
     SizePlusOne         <= (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
     SizeMaxIdx          <= (SizePlusOne(6 DOWNTO 0) & '0');
-    SizePlusCol         <= (('0' & CurCol) + ('0' & SizeVal));
+    SizePlusCol         <= (('0' & CurCol) + ('0' & SizeMaxIdx));
 
     --===================================================================================
     --
