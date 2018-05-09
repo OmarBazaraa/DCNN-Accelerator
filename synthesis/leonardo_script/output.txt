@@ -1,5 +1,5 @@
 load_library tsmc035_typ 
- set_working_dir "/home/ayman/Desktop/repo/DCNN-Accelerator/generated_files"
+ set_working_dir "/home/ayman/Desktop/repo/DCNN-Accelerator/synthesis/generated_files"
 load_library tsmc035_typ
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/utilities/common.vhd }
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_2x1.vhd }
