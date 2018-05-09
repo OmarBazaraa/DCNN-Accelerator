@@ -81,7 +81,7 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL LoadAddr             : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL StoreAddr            : STD_LOGIC_VECTOR(17 DOWNTO 0);
 
-    SIGNAL ZeroByte		: STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL ZeroByte             : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
 
@@ -89,7 +89,6 @@ BEGIN
     --
     -- State Transitions
     --
-    ZeroByte <= (others => '0');
 
     -- State Register
     STATE:
@@ -136,10 +135,13 @@ BEGIN
     CntRST              <= (Restart OR (LoadFilterState AND NxtLoadWindowState));
     CntEN               <= (Load AND (NOT IsCalcTurn)) OR StoreState;
 
+    ZeroByte            <= (OTHERS => '0');
+
     --===================================================================================
     --
     -- Interfacing Signals
     --
+
     Calc                <= CalcState;
     MemRD               <= Load;
     MemWR               <= StoreState;
@@ -192,7 +194,8 @@ BEGIN
 
     WindowAddr  <= "00" & (CurRow & CurCol);
     StoreAddr   <= "01" & (StoreRow & StoreCol);
-    FilterAddr  <= "10" & (15 DOWNTO 8 => '0') & CurRow;
+    FilterAddr  <= "10" & (15 DOWNTO 11 => '0') & CurRow & (2 DOWNTO 0 => '0');
+
     LoadAddr    <= WindowAddr   WHEN LoadWindowState='1'    ELSE    FilterAddr;
     MemAddr     <= StoreAddr    WHEN StoreState='1'         ELSE    LoadAddr;
 
