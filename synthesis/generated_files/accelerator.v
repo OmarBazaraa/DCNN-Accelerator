@@ -1,6 +1,6 @@
 //
 // Verilog description for cell accelerator, 
-// Wed May  2 09:48:14 2018
+// Wed May  9 07:36:06 2018
 //
 // LeonardoSpectrum Level 3, 2017a.2 
 //
@@ -1770,12 +1770,12 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
          L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_2, 
          L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_1, 
          L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_0, L1FirstOperands_12__16, nx22, 
-         CounterOut_0, NOT__13497, nx1032, NOT_CounterOut_0, nx1036, 
+         CounterOut_0, NOT__145383, nx1032, NOT_CounterOut_0, nx1036, 
          CounterOut_3, CounterOut_2, CounterOut_1, nx1046, nx1058, nx1066, 
-         nx2856, nx2868, nx2872, nx2876, nx3233, nx3236, nx3238, nx3242, nx3244, 
-         nx3247, nx3249, nx3273, nx3275, nx3277, nx3279, nx3281, nx3283, nx3285, 
-         nx3287, nx3289, nx3303, nx5, nx1, nx3304, nx3305, nx3306, nx3308;
-    wire [901:0] \$dummy ;
+         nx2853, nx2865, nx2869, nx2873, nx3230, nx3233, nx3235, nx3239, nx3241, 
+         nx3244, nx3246, nx3270, nx3272, nx3274, nx3276, nx3278, nx3280, nx3282, 
+         nx3284, nx3286, nx3292;
+    wire [903:0] \$dummy ;
 
 
 
@@ -1832,7 +1832,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_0_L2_0_G1_MINI_ALU_BoothP_4,
                    L1_0_L2_0_G1_MINI_ALU_BoothP_3,L1_0_L2_0_G1_MINI_ALU_BoothP_2
                    ,L1_0_L2_0_G1_MINI_ALU_BoothP_1,
-                   L1_0_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_0_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_0_L2_0_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_0__16,L1ResultsLarge_0__15,
                    L1ResultsLarge_0__14,L1ResultsLarge_0__13,
@@ -1858,7 +1858,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_0_L2_0_G1_MINI_ALU_AdderBoothResult_1,
                    L1_0_L2_0_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_0_L2_0_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_0__0__7,FilterDin_0__0__6,FilterDin_0__0__5,
                   FilterDin_0__0__4,FilterDin_0__0__3,FilterDin_0__0__2,
                   FilterDin_0__0__1,FilterDin_0__0__0}), .Window ({
@@ -1964,7 +1964,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_0_L2_1_G1_MINI_ALU_BoothP_4,
                    L1_0_L2_1_G1_MINI_ALU_BoothP_3,L1_0_L2_1_G1_MINI_ALU_BoothP_2
                    ,L1_0_L2_1_G1_MINI_ALU_BoothP_1,
-                   L1_0_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_0_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_0_L2_1_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_1__16,L1ResultsLarge_1__15,
                    L1ResultsLarge_1__14,L1ResultsLarge_1__13,
@@ -1990,7 +1990,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_0_L2_1_G1_MINI_ALU_AdderBoothResult_1,
                    L1_0_L2_1_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_0_L2_1_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_0__1__7,FilterDin_0__1__6,FilterDin_0__1__5,
                   FilterDin_0__1__4,FilterDin_0__1__3,FilterDin_0__1__2,
                   FilterDin_0__1__1,FilterDin_0__1__0}), .Window ({
@@ -2096,7 +2096,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_0_L2_2_G1_MINI_ALU_BoothP_4,
                    L1_0_L2_2_G1_MINI_ALU_BoothP_3,L1_0_L2_2_G1_MINI_ALU_BoothP_2
                    ,L1_0_L2_2_G1_MINI_ALU_BoothP_1,
-                   L1_0_L2_2_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_0_L2_2_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_0_L2_2_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_2__16,L1ResultsLarge_2__15,
                    L1ResultsLarge_2__14,L1ResultsLarge_2__13,
@@ -2122,7 +2122,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_0_L2_2_G1_MINI_ALU_AdderBoothResult_1,
                    L1_0_L2_2_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_0_L2_2_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_0__2__7,FilterDin_0__2__6,FilterDin_0__2__5,
                   FilterDin_0__2__4,FilterDin_0__2__3,FilterDin_0__2__2,
                   FilterDin_0__2__1,FilterDin_0__2__0}), .Window ({
@@ -2228,7 +2228,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_0_L2_3_G1_MINI_ALU_BoothP_4,
                    L1_0_L2_3_G1_MINI_ALU_BoothP_3,L1_0_L2_3_G1_MINI_ALU_BoothP_2
                    ,L1_0_L2_3_G1_MINI_ALU_BoothP_1,
-                   L1_0_L2_3_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_0_L2_3_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_0_L2_3_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_3__16,L1ResultsLarge_3__15,
                    L1ResultsLarge_3__14,L1ResultsLarge_3__13,
@@ -2254,7 +2254,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_0_L2_3_G1_MINI_ALU_AdderBoothResult_1,
                    L1_0_L2_3_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_0_L2_3_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_0__3__7,FilterDin_0__3__6,FilterDin_0__3__5,
                   FilterDin_0__3__4,FilterDin_0__3__3,FilterDin_0__3__2,
                   FilterDin_0__3__1,FilterDin_0__3__0}), .Window ({
@@ -2360,7 +2360,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_0_L2_4_G1_MINI_ALU_BoothP_4,
                    L1_0_L2_4_G1_MINI_ALU_BoothP_3,L1_0_L2_4_G1_MINI_ALU_BoothP_2
                    ,L1_0_L2_4_G1_MINI_ALU_BoothP_1,
-                   L1_0_L2_4_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_0_L2_4_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_0_L2_4_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_4__16,L1ResultsLarge_4__15,
                    L1ResultsLarge_4__14,L1ResultsLarge_4__13,
@@ -2386,7 +2386,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_0_L2_4_G1_MINI_ALU_AdderBoothResult_1,
                    L1_0_L2_4_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_0_L2_4_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_0__4__7,FilterDin_0__4__6,FilterDin_0__4__5,
                   FilterDin_0__4__4,FilterDin_0__4__3,FilterDin_0__4__2,
                   FilterDin_0__4__1,FilterDin_0__4__0}), .Window ({
@@ -2492,7 +2492,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_1_L2_0_G1_MINI_ALU_BoothP_4,
                    L1_1_L2_0_G1_MINI_ALU_BoothP_3,L1_1_L2_0_G1_MINI_ALU_BoothP_2
                    ,L1_1_L2_0_G1_MINI_ALU_BoothP_1,
-                   L1_1_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_1_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_1_L2_0_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_5__16,L1ResultsLarge_5__15,
                    L1ResultsLarge_5__14,L1ResultsLarge_5__13,
@@ -2518,7 +2518,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_1_L2_0_G1_MINI_ALU_AdderBoothResult_1,
                    L1_1_L2_0_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_1_L2_0_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_1__0__7,FilterDin_1__0__6,FilterDin_1__0__5,
                   FilterDin_1__0__4,FilterDin_1__0__3,FilterDin_1__0__2,
                   FilterDin_1__0__1,FilterDin_1__0__0}), .Window ({
@@ -2624,7 +2624,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_1_L2_1_G1_MINI_ALU_BoothP_4,
                    L1_1_L2_1_G1_MINI_ALU_BoothP_3,L1_1_L2_1_G1_MINI_ALU_BoothP_2
                    ,L1_1_L2_1_G1_MINI_ALU_BoothP_1,
-                   L1_1_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_1_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_1_L2_1_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_6__16,L1ResultsLarge_6__15,
                    L1ResultsLarge_6__14,L1ResultsLarge_6__13,
@@ -2650,7 +2650,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_1_L2_1_G1_MINI_ALU_AdderBoothResult_1,
                    L1_1_L2_1_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_1_L2_1_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3275), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3272), .Filter (
                   {FilterDin_1__1__7,FilterDin_1__1__6,FilterDin_1__1__5,
                   FilterDin_1__1__4,FilterDin_1__1__3,FilterDin_1__1__2,
                   FilterDin_1__1__1,FilterDin_1__1__0}), .Window ({
@@ -2756,7 +2756,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_1_L2_2_G1_MINI_ALU_BoothP_4,
                    L1_1_L2_2_G1_MINI_ALU_BoothP_3,L1_1_L2_2_G1_MINI_ALU_BoothP_2
                    ,L1_1_L2_2_G1_MINI_ALU_BoothP_1,
-                   L1_1_L2_2_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3283), .Operation (
+                   L1_1_L2_2_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3280), .Operation (
                    L1_1_L2_2_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_7__16,L1ResultsLarge_7__15,
                    L1ResultsLarge_7__14,L1ResultsLarge_7__13,
@@ -2782,7 +2782,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_1_L2_2_G1_MINI_ALU_AdderBoothResult_1,
                    L1_1_L2_2_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_1_L2_2_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_1__2__7,FilterDin_1__2__6,FilterDin_1__2__5,
                   FilterDin_1__2__4,FilterDin_1__2__3,FilterDin_1__2__2,
                   FilterDin_1__2__1,FilterDin_1__2__0}), .Window ({
@@ -2888,7 +2888,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_1_L2_3_G1_MINI_ALU_BoothP_4,
                    L1_1_L2_3_G1_MINI_ALU_BoothP_3,L1_1_L2_3_G1_MINI_ALU_BoothP_2
                    ,L1_1_L2_3_G1_MINI_ALU_BoothP_1,
-                   L1_1_L2_3_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_1_L2_3_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_1_L2_3_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_8__16,L1ResultsLarge_8__15,
                    L1ResultsLarge_8__14,L1ResultsLarge_8__13,
@@ -2914,7 +2914,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_1_L2_3_G1_MINI_ALU_AdderBoothResult_1,
                    L1_1_L2_3_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_1_L2_3_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_1__3__7,FilterDin_1__3__6,FilterDin_1__3__5,
                   FilterDin_1__3__4,FilterDin_1__3__3,FilterDin_1__3__2,
                   FilterDin_1__3__1,FilterDin_1__3__0}), .Window ({
@@ -3020,7 +3020,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_1_L2_4_G1_MINI_ALU_BoothP_4,
                    L1_1_L2_4_G1_MINI_ALU_BoothP_3,L1_1_L2_4_G1_MINI_ALU_BoothP_2
                    ,L1_1_L2_4_G1_MINI_ALU_BoothP_1,
-                   L1_1_L2_4_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_1_L2_4_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_1_L2_4_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_9__16,L1ResultsLarge_9__15,
                    L1ResultsLarge_9__14,L1ResultsLarge_9__13,
@@ -3046,7 +3046,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_1_L2_4_G1_MINI_ALU_AdderBoothResult_1,
                    L1_1_L2_4_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_1_L2_4_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_1__4__7,FilterDin_1__4__6,FilterDin_1__4__5,
                   FilterDin_1__4__4,FilterDin_1__4__3,FilterDin_1__4__2,
                   FilterDin_1__4__1,FilterDin_1__4__0}), .Window ({
@@ -3152,7 +3152,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_2_L2_0_G1_MINI_ALU_BoothP_4,
                    L1_2_L2_0_G1_MINI_ALU_BoothP_3,L1_2_L2_0_G1_MINI_ALU_BoothP_2
                    ,L1_2_L2_0_G1_MINI_ALU_BoothP_1,
-                   L1_2_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_2_L2_0_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_2_L2_0_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_10__16,L1ResultsLarge_10__15,
                    L1ResultsLarge_10__14,L1ResultsLarge_10__13,
@@ -3180,7 +3180,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_2_L2_0_G1_MINI_ALU_AdderBoothResult_1,
                    L1_2_L2_0_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_2_L2_0_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_2__0__7,FilterDin_2__0__6,FilterDin_2__0__5,
                   FilterDin_2__0__4,FilterDin_2__0__3,FilterDin_2__0__2,
                   FilterDin_2__0__1,FilterDin_2__0__0}), .Window ({
@@ -3286,7 +3286,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    ,L1_2_L2_1_G1_MINI_ALU_BoothP_4,
                    L1_2_L2_1_G1_MINI_ALU_BoothP_3,L1_2_L2_1_G1_MINI_ALU_BoothP_2
                    ,L1_2_L2_1_G1_MINI_ALU_BoothP_1,
-                   L1_2_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3285), .Operation (
+                   L1_2_L2_1_G1_MINI_ALU_BoothP_0}), .SelOperand (nx3282), .Operation (
                    L1_2_L2_1_G1_MINI_ALU_BoothXORCheck), .AdderResult ({
                    L1ResultsLarge_11__16,L1ResultsLarge_11__15,
                    L1ResultsLarge_11__14,L1ResultsLarge_11__13,
@@ -3314,7 +3314,7 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                    L1_2_L2_1_G1_MINI_ALU_AdderBoothResult_1,
                    L1_2_L2_1_G1_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_2_L2_1_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_2__1__7,FilterDin_2__1__6,FilterDin_2__1__5,
                   FilterDin_2__1__4,FilterDin_2__1__3,FilterDin_2__1__2,
                   FilterDin_2__1__1,FilterDin_2__1__0}), .Window ({
@@ -3368,82 +3368,82 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [411],\$dummy [412],\$dummy [413],\$dummy [414],
                   \$dummy [415],\$dummy [416],\$dummy [417],\$dummy [418],
                   \$dummy [419]})) ;
-    booth_adder_17_unfolded0 L1_2_L2_2_G1_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .AdderSecondOperand ({
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothOperand ({
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_16,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_15,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_14,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_13,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_12,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_11,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_10,
-                             L1_2_L2_2_G1_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_16,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_15,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_14,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_13,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_12,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_11,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_10,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_9,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_8,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_7,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_6,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_5,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_4,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_3,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_2,
-                             L1_2_L2_2_G1_MINI_ALU_BoothP_1,
-                             L1FirstOperands_12__16}), .SelOperand (nx3283), .Operation (
-                             L1_2_L2_2_G1_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {\$dummy [420],\$dummy [421],\$dummy [422],
-                             \$dummy [423],\$dummy [424],\$dummy [425],
-                             \$dummy [426],\$dummy [427],\$dummy [428],
-                             \$dummy [429],\$dummy [430],\$dummy [431],
-                             \$dummy [432],\$dummy [433],\$dummy [434],
-                             \$dummy [435],\$dummy [436]}), .AdderBoothResult ({
-                             \$dummy [437],
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_15,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_14,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_13,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_12,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_11,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_10,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_9,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_8,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_7,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_6,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_5,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_4,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_3,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_2,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_1,
-                             L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_0})) ;
-    booth_unit_17_unfolded0 L1_2_L2_2_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (
+    booth_adder_17_unfolded12 L1_2_L2_2_G1_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .AdderSecondOperand ({
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothOperand ({
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_16,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_15,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_14,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_13,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_12,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_11,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_10,
+                              L1_2_L2_2_G1_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_16,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_15,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_14,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_13,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_12,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_11,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_10,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_9,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_8,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_7,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_6,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_5,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_4,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_3,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_2,
+                              L1_2_L2_2_G1_MINI_ALU_BoothP_1,
+                              L1FirstOperands_12__16}), .SelOperand (nx3280), .Operation (
+                              L1_2_L2_2_G1_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {\$dummy [420],\$dummy [421],\$dummy [422],
+                              \$dummy [423],\$dummy [424],\$dummy [425],
+                              \$dummy [426],\$dummy [427],\$dummy [428],
+                              \$dummy [429],\$dummy [430],\$dummy [431],
+                              \$dummy [432],\$dummy [433],\$dummy [434],
+                              \$dummy [435],\$dummy [436]}), .AdderBoothResult (
+                              {\$dummy [437],
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_15,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_14,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_13,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_12,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_11,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_10,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_9,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_8,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_7,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_6,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_5,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_4,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_3,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_2,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_1,
+                              L1_2_L2_2_G1_MINI_ALU_AdderBoothResult_0})) ;
+    booth_unit_17_unfolded4 L1_2_L2_2_G1_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (
                             RST), .Start (Start), .Instr (Instr), .LoopingAndResultNotReady (
-                            nx3277), .Filter ({FilterDin_2__2__7,
+                            nx3274), .Filter ({FilterDin_2__2__7,
                             FilterDin_2__2__6,FilterDin_2__2__5,
                             FilterDin_2__2__4,FilterDin_2__2__3,
                             FilterDin_2__2__2,FilterDin_2__2__1,
@@ -3506,85 +3506,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                             \$dummy [465],\$dummy [466],\$dummy [467],
                             \$dummy [468],\$dummy [469],\$dummy [470],
                             \$dummy [471],\$dummy [472]})) ;
-    booth_adder_17_unfolded1 L1_2_L2_3_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_0__16,L1ResultsLarge_0__15,
-                             L1ResultsLarge_0__14,L1ResultsLarge_0__13,
-                             L1ResultsLarge_0__12,L1ResultsLarge_0__11,
-                             L1ResultsLarge_0__10,L1ResultsLarge_0__9,
-                             L1ResultsLarge_0__8,L1ResultsLarge_0__7,
-                             L1ResultsLarge_0__6,L1ResultsLarge_0__5,
-                             L1ResultsLarge_0__4,L1ResultsLarge_0__3,
-                             L1ResultsLarge_0__2,L1ResultsLarge_0__1,
-                             L1ResultsLarge_0__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_1__16,L1ResultsLarge_1__15,
-                             L1ResultsLarge_1__14,L1ResultsLarge_1__13,
-                             L1ResultsLarge_1__12,L1ResultsLarge_1__11,
-                             L1ResultsLarge_1__10,L1ResultsLarge_1__9,
-                             L1ResultsLarge_1__8,L1ResultsLarge_1__7,
-                             L1ResultsLarge_1__6,L1ResultsLarge_1__5,
-                             L1ResultsLarge_1__4,L1ResultsLarge_1__3,
-                             L1ResultsLarge_1__2,L1ResultsLarge_1__1,
-                             L1ResultsLarge_1__0}), .BoothOperand ({
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_16,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_15,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_14,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_13,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_12,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_11,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_10,
-                             L1_2_L2_3_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_16,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_15,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_14,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_13,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_12,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_11,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_10,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_9,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_8,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_7,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_6,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_5,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_4,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_3,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_2,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_1,
-                             L1_2_L2_3_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_2_L2_3_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_0__16,L2ResultsLarge_0__15,
-                             L2ResultsLarge_0__14,L2ResultsLarge_0__13,
-                             L2ResultsLarge_0__12,L2ResultsLarge_0__11,
-                             L2ResultsLarge_0__10,L2ResultsLarge_0__9,
-                             L2ResultsLarge_0__8,L2ResultsLarge_0__7,
-                             L2ResultsLarge_0__6,L2ResultsLarge_0__5,
-                             L2ResultsLarge_0__4,L2ResultsLarge_0__3,
-                             L2ResultsLarge_0__2,L2ResultsLarge_0__1,
-                             L2ResultsLarge_0__0}), .AdderBoothResult ({
-                             \$dummy [473],
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_2_L2_3_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_0__16,L1ResultsLarge_0__15,
+                              L1ResultsLarge_0__14,L1ResultsLarge_0__13,
+                              L1ResultsLarge_0__12,L1ResultsLarge_0__11,
+                              L1ResultsLarge_0__10,L1ResultsLarge_0__9,
+                              L1ResultsLarge_0__8,L1ResultsLarge_0__7,
+                              L1ResultsLarge_0__6,L1ResultsLarge_0__5,
+                              L1ResultsLarge_0__4,L1ResultsLarge_0__3,
+                              L1ResultsLarge_0__2,L1ResultsLarge_0__1,
+                              L1ResultsLarge_0__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_1__16,L1ResultsLarge_1__15,
+                              L1ResultsLarge_1__14,L1ResultsLarge_1__13,
+                              L1ResultsLarge_1__12,L1ResultsLarge_1__11,
+                              L1ResultsLarge_1__10,L1ResultsLarge_1__9,
+                              L1ResultsLarge_1__8,L1ResultsLarge_1__7,
+                              L1ResultsLarge_1__6,L1ResultsLarge_1__5,
+                              L1ResultsLarge_1__4,L1ResultsLarge_1__3,
+                              L1ResultsLarge_1__2,L1ResultsLarge_1__1,
+                              L1ResultsLarge_1__0}), .BoothOperand ({
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_16,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_15,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_14,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_13,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_12,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_11,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_10,
+                              L1_2_L2_3_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_16,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_15,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_14,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_13,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_12,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_11,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_10,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_9,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_8,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_7,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_6,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_5,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_4,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_3,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_2,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_1,
+                              L1_2_L2_3_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_2_L2_3_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_0__16,L2ResultsLarge_0__15,
+                              L2ResultsLarge_0__14,L2ResultsLarge_0__13,
+                              L2ResultsLarge_0__12,L2ResultsLarge_0__11,
+                              L2ResultsLarge_0__10,L2ResultsLarge_0__9,
+                              L2ResultsLarge_0__8,L2ResultsLarge_0__7,
+                              L2ResultsLarge_0__6,L2ResultsLarge_0__5,
+                              L2ResultsLarge_0__4,L2ResultsLarge_0__3,
+                              L2ResultsLarge_0__2,L2ResultsLarge_0__1,
+                              L2ResultsLarge_0__0}), .AdderBoothResult ({
+                              \$dummy [473],
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_2_L2_3_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_2_L2_3_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3277), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3274), .Filter (
                   {FilterDin_2__3__7,FilterDin_2__3__6,FilterDin_2__3__5,
                   FilterDin_2__3__4,FilterDin_2__3__3,FilterDin_2__3__2,
                   FilterDin_2__3__1,FilterDin_2__3__0}), .Window ({
@@ -3638,85 +3638,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [499],\$dummy [500],\$dummy [501],\$dummy [502],
                   \$dummy [503],\$dummy [504],\$dummy [505],\$dummy [506],
                   \$dummy [507]})) ;
-    booth_adder_17_unfolded1 L1_2_L2_4_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_2__16,L1ResultsLarge_2__15,
-                             L1ResultsLarge_2__14,L1ResultsLarge_2__13,
-                             L1ResultsLarge_2__12,L1ResultsLarge_2__11,
-                             L1ResultsLarge_2__10,L1ResultsLarge_2__9,
-                             L1ResultsLarge_2__8,L1ResultsLarge_2__7,
-                             L1ResultsLarge_2__6,L1ResultsLarge_2__5,
-                             L1ResultsLarge_2__4,L1ResultsLarge_2__3,
-                             L1ResultsLarge_2__2,L1ResultsLarge_2__1,
-                             L1ResultsLarge_2__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_3__16,L1ResultsLarge_3__15,
-                             L1ResultsLarge_3__14,L1ResultsLarge_3__13,
-                             L1ResultsLarge_3__12,L1ResultsLarge_3__11,
-                             L1ResultsLarge_3__10,L1ResultsLarge_3__9,
-                             L1ResultsLarge_3__8,L1ResultsLarge_3__7,
-                             L1ResultsLarge_3__6,L1ResultsLarge_3__5,
-                             L1ResultsLarge_3__4,L1ResultsLarge_3__3,
-                             L1ResultsLarge_3__2,L1ResultsLarge_3__1,
-                             L1ResultsLarge_3__0}), .BoothOperand ({
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_16,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_15,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_14,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_13,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_12,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_11,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_10,
-                             L1_2_L2_4_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_16,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_15,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_14,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_13,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_12,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_11,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_10,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_9,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_8,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_7,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_6,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_5,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_4,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_3,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_2,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_1,
-                             L1_2_L2_4_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_2_L2_4_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_1__16,L2ResultsLarge_1__15,
-                             L2ResultsLarge_1__14,L2ResultsLarge_1__13,
-                             L2ResultsLarge_1__12,L2ResultsLarge_1__11,
-                             L2ResultsLarge_1__10,L2ResultsLarge_1__9,
-                             L2ResultsLarge_1__8,L2ResultsLarge_1__7,
-                             L2ResultsLarge_1__6,L2ResultsLarge_1__5,
-                             L2ResultsLarge_1__4,L2ResultsLarge_1__3,
-                             L2ResultsLarge_1__2,L2ResultsLarge_1__1,
-                             L2ResultsLarge_1__0}), .AdderBoothResult ({
-                             \$dummy [508],
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_2_L2_4_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_2__16,L1ResultsLarge_2__15,
+                              L1ResultsLarge_2__14,L1ResultsLarge_2__13,
+                              L1ResultsLarge_2__12,L1ResultsLarge_2__11,
+                              L1ResultsLarge_2__10,L1ResultsLarge_2__9,
+                              L1ResultsLarge_2__8,L1ResultsLarge_2__7,
+                              L1ResultsLarge_2__6,L1ResultsLarge_2__5,
+                              L1ResultsLarge_2__4,L1ResultsLarge_2__3,
+                              L1ResultsLarge_2__2,L1ResultsLarge_2__1,
+                              L1ResultsLarge_2__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_3__16,L1ResultsLarge_3__15,
+                              L1ResultsLarge_3__14,L1ResultsLarge_3__13,
+                              L1ResultsLarge_3__12,L1ResultsLarge_3__11,
+                              L1ResultsLarge_3__10,L1ResultsLarge_3__9,
+                              L1ResultsLarge_3__8,L1ResultsLarge_3__7,
+                              L1ResultsLarge_3__6,L1ResultsLarge_3__5,
+                              L1ResultsLarge_3__4,L1ResultsLarge_3__3,
+                              L1ResultsLarge_3__2,L1ResultsLarge_3__1,
+                              L1ResultsLarge_3__0}), .BoothOperand ({
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_16,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_15,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_14,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_13,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_12,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_11,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_10,
+                              L1_2_L2_4_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_16,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_15,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_14,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_13,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_12,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_11,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_10,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_9,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_8,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_7,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_6,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_5,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_4,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_3,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_2,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_1,
+                              L1_2_L2_4_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_2_L2_4_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_1__16,L2ResultsLarge_1__15,
+                              L2ResultsLarge_1__14,L2ResultsLarge_1__13,
+                              L2ResultsLarge_1__12,L2ResultsLarge_1__11,
+                              L2ResultsLarge_1__10,L2ResultsLarge_1__9,
+                              L2ResultsLarge_1__8,L2ResultsLarge_1__7,
+                              L2ResultsLarge_1__6,L2ResultsLarge_1__5,
+                              L2ResultsLarge_1__4,L2ResultsLarge_1__3,
+                              L2ResultsLarge_1__2,L2ResultsLarge_1__1,
+                              L2ResultsLarge_1__0}), .AdderBoothResult ({
+                              \$dummy [508],
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_2_L2_4_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_2_L2_4_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_2__4__7,FilterDin_2__4__6,FilterDin_2__4__5,
                   FilterDin_2__4__4,FilterDin_2__4__3,FilterDin_2__4__2,
                   FilterDin_2__4__1,FilterDin_2__4__0}), .Window ({
@@ -3770,85 +3770,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [534],\$dummy [535],\$dummy [536],\$dummy [537],
                   \$dummy [538],\$dummy [539],\$dummy [540],\$dummy [541],
                   \$dummy [542]})) ;
-    booth_adder_17_unfolded1 L1_3_L2_0_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_4__16,L1ResultsLarge_4__15,
-                             L1ResultsLarge_4__14,L1ResultsLarge_4__13,
-                             L1ResultsLarge_4__12,L1ResultsLarge_4__11,
-                             L1ResultsLarge_4__10,L1ResultsLarge_4__9,
-                             L1ResultsLarge_4__8,L1ResultsLarge_4__7,
-                             L1ResultsLarge_4__6,L1ResultsLarge_4__5,
-                             L1ResultsLarge_4__4,L1ResultsLarge_4__3,
-                             L1ResultsLarge_4__2,L1ResultsLarge_4__1,
-                             L1ResultsLarge_4__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_5__16,L1ResultsLarge_5__15,
-                             L1ResultsLarge_5__14,L1ResultsLarge_5__13,
-                             L1ResultsLarge_5__12,L1ResultsLarge_5__11,
-                             L1ResultsLarge_5__10,L1ResultsLarge_5__9,
-                             L1ResultsLarge_5__8,L1ResultsLarge_5__7,
-                             L1ResultsLarge_5__6,L1ResultsLarge_5__5,
-                             L1ResultsLarge_5__4,L1ResultsLarge_5__3,
-                             L1ResultsLarge_5__2,L1ResultsLarge_5__1,
-                             L1ResultsLarge_5__0}), .BoothOperand ({
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_16,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_15,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_14,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_13,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_12,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_11,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_10,
-                             L1_3_L2_0_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_16,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_15,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_14,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_13,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_12,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_11,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_10,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_9,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_8,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_7,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_6,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_5,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_4,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_3,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_2,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_1,
-                             L1_3_L2_0_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_3_L2_0_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_2__16,L2ResultsLarge_2__15,
-                             L2ResultsLarge_2__14,L2ResultsLarge_2__13,
-                             L2ResultsLarge_2__12,L2ResultsLarge_2__11,
-                             L2ResultsLarge_2__10,L2ResultsLarge_2__9,
-                             L2ResultsLarge_2__8,L2ResultsLarge_2__7,
-                             L2ResultsLarge_2__6,L2ResultsLarge_2__5,
-                             L2ResultsLarge_2__4,L2ResultsLarge_2__3,
-                             L2ResultsLarge_2__2,L2ResultsLarge_2__1,
-                             L2ResultsLarge_2__0}), .AdderBoothResult ({
-                             \$dummy [543],
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_3_L2_0_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_4__16,L1ResultsLarge_4__15,
+                              L1ResultsLarge_4__14,L1ResultsLarge_4__13,
+                              L1ResultsLarge_4__12,L1ResultsLarge_4__11,
+                              L1ResultsLarge_4__10,L1ResultsLarge_4__9,
+                              L1ResultsLarge_4__8,L1ResultsLarge_4__7,
+                              L1ResultsLarge_4__6,L1ResultsLarge_4__5,
+                              L1ResultsLarge_4__4,L1ResultsLarge_4__3,
+                              L1ResultsLarge_4__2,L1ResultsLarge_4__1,
+                              L1ResultsLarge_4__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_5__16,L1ResultsLarge_5__15,
+                              L1ResultsLarge_5__14,L1ResultsLarge_5__13,
+                              L1ResultsLarge_5__12,L1ResultsLarge_5__11,
+                              L1ResultsLarge_5__10,L1ResultsLarge_5__9,
+                              L1ResultsLarge_5__8,L1ResultsLarge_5__7,
+                              L1ResultsLarge_5__6,L1ResultsLarge_5__5,
+                              L1ResultsLarge_5__4,L1ResultsLarge_5__3,
+                              L1ResultsLarge_5__2,L1ResultsLarge_5__1,
+                              L1ResultsLarge_5__0}), .BoothOperand ({
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_16,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_15,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_14,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_13,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_12,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_11,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_10,
+                              L1_3_L2_0_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_16,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_15,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_14,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_13,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_12,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_11,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_10,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_9,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_8,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_7,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_6,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_5,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_4,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_3,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_2,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_1,
+                              L1_3_L2_0_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_3_L2_0_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_2__16,L2ResultsLarge_2__15,
+                              L2ResultsLarge_2__14,L2ResultsLarge_2__13,
+                              L2ResultsLarge_2__12,L2ResultsLarge_2__11,
+                              L2ResultsLarge_2__10,L2ResultsLarge_2__9,
+                              L2ResultsLarge_2__8,L2ResultsLarge_2__7,
+                              L2ResultsLarge_2__6,L2ResultsLarge_2__5,
+                              L2ResultsLarge_2__4,L2ResultsLarge_2__3,
+                              L2ResultsLarge_2__2,L2ResultsLarge_2__1,
+                              L2ResultsLarge_2__0}), .AdderBoothResult ({
+                              \$dummy [543],
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_3_L2_0_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_3_L2_0_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_3__0__7,FilterDin_3__0__6,FilterDin_3__0__5,
                   FilterDin_3__0__4,FilterDin_3__0__3,FilterDin_3__0__2,
                   FilterDin_3__0__1,FilterDin_3__0__0}), .Window ({
@@ -3902,85 +3902,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [569],\$dummy [570],\$dummy [571],\$dummy [572],
                   \$dummy [573],\$dummy [574],\$dummy [575],\$dummy [576],
                   \$dummy [577]})) ;
-    booth_adder_17_unfolded1 L1_3_L2_1_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_6__16,L1ResultsLarge_6__15,
-                             L1ResultsLarge_6__14,L1ResultsLarge_6__13,
-                             L1ResultsLarge_6__12,L1ResultsLarge_6__11,
-                             L1ResultsLarge_6__10,L1ResultsLarge_6__9,
-                             L1ResultsLarge_6__8,L1ResultsLarge_6__7,
-                             L1ResultsLarge_6__6,L1ResultsLarge_6__5,
-                             L1ResultsLarge_6__4,L1ResultsLarge_6__3,
-                             L1ResultsLarge_6__2,L1ResultsLarge_6__1,
-                             L1ResultsLarge_6__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_7__16,L1ResultsLarge_7__15,
-                             L1ResultsLarge_7__14,L1ResultsLarge_7__13,
-                             L1ResultsLarge_7__12,L1ResultsLarge_7__11,
-                             L1ResultsLarge_7__10,L1ResultsLarge_7__9,
-                             L1ResultsLarge_7__8,L1ResultsLarge_7__7,
-                             L1ResultsLarge_7__6,L1ResultsLarge_7__5,
-                             L1ResultsLarge_7__4,L1ResultsLarge_7__3,
-                             L1ResultsLarge_7__2,L1ResultsLarge_7__1,
-                             L1ResultsLarge_7__0}), .BoothOperand ({
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_16,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_15,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_14,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_13,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_12,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_11,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_10,
-                             L1_3_L2_1_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_16,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_15,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_14,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_13,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_12,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_11,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_10,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_9,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_8,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_7,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_6,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_5,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_4,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_3,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_2,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_1,
-                             L1_3_L2_1_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3285), .Operation (
-                             L1_3_L2_1_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_3__16,L2ResultsLarge_3__15,
-                             L2ResultsLarge_3__14,L2ResultsLarge_3__13,
-                             L2ResultsLarge_3__12,L2ResultsLarge_3__11,
-                             L2ResultsLarge_3__10,L2ResultsLarge_3__9,
-                             L2ResultsLarge_3__8,L2ResultsLarge_3__7,
-                             L2ResultsLarge_3__6,L2ResultsLarge_3__5,
-                             L2ResultsLarge_3__4,L2ResultsLarge_3__3,
-                             L2ResultsLarge_3__2,L2ResultsLarge_3__1,
-                             L2ResultsLarge_3__0}), .AdderBoothResult ({
-                             \$dummy [578],
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_3_L2_1_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_6__16,L1ResultsLarge_6__15,
+                              L1ResultsLarge_6__14,L1ResultsLarge_6__13,
+                              L1ResultsLarge_6__12,L1ResultsLarge_6__11,
+                              L1ResultsLarge_6__10,L1ResultsLarge_6__9,
+                              L1ResultsLarge_6__8,L1ResultsLarge_6__7,
+                              L1ResultsLarge_6__6,L1ResultsLarge_6__5,
+                              L1ResultsLarge_6__4,L1ResultsLarge_6__3,
+                              L1ResultsLarge_6__2,L1ResultsLarge_6__1,
+                              L1ResultsLarge_6__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_7__16,L1ResultsLarge_7__15,
+                              L1ResultsLarge_7__14,L1ResultsLarge_7__13,
+                              L1ResultsLarge_7__12,L1ResultsLarge_7__11,
+                              L1ResultsLarge_7__10,L1ResultsLarge_7__9,
+                              L1ResultsLarge_7__8,L1ResultsLarge_7__7,
+                              L1ResultsLarge_7__6,L1ResultsLarge_7__5,
+                              L1ResultsLarge_7__4,L1ResultsLarge_7__3,
+                              L1ResultsLarge_7__2,L1ResultsLarge_7__1,
+                              L1ResultsLarge_7__0}), .BoothOperand ({
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_16,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_15,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_14,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_13,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_12,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_11,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_10,
+                              L1_3_L2_1_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_16,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_15,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_14,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_13,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_12,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_11,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_10,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_9,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_8,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_7,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_6,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_5,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_4,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_3,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_2,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_1,
+                              L1_3_L2_1_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3282), .Operation (
+                              L1_3_L2_1_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_3__16,L2ResultsLarge_3__15,
+                              L2ResultsLarge_3__14,L2ResultsLarge_3__13,
+                              L2ResultsLarge_3__12,L2ResultsLarge_3__11,
+                              L2ResultsLarge_3__10,L2ResultsLarge_3__9,
+                              L2ResultsLarge_3__8,L2ResultsLarge_3__7,
+                              L2ResultsLarge_3__6,L2ResultsLarge_3__5,
+                              L2ResultsLarge_3__4,L2ResultsLarge_3__3,
+                              L2ResultsLarge_3__2,L2ResultsLarge_3__1,
+                              L2ResultsLarge_3__0}), .AdderBoothResult ({
+                              \$dummy [578],
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_3_L2_1_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_3_L2_1_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_3__1__7,FilterDin_3__1__6,FilterDin_3__1__5,
                   FilterDin_3__1__4,FilterDin_3__1__3,FilterDin_3__1__2,
                   FilterDin_3__1__1,FilterDin_3__1__0}), .Window ({
@@ -4034,85 +4034,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [604],\$dummy [605],\$dummy [606],\$dummy [607],
                   \$dummy [608],\$dummy [609],\$dummy [610],\$dummy [611],
                   \$dummy [612]})) ;
-    booth_adder_17_unfolded1 L1_3_L2_2_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_8__16,L1ResultsLarge_8__15,
-                             L1ResultsLarge_8__14,L1ResultsLarge_8__13,
-                             L1ResultsLarge_8__12,L1ResultsLarge_8__11,
-                             L1ResultsLarge_8__10,L1ResultsLarge_8__9,
-                             L1ResultsLarge_8__8,L1ResultsLarge_8__7,
-                             L1ResultsLarge_8__6,L1ResultsLarge_8__5,
-                             L1ResultsLarge_8__4,L1ResultsLarge_8__3,
-                             L1ResultsLarge_8__2,L1ResultsLarge_8__1,
-                             L1ResultsLarge_8__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_9__16,L1ResultsLarge_9__15,
-                             L1ResultsLarge_9__14,L1ResultsLarge_9__13,
-                             L1ResultsLarge_9__12,L1ResultsLarge_9__11,
-                             L1ResultsLarge_9__10,L1ResultsLarge_9__9,
-                             L1ResultsLarge_9__8,L1ResultsLarge_9__7,
-                             L1ResultsLarge_9__6,L1ResultsLarge_9__5,
-                             L1ResultsLarge_9__4,L1ResultsLarge_9__3,
-                             L1ResultsLarge_9__2,L1ResultsLarge_9__1,
-                             L1ResultsLarge_9__0}), .BoothOperand ({
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_16,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_15,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_14,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_13,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_12,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_11,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_10,
-                             L1_3_L2_2_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_16,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_15,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_14,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_13,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_12,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_11,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_10,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_9,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_8,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_7,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_6,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_5,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_4,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_3,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_2,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_1,
-                             L1_3_L2_2_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_3_L2_2_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_4__16,L2ResultsLarge_4__15,
-                             L2ResultsLarge_4__14,L2ResultsLarge_4__13,
-                             L2ResultsLarge_4__12,L2ResultsLarge_4__11,
-                             L2ResultsLarge_4__10,L2ResultsLarge_4__9,
-                             L2ResultsLarge_4__8,L2ResultsLarge_4__7,
-                             L2ResultsLarge_4__6,L2ResultsLarge_4__5,
-                             L2ResultsLarge_4__4,L2ResultsLarge_4__3,
-                             L2ResultsLarge_4__2,L2ResultsLarge_4__1,
-                             L2ResultsLarge_4__0}), .AdderBoothResult ({
-                             \$dummy [613],
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_3_L2_2_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_8__16,L1ResultsLarge_8__15,
+                              L1ResultsLarge_8__14,L1ResultsLarge_8__13,
+                              L1ResultsLarge_8__12,L1ResultsLarge_8__11,
+                              L1ResultsLarge_8__10,L1ResultsLarge_8__9,
+                              L1ResultsLarge_8__8,L1ResultsLarge_8__7,
+                              L1ResultsLarge_8__6,L1ResultsLarge_8__5,
+                              L1ResultsLarge_8__4,L1ResultsLarge_8__3,
+                              L1ResultsLarge_8__2,L1ResultsLarge_8__1,
+                              L1ResultsLarge_8__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_9__16,L1ResultsLarge_9__15,
+                              L1ResultsLarge_9__14,L1ResultsLarge_9__13,
+                              L1ResultsLarge_9__12,L1ResultsLarge_9__11,
+                              L1ResultsLarge_9__10,L1ResultsLarge_9__9,
+                              L1ResultsLarge_9__8,L1ResultsLarge_9__7,
+                              L1ResultsLarge_9__6,L1ResultsLarge_9__5,
+                              L1ResultsLarge_9__4,L1ResultsLarge_9__3,
+                              L1ResultsLarge_9__2,L1ResultsLarge_9__1,
+                              L1ResultsLarge_9__0}), .BoothOperand ({
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_16,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_15,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_14,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_13,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_12,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_11,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_10,
+                              L1_3_L2_2_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_16,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_15,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_14,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_13,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_12,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_11,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_10,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_9,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_8,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_7,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_6,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_5,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_4,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_3,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_2,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_1,
+                              L1_3_L2_2_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_3_L2_2_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_4__16,L2ResultsLarge_4__15,
+                              L2ResultsLarge_4__14,L2ResultsLarge_4__13,
+                              L2ResultsLarge_4__12,L2ResultsLarge_4__11,
+                              L2ResultsLarge_4__10,L2ResultsLarge_4__9,
+                              L2ResultsLarge_4__8,L2ResultsLarge_4__7,
+                              L2ResultsLarge_4__6,L2ResultsLarge_4__5,
+                              L2ResultsLarge_4__4,L2ResultsLarge_4__3,
+                              L2ResultsLarge_4__2,L2ResultsLarge_4__1,
+                              L2ResultsLarge_4__0}), .AdderBoothResult ({
+                              \$dummy [613],
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_3_L2_2_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_3_L2_2_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_3__2__7,FilterDin_3__2__6,FilterDin_3__2__5,
                   FilterDin_3__2__4,FilterDin_3__2__3,FilterDin_3__2__2,
                   FilterDin_3__2__1,FilterDin_3__2__0}), .Window ({
@@ -4166,85 +4166,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [639],\$dummy [640],\$dummy [641],\$dummy [642],
                   \$dummy [643],\$dummy [644],\$dummy [645],\$dummy [646],
                   \$dummy [647]})) ;
-    booth_adder_17_unfolded1 L1_3_L2_3_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L1ResultsLarge_10__16,L1ResultsLarge_10__15,
-                             L1ResultsLarge_10__14,L1ResultsLarge_10__13,
-                             L1ResultsLarge_10__12,L1ResultsLarge_10__11,
-                             L1ResultsLarge_10__10,L1ResultsLarge_10__9,
-                             L1ResultsLarge_10__8,L1ResultsLarge_10__7,
-                             L1ResultsLarge_10__6,L1ResultsLarge_10__5,
-                             L1ResultsLarge_10__4,L1ResultsLarge_10__3,
-                             L1ResultsLarge_10__2,L1ResultsLarge_10__1,
-                             L1ResultsLarge_10__0}), .AdderSecondOperand ({
-                             L1ResultsLarge_11__16,L1ResultsLarge_11__15,
-                             L1ResultsLarge_11__14,L1ResultsLarge_11__13,
-                             L1ResultsLarge_11__12,L1ResultsLarge_11__11,
-                             L1ResultsLarge_11__10,L1ResultsLarge_11__9,
-                             L1ResultsLarge_11__8,L1ResultsLarge_11__7,
-                             L1ResultsLarge_11__6,L1ResultsLarge_11__5,
-                             L1ResultsLarge_11__4,L1ResultsLarge_11__3,
-                             L1ResultsLarge_11__2,L1ResultsLarge_11__1,
-                             L1ResultsLarge_11__0}), .BoothOperand ({
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_16,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_15,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_14,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_13,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_12,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_11,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_10,
-                             L1_3_L2_3_G2_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_16,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_15,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_14,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_13,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_12,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_11,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_10,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_9,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_8,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_7,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_6,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_5,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_4,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_3,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_2,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_1,
-                             L1_3_L2_3_G2_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_3_L2_3_G2_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L2ResultsLarge_5__16,L2ResultsLarge_5__15,
-                             L2ResultsLarge_5__14,L2ResultsLarge_5__13,
-                             L2ResultsLarge_5__12,L2ResultsLarge_5__11,
-                             L2ResultsLarge_5__10,L2ResultsLarge_5__9,
-                             L2ResultsLarge_5__8,L2ResultsLarge_5__7,
-                             L2ResultsLarge_5__6,L2ResultsLarge_5__5,
-                             L2ResultsLarge_5__4,L2ResultsLarge_5__3,
-                             L2ResultsLarge_5__2,L2ResultsLarge_5__1,
-                             L2ResultsLarge_5__0}), .AdderBoothResult ({
-                             \$dummy [648],
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_15,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_14,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_13,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_12,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_11,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_10,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_9,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_8,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_7,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_6,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_5,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_4,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_3,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_2,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_1,
-                             L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_3_L2_3_G2_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L1ResultsLarge_10__16,L1ResultsLarge_10__15,
+                              L1ResultsLarge_10__14,L1ResultsLarge_10__13,
+                              L1ResultsLarge_10__12,L1ResultsLarge_10__11,
+                              L1ResultsLarge_10__10,L1ResultsLarge_10__9,
+                              L1ResultsLarge_10__8,L1ResultsLarge_10__7,
+                              L1ResultsLarge_10__6,L1ResultsLarge_10__5,
+                              L1ResultsLarge_10__4,L1ResultsLarge_10__3,
+                              L1ResultsLarge_10__2,L1ResultsLarge_10__1,
+                              L1ResultsLarge_10__0}), .AdderSecondOperand ({
+                              L1ResultsLarge_11__16,L1ResultsLarge_11__15,
+                              L1ResultsLarge_11__14,L1ResultsLarge_11__13,
+                              L1ResultsLarge_11__12,L1ResultsLarge_11__11,
+                              L1ResultsLarge_11__10,L1ResultsLarge_11__9,
+                              L1ResultsLarge_11__8,L1ResultsLarge_11__7,
+                              L1ResultsLarge_11__6,L1ResultsLarge_11__5,
+                              L1ResultsLarge_11__4,L1ResultsLarge_11__3,
+                              L1ResultsLarge_11__2,L1ResultsLarge_11__1,
+                              L1ResultsLarge_11__0}), .BoothOperand ({
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_16,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_15,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_14,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_13,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_12,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_11,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_10,
+                              L1_3_L2_3_G2_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_16,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_15,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_14,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_13,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_12,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_11,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_10,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_9,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_8,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_7,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_6,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_5,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_4,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_3,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_2,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_1,
+                              L1_3_L2_3_G2_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_3_L2_3_G2_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L2ResultsLarge_5__16,L2ResultsLarge_5__15,
+                              L2ResultsLarge_5__14,L2ResultsLarge_5__13,
+                              L2ResultsLarge_5__12,L2ResultsLarge_5__11,
+                              L2ResultsLarge_5__10,L2ResultsLarge_5__9,
+                              L2ResultsLarge_5__8,L2ResultsLarge_5__7,
+                              L2ResultsLarge_5__6,L2ResultsLarge_5__5,
+                              L2ResultsLarge_5__4,L2ResultsLarge_5__3,
+                              L2ResultsLarge_5__2,L2ResultsLarge_5__1,
+                              L2ResultsLarge_5__0}), .AdderBoothResult ({
+                              \$dummy [648],
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_15,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_14,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_13,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_12,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_11,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_10,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_9,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_8,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_7,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_6,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_5,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_4,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_3,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_2,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_1,
+                              L1_3_L2_3_G2_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_3_L2_3_G2_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_3__3__7,FilterDin_3__3__6,FilterDin_3__3__5,
                   FilterDin_3__3__4,FilterDin_3__3__3,FilterDin_3__3__2,
                   FilterDin_3__3__1,FilterDin_3__3__0}), .Window ({
@@ -4298,85 +4298,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [674],\$dummy [675],\$dummy [676],\$dummy [677],
                   \$dummy [678],\$dummy [679],\$dummy [680],\$dummy [681],
                   \$dummy [682]})) ;
-    booth_adder_17_unfolded1 L1_3_L2_4_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L2ResultsLarge_0__16,L2ResultsLarge_0__15,
-                             L2ResultsLarge_0__14,L2ResultsLarge_0__13,
-                             L2ResultsLarge_0__12,L2ResultsLarge_0__11,
-                             L2ResultsLarge_0__10,L2ResultsLarge_0__9,
-                             L2ResultsLarge_0__8,L2ResultsLarge_0__7,
-                             L2ResultsLarge_0__6,L2ResultsLarge_0__5,
-                             L2ResultsLarge_0__4,L2ResultsLarge_0__3,
-                             L2ResultsLarge_0__2,L2ResultsLarge_0__1,
-                             L2ResultsLarge_0__0}), .AdderSecondOperand ({
-                             L2ResultsLarge_1__16,L2ResultsLarge_1__15,
-                             L2ResultsLarge_1__14,L2ResultsLarge_1__13,
-                             L2ResultsLarge_1__12,L2ResultsLarge_1__11,
-                             L2ResultsLarge_1__10,L2ResultsLarge_1__9,
-                             L2ResultsLarge_1__8,L2ResultsLarge_1__7,
-                             L2ResultsLarge_1__6,L2ResultsLarge_1__5,
-                             L2ResultsLarge_1__4,L2ResultsLarge_1__3,
-                             L2ResultsLarge_1__2,L2ResultsLarge_1__1,
-                             L2ResultsLarge_1__0}), .BoothOperand ({
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_16,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_15,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_14,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_13,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_12,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_11,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_10,
-                             L1_3_L2_4_G3_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_16,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_15,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_14,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_13,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_12,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_11,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_10,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_9,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_8,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_7,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_6,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_5,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_4,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_3,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_2,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_1,
-                             L1_3_L2_4_G3_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_3_L2_4_G3_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L3ResultsLarge_0__16,L3ResultsLarge_0__15,
-                             L3ResultsLarge_0__14,L3ResultsLarge_0__13,
-                             L3ResultsLarge_0__12,L3ResultsLarge_0__11,
-                             L3ResultsLarge_0__10,L3ResultsLarge_0__9,
-                             L3ResultsLarge_0__8,L3ResultsLarge_0__7,
-                             L3ResultsLarge_0__6,L3ResultsLarge_0__5,
-                             L3ResultsLarge_0__4,L3ResultsLarge_0__3,
-                             L3ResultsLarge_0__2,L3ResultsLarge_0__1,
-                             L3ResultsLarge_0__0}), .AdderBoothResult ({
-                             \$dummy [683],
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_15,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_14,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_13,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_12,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_11,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_10,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_9,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_8,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_7,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_6,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_5,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_4,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_3,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_2,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_1,
-                             L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_3_L2_4_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L2ResultsLarge_0__16,L2ResultsLarge_0__15,
+                              L2ResultsLarge_0__14,L2ResultsLarge_0__13,
+                              L2ResultsLarge_0__12,L2ResultsLarge_0__11,
+                              L2ResultsLarge_0__10,L2ResultsLarge_0__9,
+                              L2ResultsLarge_0__8,L2ResultsLarge_0__7,
+                              L2ResultsLarge_0__6,L2ResultsLarge_0__5,
+                              L2ResultsLarge_0__4,L2ResultsLarge_0__3,
+                              L2ResultsLarge_0__2,L2ResultsLarge_0__1,
+                              L2ResultsLarge_0__0}), .AdderSecondOperand ({
+                              L2ResultsLarge_1__16,L2ResultsLarge_1__15,
+                              L2ResultsLarge_1__14,L2ResultsLarge_1__13,
+                              L2ResultsLarge_1__12,L2ResultsLarge_1__11,
+                              L2ResultsLarge_1__10,L2ResultsLarge_1__9,
+                              L2ResultsLarge_1__8,L2ResultsLarge_1__7,
+                              L2ResultsLarge_1__6,L2ResultsLarge_1__5,
+                              L2ResultsLarge_1__4,L2ResultsLarge_1__3,
+                              L2ResultsLarge_1__2,L2ResultsLarge_1__1,
+                              L2ResultsLarge_1__0}), .BoothOperand ({
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_16,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_15,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_14,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_13,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_12,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_11,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_10,
+                              L1_3_L2_4_G3_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_16,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_15,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_14,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_13,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_12,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_11,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_10,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_9,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_8,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_7,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_6,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_5,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_4,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_3,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_2,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_1,
+                              L1_3_L2_4_G3_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_3_L2_4_G3_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L3ResultsLarge_0__16,L3ResultsLarge_0__15,
+                              L3ResultsLarge_0__14,L3ResultsLarge_0__13,
+                              L3ResultsLarge_0__12,L3ResultsLarge_0__11,
+                              L3ResultsLarge_0__10,L3ResultsLarge_0__9,
+                              L3ResultsLarge_0__8,L3ResultsLarge_0__7,
+                              L3ResultsLarge_0__6,L3ResultsLarge_0__5,
+                              L3ResultsLarge_0__4,L3ResultsLarge_0__3,
+                              L3ResultsLarge_0__2,L3ResultsLarge_0__1,
+                              L3ResultsLarge_0__0}), .AdderBoothResult ({
+                              \$dummy [683],
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_15,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_14,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_13,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_12,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_11,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_10,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_9,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_8,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_7,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_6,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_5,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_4,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_3,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_2,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_1,
+                              L1_3_L2_4_G3_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_3_L2_4_G3_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_3__4__7,FilterDin_3__4__6,FilterDin_3__4__5,
                   FilterDin_3__4__4,FilterDin_3__4__3,FilterDin_3__4__2,
                   FilterDin_3__4__1,FilterDin_3__4__0}), .Window ({
@@ -4430,85 +4430,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [709],\$dummy [710],\$dummy [711],\$dummy [712],
                   \$dummy [713],\$dummy [714],\$dummy [715],\$dummy [716],
                   \$dummy [717]})) ;
-    booth_adder_17_unfolded1 L1_4_L2_0_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L2ResultsLarge_2__16,L2ResultsLarge_2__15,
-                             L2ResultsLarge_2__14,L2ResultsLarge_2__13,
-                             L2ResultsLarge_2__12,L2ResultsLarge_2__11,
-                             L2ResultsLarge_2__10,L2ResultsLarge_2__9,
-                             L2ResultsLarge_2__8,L2ResultsLarge_2__7,
-                             L2ResultsLarge_2__6,L2ResultsLarge_2__5,
-                             L2ResultsLarge_2__4,L2ResultsLarge_2__3,
-                             L2ResultsLarge_2__2,L2ResultsLarge_2__1,
-                             L2ResultsLarge_2__0}), .AdderSecondOperand ({
-                             L2ResultsLarge_3__16,L2ResultsLarge_3__15,
-                             L2ResultsLarge_3__14,L2ResultsLarge_3__13,
-                             L2ResultsLarge_3__12,L2ResultsLarge_3__11,
-                             L2ResultsLarge_3__10,L2ResultsLarge_3__9,
-                             L2ResultsLarge_3__8,L2ResultsLarge_3__7,
-                             L2ResultsLarge_3__6,L2ResultsLarge_3__5,
-                             L2ResultsLarge_3__4,L2ResultsLarge_3__3,
-                             L2ResultsLarge_3__2,L2ResultsLarge_3__1,
-                             L2ResultsLarge_3__0}), .BoothOperand ({
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_16,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_15,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_14,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_13,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_12,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_11,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_10,
-                             L1_4_L2_0_G3_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_16,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_15,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_14,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_13,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_12,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_11,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_10,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_9,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_8,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_7,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_6,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_5,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_4,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_3,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_2,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_1,
-                             L1_4_L2_0_G3_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3287), .Operation (
-                             L1_4_L2_0_G3_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L3ResultsLarge_1__16,L3ResultsLarge_1__15,
-                             L3ResultsLarge_1__14,L3ResultsLarge_1__13,
-                             L3ResultsLarge_1__12,L3ResultsLarge_1__11,
-                             L3ResultsLarge_1__10,L3ResultsLarge_1__9,
-                             L3ResultsLarge_1__8,L3ResultsLarge_1__7,
-                             L3ResultsLarge_1__6,L3ResultsLarge_1__5,
-                             L3ResultsLarge_1__4,L3ResultsLarge_1__3,
-                             L3ResultsLarge_1__2,L3ResultsLarge_1__1,
-                             L3ResultsLarge_1__0}), .AdderBoothResult ({
-                             \$dummy [718],
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_15,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_14,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_13,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_12,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_11,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_10,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_9,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_8,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_7,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_6,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_5,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_4,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_3,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_2,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_1,
-                             L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_4_L2_0_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L2ResultsLarge_2__16,L2ResultsLarge_2__15,
+                              L2ResultsLarge_2__14,L2ResultsLarge_2__13,
+                              L2ResultsLarge_2__12,L2ResultsLarge_2__11,
+                              L2ResultsLarge_2__10,L2ResultsLarge_2__9,
+                              L2ResultsLarge_2__8,L2ResultsLarge_2__7,
+                              L2ResultsLarge_2__6,L2ResultsLarge_2__5,
+                              L2ResultsLarge_2__4,L2ResultsLarge_2__3,
+                              L2ResultsLarge_2__2,L2ResultsLarge_2__1,
+                              L2ResultsLarge_2__0}), .AdderSecondOperand ({
+                              L2ResultsLarge_3__16,L2ResultsLarge_3__15,
+                              L2ResultsLarge_3__14,L2ResultsLarge_3__13,
+                              L2ResultsLarge_3__12,L2ResultsLarge_3__11,
+                              L2ResultsLarge_3__10,L2ResultsLarge_3__9,
+                              L2ResultsLarge_3__8,L2ResultsLarge_3__7,
+                              L2ResultsLarge_3__6,L2ResultsLarge_3__5,
+                              L2ResultsLarge_3__4,L2ResultsLarge_3__3,
+                              L2ResultsLarge_3__2,L2ResultsLarge_3__1,
+                              L2ResultsLarge_3__0}), .BoothOperand ({
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_16,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_15,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_14,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_13,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_12,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_11,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_10,
+                              L1_4_L2_0_G3_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_16,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_15,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_14,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_13,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_12,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_11,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_10,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_9,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_8,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_7,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_6,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_5,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_4,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_3,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_2,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_1,
+                              L1_4_L2_0_G3_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3284), .Operation (
+                              L1_4_L2_0_G3_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L3ResultsLarge_1__16,L3ResultsLarge_1__15,
+                              L3ResultsLarge_1__14,L3ResultsLarge_1__13,
+                              L3ResultsLarge_1__12,L3ResultsLarge_1__11,
+                              L3ResultsLarge_1__10,L3ResultsLarge_1__9,
+                              L3ResultsLarge_1__8,L3ResultsLarge_1__7,
+                              L3ResultsLarge_1__6,L3ResultsLarge_1__5,
+                              L3ResultsLarge_1__4,L3ResultsLarge_1__3,
+                              L3ResultsLarge_1__2,L3ResultsLarge_1__1,
+                              L3ResultsLarge_1__0}), .AdderBoothResult ({
+                              \$dummy [718],
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_15,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_14,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_13,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_12,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_11,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_10,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_9,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_8,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_7,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_6,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_5,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_4,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_3,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_2,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_1,
+                              L1_4_L2_0_G3_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_4_L2_0_G3_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3279), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3276), .Filter (
                   {FilterDin_4__0__7,FilterDin_4__0__6,FilterDin_4__0__5,
                   FilterDin_4__0__4,FilterDin_4__0__3,FilterDin_4__0__2,
                   FilterDin_4__0__1,FilterDin_4__0__0}), .Window ({
@@ -4562,85 +4562,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [744],\$dummy [745],\$dummy [746],\$dummy [747],
                   \$dummy [748],\$dummy [749],\$dummy [750],\$dummy [751],
                   \$dummy [752]})) ;
-    booth_adder_17_unfolded1 L1_4_L2_1_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L2ResultsLarge_4__16,L2ResultsLarge_4__15,
-                             L2ResultsLarge_4__14,L2ResultsLarge_4__13,
-                             L2ResultsLarge_4__12,L2ResultsLarge_4__11,
-                             L2ResultsLarge_4__10,L2ResultsLarge_4__9,
-                             L2ResultsLarge_4__8,L2ResultsLarge_4__7,
-                             L2ResultsLarge_4__6,L2ResultsLarge_4__5,
-                             L2ResultsLarge_4__4,L2ResultsLarge_4__3,
-                             L2ResultsLarge_4__2,L2ResultsLarge_4__1,
-                             L2ResultsLarge_4__0}), .AdderSecondOperand ({
-                             L2ResultsLarge_5__16,L2ResultsLarge_5__15,
-                             L2ResultsLarge_5__14,L2ResultsLarge_5__13,
-                             L2ResultsLarge_5__12,L2ResultsLarge_5__11,
-                             L2ResultsLarge_5__10,L2ResultsLarge_5__9,
-                             L2ResultsLarge_5__8,L2ResultsLarge_5__7,
-                             L2ResultsLarge_5__6,L2ResultsLarge_5__5,
-                             L2ResultsLarge_5__4,L2ResultsLarge_5__3,
-                             L2ResultsLarge_5__2,L2ResultsLarge_5__1,
-                             L2ResultsLarge_5__0}), .BoothOperand ({
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_16,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_15,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_14,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_13,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_12,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_11,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_10,
-                             L1_4_L2_1_G3_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_16,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_15,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_14,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_13,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_12,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_11,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_10,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_9,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_8,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_7,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_6,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_5,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_4,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_3,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_2,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_1,
-                             L1_4_L2_1_G3_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3289), .Operation (
-                             L1_4_L2_1_G3_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L3ResultsLarge_2__16,L3ResultsLarge_2__15,
-                             L3ResultsLarge_2__14,L3ResultsLarge_2__13,
-                             L3ResultsLarge_2__12,L3ResultsLarge_2__11,
-                             L3ResultsLarge_2__10,L3ResultsLarge_2__9,
-                             L3ResultsLarge_2__8,L3ResultsLarge_2__7,
-                             L3ResultsLarge_2__6,L3ResultsLarge_2__5,
-                             L3ResultsLarge_2__4,L3ResultsLarge_2__3,
-                             L3ResultsLarge_2__2,L3ResultsLarge_2__1,
-                             L3ResultsLarge_2__0}), .AdderBoothResult ({
-                             \$dummy [753],
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_15,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_14,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_13,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_12,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_11,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_10,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_9,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_8,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_7,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_6,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_5,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_4,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_3,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_2,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_1,
-                             L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_4_L2_1_G3_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L2ResultsLarge_4__16,L2ResultsLarge_4__15,
+                              L2ResultsLarge_4__14,L2ResultsLarge_4__13,
+                              L2ResultsLarge_4__12,L2ResultsLarge_4__11,
+                              L2ResultsLarge_4__10,L2ResultsLarge_4__9,
+                              L2ResultsLarge_4__8,L2ResultsLarge_4__7,
+                              L2ResultsLarge_4__6,L2ResultsLarge_4__5,
+                              L2ResultsLarge_4__4,L2ResultsLarge_4__3,
+                              L2ResultsLarge_4__2,L2ResultsLarge_4__1,
+                              L2ResultsLarge_4__0}), .AdderSecondOperand ({
+                              L2ResultsLarge_5__16,L2ResultsLarge_5__15,
+                              L2ResultsLarge_5__14,L2ResultsLarge_5__13,
+                              L2ResultsLarge_5__12,L2ResultsLarge_5__11,
+                              L2ResultsLarge_5__10,L2ResultsLarge_5__9,
+                              L2ResultsLarge_5__8,L2ResultsLarge_5__7,
+                              L2ResultsLarge_5__6,L2ResultsLarge_5__5,
+                              L2ResultsLarge_5__4,L2ResultsLarge_5__3,
+                              L2ResultsLarge_5__2,L2ResultsLarge_5__1,
+                              L2ResultsLarge_5__0}), .BoothOperand ({
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_16,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_15,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_14,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_13,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_12,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_11,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_10,
+                              L1_4_L2_1_G3_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_16,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_15,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_14,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_13,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_12,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_11,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_10,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_9,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_8,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_7,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_6,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_5,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_4,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_3,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_2,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_1,
+                              L1_4_L2_1_G3_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3286), .Operation (
+                              L1_4_L2_1_G3_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L3ResultsLarge_2__16,L3ResultsLarge_2__15,
+                              L3ResultsLarge_2__14,L3ResultsLarge_2__13,
+                              L3ResultsLarge_2__12,L3ResultsLarge_2__11,
+                              L3ResultsLarge_2__10,L3ResultsLarge_2__9,
+                              L3ResultsLarge_2__8,L3ResultsLarge_2__7,
+                              L3ResultsLarge_2__6,L3ResultsLarge_2__5,
+                              L3ResultsLarge_2__4,L3ResultsLarge_2__3,
+                              L3ResultsLarge_2__2,L3ResultsLarge_2__1,
+                              L3ResultsLarge_2__0}), .AdderBoothResult ({
+                              \$dummy [753],
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_15,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_14,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_13,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_12,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_11,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_10,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_9,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_8,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_7,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_6,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_5,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_4,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_3,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_2,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_1,
+                              L1_4_L2_1_G3_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_4_L2_1_G3_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3281), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3278), .Filter (
                   {FilterDin_4__1__7,FilterDin_4__1__6,FilterDin_4__1__5,
                   FilterDin_4__1__4,FilterDin_4__1__3,FilterDin_4__1__2,
                   FilterDin_4__1__1,FilterDin_4__1__0}), .Window ({
@@ -4694,85 +4694,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [779],\$dummy [780],\$dummy [781],\$dummy [782],
                   \$dummy [783],\$dummy [784],\$dummy [785],\$dummy [786],
                   \$dummy [787]})) ;
-    booth_adder_17_unfolded1 L1_4_L2_2_G4_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L3ResultsLarge_0__16,L3ResultsLarge_0__15,
-                             L3ResultsLarge_0__14,L3ResultsLarge_0__13,
-                             L3ResultsLarge_0__12,L3ResultsLarge_0__11,
-                             L3ResultsLarge_0__10,L3ResultsLarge_0__9,
-                             L3ResultsLarge_0__8,L3ResultsLarge_0__7,
-                             L3ResultsLarge_0__6,L3ResultsLarge_0__5,
-                             L3ResultsLarge_0__4,L3ResultsLarge_0__3,
-                             L3ResultsLarge_0__2,L3ResultsLarge_0__1,
-                             L3ResultsLarge_0__0}), .AdderSecondOperand ({
-                             L3ResultsLarge_1__16,L3ResultsLarge_1__15,
-                             L3ResultsLarge_1__14,L3ResultsLarge_1__13,
-                             L3ResultsLarge_1__12,L3ResultsLarge_1__11,
-                             L3ResultsLarge_1__10,L3ResultsLarge_1__9,
-                             L3ResultsLarge_1__8,L3ResultsLarge_1__7,
-                             L3ResultsLarge_1__6,L3ResultsLarge_1__5,
-                             L3ResultsLarge_1__4,L3ResultsLarge_1__3,
-                             L3ResultsLarge_1__2,L3ResultsLarge_1__1,
-                             L3ResultsLarge_1__0}), .BoothOperand ({
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_16,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_15,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_14,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_13,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_12,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_11,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_10,
-                             L1_4_L2_2_G4_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_16,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_15,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_14,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_13,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_12,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_11,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_10,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_9,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_8,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_7,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_6,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_5,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_4,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_3,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_2,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_1,
-                             L1_4_L2_2_G4_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3289), .Operation (
-                             L1_4_L2_2_G4_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L4ResultsLarge_0__16,L4ResultsLarge_0__15,
-                             L4ResultsLarge_0__14,L4ResultsLarge_0__13,
-                             L4ResultsLarge_0__12,L4ResultsLarge_0__11,
-                             L4ResultsLarge_0__10,L4ResultsLarge_0__9,
-                             L4ResultsLarge_0__8,L4ResultsLarge_0__7,
-                             L4ResultsLarge_0__6,L4ResultsLarge_0__5,
-                             L4ResultsLarge_0__4,L4ResultsLarge_0__3,
-                             L4ResultsLarge_0__2,L4ResultsLarge_0__1,
-                             L4ResultsLarge_0__0}), .AdderBoothResult ({
-                             \$dummy [788],
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_15,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_14,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_13,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_12,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_11,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_10,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_9,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_8,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_7,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_6,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_5,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_4,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_3,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_2,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_1,
-                             L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_4_L2_2_G4_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L3ResultsLarge_0__16,L3ResultsLarge_0__15,
+                              L3ResultsLarge_0__14,L3ResultsLarge_0__13,
+                              L3ResultsLarge_0__12,L3ResultsLarge_0__11,
+                              L3ResultsLarge_0__10,L3ResultsLarge_0__9,
+                              L3ResultsLarge_0__8,L3ResultsLarge_0__7,
+                              L3ResultsLarge_0__6,L3ResultsLarge_0__5,
+                              L3ResultsLarge_0__4,L3ResultsLarge_0__3,
+                              L3ResultsLarge_0__2,L3ResultsLarge_0__1,
+                              L3ResultsLarge_0__0}), .AdderSecondOperand ({
+                              L3ResultsLarge_1__16,L3ResultsLarge_1__15,
+                              L3ResultsLarge_1__14,L3ResultsLarge_1__13,
+                              L3ResultsLarge_1__12,L3ResultsLarge_1__11,
+                              L3ResultsLarge_1__10,L3ResultsLarge_1__9,
+                              L3ResultsLarge_1__8,L3ResultsLarge_1__7,
+                              L3ResultsLarge_1__6,L3ResultsLarge_1__5,
+                              L3ResultsLarge_1__4,L3ResultsLarge_1__3,
+                              L3ResultsLarge_1__2,L3ResultsLarge_1__1,
+                              L3ResultsLarge_1__0}), .BoothOperand ({
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_16,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_15,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_14,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_13,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_12,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_11,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_10,
+                              L1_4_L2_2_G4_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_16,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_15,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_14,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_13,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_12,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_11,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_10,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_9,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_8,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_7,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_6,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_5,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_4,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_3,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_2,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_1,
+                              L1_4_L2_2_G4_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3286), .Operation (
+                              L1_4_L2_2_G4_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L4ResultsLarge_0__16,L4ResultsLarge_0__15,
+                              L4ResultsLarge_0__14,L4ResultsLarge_0__13,
+                              L4ResultsLarge_0__12,L4ResultsLarge_0__11,
+                              L4ResultsLarge_0__10,L4ResultsLarge_0__9,
+                              L4ResultsLarge_0__8,L4ResultsLarge_0__7,
+                              L4ResultsLarge_0__6,L4ResultsLarge_0__5,
+                              L4ResultsLarge_0__4,L4ResultsLarge_0__3,
+                              L4ResultsLarge_0__2,L4ResultsLarge_0__1,
+                              L4ResultsLarge_0__0}), .AdderBoothResult ({
+                              \$dummy [788],
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_15,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_14,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_13,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_12,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_11,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_10,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_9,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_8,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_7,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_6,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_5,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_4,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_3,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_2,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_1,
+                              L1_4_L2_2_G4_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_4_L2_2_G4_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3281), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3278), .Filter (
                   {FilterDin_4__2__7,FilterDin_4__2__6,FilterDin_4__2__5,
                   FilterDin_4__2__4,FilterDin_4__2__3,FilterDin_4__2__2,
                   FilterDin_4__2__1,FilterDin_4__2__0}), .Window ({
@@ -4826,85 +4826,85 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [814],\$dummy [815],\$dummy [816],\$dummy [817],
                   \$dummy [818],\$dummy [819],\$dummy [820],\$dummy [821],
                   \$dummy [822]})) ;
-    booth_adder_17_unfolded1 L1_4_L2_3_G5_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L4ResultsLarge_0__16,L4ResultsLarge_0__15,
-                             L4ResultsLarge_0__14,L4ResultsLarge_0__13,
-                             L4ResultsLarge_0__12,L4ResultsLarge_0__11,
-                             L4ResultsLarge_0__10,L4ResultsLarge_0__9,
-                             L4ResultsLarge_0__8,L4ResultsLarge_0__7,
-                             L4ResultsLarge_0__6,L4ResultsLarge_0__5,
-                             L4ResultsLarge_0__4,L4ResultsLarge_0__3,
-                             L4ResultsLarge_0__2,L4ResultsLarge_0__1,
-                             L4ResultsLarge_0__0}), .AdderSecondOperand ({
-                             L3ResultsLarge_2__16,L3ResultsLarge_2__15,
-                             L3ResultsLarge_2__14,L3ResultsLarge_2__13,
-                             L3ResultsLarge_2__12,L3ResultsLarge_2__11,
-                             L3ResultsLarge_2__10,L3ResultsLarge_2__9,
-                             L3ResultsLarge_2__8,L3ResultsLarge_2__7,
-                             L3ResultsLarge_2__6,L3ResultsLarge_2__5,
-                             L3ResultsLarge_2__4,L3ResultsLarge_2__3,
-                             L3ResultsLarge_2__2,L3ResultsLarge_2__1,
-                             L3ResultsLarge_2__0}), .BoothOperand ({
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_16,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_15,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_14,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_13,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_12,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_11,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_10,
-                             L1_4_L2_3_G5_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_16,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_15,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_14,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_13,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_12,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_11,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_10,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_9,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_8,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_7,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_6,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_5,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_4,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_3,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_2,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_1,
-                             L1_4_L2_3_G5_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3289), .Operation (
-                             L1_4_L2_3_G5_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {L5FirstOperands_1__16,L5FirstOperands_1__15,
-                             L5FirstOperands_1__14,L5FirstOperands_1__13,
-                             L5FirstOperands_1__12,L5FirstOperands_1__11,
-                             L5FirstOperands_1__10,L5FirstOperands_1__9,
-                             L5FirstOperands_1__8,L5FirstOperands_1__7,
-                             L5FirstOperands_1__6,L5FirstOperands_1__5,
-                             L5FirstOperands_1__4,L5FirstOperands_1__3,
-                             L5FirstOperands_1__2,L5FirstOperands_1__1,
-                             L5FirstOperands_1__0}), .AdderBoothResult ({
-                             \$dummy [823],
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_15,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_14,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_13,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_12,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_11,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_10,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_9,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_8,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_7,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_6,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_5,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_4,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_3,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_2,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_1,
-                             L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded13 L1_4_L2_3_G5_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L4ResultsLarge_0__16,L4ResultsLarge_0__15,
+                              L4ResultsLarge_0__14,L4ResultsLarge_0__13,
+                              L4ResultsLarge_0__12,L4ResultsLarge_0__11,
+                              L4ResultsLarge_0__10,L4ResultsLarge_0__9,
+                              L4ResultsLarge_0__8,L4ResultsLarge_0__7,
+                              L4ResultsLarge_0__6,L4ResultsLarge_0__5,
+                              L4ResultsLarge_0__4,L4ResultsLarge_0__3,
+                              L4ResultsLarge_0__2,L4ResultsLarge_0__1,
+                              L4ResultsLarge_0__0}), .AdderSecondOperand ({
+                              L3ResultsLarge_2__16,L3ResultsLarge_2__15,
+                              L3ResultsLarge_2__14,L3ResultsLarge_2__13,
+                              L3ResultsLarge_2__12,L3ResultsLarge_2__11,
+                              L3ResultsLarge_2__10,L3ResultsLarge_2__9,
+                              L3ResultsLarge_2__8,L3ResultsLarge_2__7,
+                              L3ResultsLarge_2__6,L3ResultsLarge_2__5,
+                              L3ResultsLarge_2__4,L3ResultsLarge_2__3,
+                              L3ResultsLarge_2__2,L3ResultsLarge_2__1,
+                              L3ResultsLarge_2__0}), .BoothOperand ({
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_16,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_15,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_14,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_13,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_12,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_11,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_10,
+                              L1_4_L2_3_G5_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_16,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_15,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_14,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_13,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_12,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_11,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_10,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_9,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_8,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_7,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_6,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_5,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_4,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_3,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_2,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_1,
+                              L1_4_L2_3_G5_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3286), .Operation (
+                              L1_4_L2_3_G5_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {L5FirstOperands_1__16,L5FirstOperands_1__15,
+                              L5FirstOperands_1__14,L5FirstOperands_1__13,
+                              L5FirstOperands_1__12,L5FirstOperands_1__11,
+                              L5FirstOperands_1__10,L5FirstOperands_1__9,
+                              L5FirstOperands_1__8,L5FirstOperands_1__7,
+                              L5FirstOperands_1__6,L5FirstOperands_1__5,
+                              L5FirstOperands_1__4,L5FirstOperands_1__3,
+                              L5FirstOperands_1__2,L5FirstOperands_1__1,
+                              L5FirstOperands_1__0}), .AdderBoothResult ({
+                              \$dummy [823],
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_15,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_14,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_13,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_12,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_11,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_10,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_9,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_8,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_7,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_6,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_5,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_4,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_3,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_2,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_1,
+                              L1_4_L2_3_G5_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_4_L2_3_G5_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3281), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3278), .Filter (
                   {FilterDin_4__3__7,FilterDin_4__3__6,FilterDin_4__3__5,
                   FilterDin_4__3__4,FilterDin_4__3__3,FilterDin_4__3__2,
                   FilterDin_4__3__1,FilterDin_4__3__0}), .Window ({
@@ -4958,95 +4958,95 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [849],\$dummy [850],\$dummy [851],\$dummy [852],
                   \$dummy [853],\$dummy [854],\$dummy [855],\$dummy [856],
                   \$dummy [857]})) ;
-    booth_adder_17_unfolded2 L1_4_L2_4_G5_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
-                             {L5FirstOperands_1__16,L5FirstOperands_1__15,
-                             L5FirstOperands_1__14,L5FirstOperands_1__13,
-                             L5FirstOperands_1__12,L5FirstOperands_1__11,
-                             L5FirstOperands_1__10,L5FirstOperands_1__9,
-                             L5FirstOperands_1__8,L5FirstOperands_1__7,
-                             L5FirstOperands_1__6,L5FirstOperands_1__5,
-                             L5FirstOperands_1__4,L5FirstOperands_1__3,
-                             L5FirstOperands_1__2,L5FirstOperands_1__1,
-                             L5FirstOperands_1__0}), .AdderSecondOperand ({
-                             L1FirstOperands_12__16,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_15,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_14,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_13,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_12,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_11,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_10,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_9,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_8,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_7,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_6,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_5,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_4,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_3,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_2,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_1,
-                             L1_4_L2_4_G5_MINI_ALU_OperationResult_0}), .BoothOperand (
-                             {L1_4_L2_4_G5_MINI_ALU_BoothOperand_16,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_15,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_14,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_13,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_12,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_11,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_10,
-                             L1_4_L2_4_G5_MINI_ALU_BoothOperand_9,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16,L1FirstOperands_12__16,
-                             L1FirstOperands_12__16}), .BoothP ({
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_16,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_15,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_14,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_13,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_12,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_11,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_10,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_9,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_8,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_7,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_6,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_5,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_4,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_3,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_2,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_1,
-                             L1_4_L2_4_G5_MINI_ALU_BoothP_0}), .SelOperand (
-                             nx3289), .Operation (
-                             L1_4_L2_4_G5_MINI_ALU_BoothXORCheck), .AdderResult (
-                             {\$dummy [858],\$dummy [859],\$dummy [860],
-                             \$dummy [861],\$dummy [862],\$dummy [863],
-                             \$dummy [864],\$dummy [865],\$dummy [866],
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_5,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_4,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_3,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_2,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_1,
-                             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_0}), .AdderBoothResult (
-                             {\$dummy [867],
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_15,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_14,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_13,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_12,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_11,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_10,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_9,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_8,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_7,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_6,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_5,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_4,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_3,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_2,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_1,
-                             L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_0})) ;
+    booth_adder_17_unfolded14 L1_4_L2_4_G5_MINI_ALU_BOOTH_ADDER (.AdderFirstOperand (
+                              {L5FirstOperands_1__16,L5FirstOperands_1__15,
+                              L5FirstOperands_1__14,L5FirstOperands_1__13,
+                              L5FirstOperands_1__12,L5FirstOperands_1__11,
+                              L5FirstOperands_1__10,L5FirstOperands_1__9,
+                              L5FirstOperands_1__8,L5FirstOperands_1__7,
+                              L5FirstOperands_1__6,L5FirstOperands_1__5,
+                              L5FirstOperands_1__4,L5FirstOperands_1__3,
+                              L5FirstOperands_1__2,L5FirstOperands_1__1,
+                              L5FirstOperands_1__0}), .AdderSecondOperand ({
+                              L1FirstOperands_12__16,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_15,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_14,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_13,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_12,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_11,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_10,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_9,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_8,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_7,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_6,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_5,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_4,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_3,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_2,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_1,
+                              L1_4_L2_4_G5_MINI_ALU_OperationResult_0}), .BoothOperand (
+                              {L1_4_L2_4_G5_MINI_ALU_BoothOperand_16,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_15,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_14,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_13,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_12,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_11,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_10,
+                              L1_4_L2_4_G5_MINI_ALU_BoothOperand_9,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16,L1FirstOperands_12__16,
+                              L1FirstOperands_12__16}), .BoothP ({
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_16,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_15,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_14,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_13,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_12,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_11,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_10,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_9,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_8,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_7,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_6,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_5,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_4,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_3,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_2,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_1,
+                              L1_4_L2_4_G5_MINI_ALU_BoothP_0}), .SelOperand (
+                              nx3286), .Operation (
+                              L1_4_L2_4_G5_MINI_ALU_BoothXORCheck), .AdderResult (
+                              {\$dummy [858],\$dummy [859],\$dummy [860],
+                              \$dummy [861],\$dummy [862],\$dummy [863],
+                              \$dummy [864],\$dummy [865],\$dummy [866],
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_5,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_4,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_3,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_2,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_1,
+                              L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_0}), .AdderBoothResult (
+                              {\$dummy [867],
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_15,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_14,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_13,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_12,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_11,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_10,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_9,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_8,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_7,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_6,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_5,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_4,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_3,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_2,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_1,
+                              L1_4_L2_4_G5_MINI_ALU_AdderBoothResult_0})) ;
     booth_unit_17 L1_4_L2_4_G5_MINI_ALU_BOOTH_UNIT (.CLK (CLK), .RST (RST), .Start (
-                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3281), .Filter (
+                  Start), .Instr (Instr), .LoopingAndResultNotReady (nx3278), .Filter (
                   {FilterDin_4__4__7,FilterDin_4__4__6,FilterDin_4__4__5,
                   FilterDin_4__4__4,FilterDin_4__4__3,FilterDin_4__4__2,
                   FilterDin_4__4__1,FilterDin_4__4__0}), .Window ({
@@ -5100,15 +5100,23 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
                   \$dummy [893],\$dummy [894],\$dummy [895],\$dummy [896],
                   \$dummy [897],\$dummy [898],\$dummy [899],\$dummy [900],
                   \$dummy [901]})) ;
-    nor02ii ix2855 (.Y (NOT__13497), .A0 (Instr), .A1 (nx2856)) ;
-    nand03 ix2857 (.Y (nx2856), .A0 (CounterOut_0), .A1 (CounterOut_3), .A2 (
-           nx2876)) ;
+    nor02ii ix2852 (.Y (NOT__145383), .A0 (Instr), .A1 (nx2853)) ;
+    nand03 ix2854 (.Y (nx2853), .A0 (CounterOut_0), .A1 (CounterOut_3), .A2 (
+           nx2873)) ;
+    dffr reg_CounterOut_0 (.Q (CounterOut_0), .QB (NOT_CounterOut_0), .D (
+         NOT_CounterOut_0), .CLK (nx1032), .R (nx1036)) ;
     or02 ix1037 (.Y (nx1036), .A0 (Start), .A1 (RST)) ;
-    xnor2 ix1067 (.Y (nx1066), .A0 (CounterOut_3), .A1 (nx2868)) ;
-    nand03 ix2869 (.Y (nx2868), .A0 (CounterOut_2), .A1 (CounterOut_1), .A2 (
+    dffr reg_CounterOut_3 (.Q (CounterOut_3), .QB (\$dummy [902]), .D (nx1066), 
+         .CLK (nx1032), .R (nx1036)) ;
+    xnor2 ix1067 (.Y (nx1066), .A0 (CounterOut_3), .A1 (nx2865)) ;
+    nand03 ix2866 (.Y (nx2865), .A0 (CounterOut_2), .A1 (CounterOut_1), .A2 (
            CounterOut_0)) ;
-    xnor2 ix1059 (.Y (nx1058), .A0 (CounterOut_2), .A1 (nx2872)) ;
-    fake_gnd ix2305 (.Y (L1FirstOperands_12__16)) ;
+    dffr reg_CounterOut_2 (.Q (CounterOut_2), .QB (\$dummy [903]), .D (nx1058), 
+         .CLK (nx1032), .R (nx1036)) ;
+    xnor2 ix1059 (.Y (nx1058), .A0 (CounterOut_2), .A1 (nx2869)) ;
+    dffr reg_CounterOut_1 (.Q (CounterOut_1), .QB (nx2873), .D (nx1046), .CLK (
+         nx1032), .R (nx1036)) ;
+    fake_gnd ix2302 (.Y (L1FirstOperands_12__16)) ;
     mux21_ni ix109 (.Y (L1_4_L2_4_G5_MINI_ALU_OperationResult_0), .A0 (
              L1_4_L2_4_G5_MINI_ALU_BoothP_1), .A1 (WindowDin_4__4__0), .S0 (
              Instr)) ;
@@ -5989,23 +5997,23 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
             L1_2_L2_3_G2_MINI_ALU_BoothP_15)) ;
     nor02ii ix869 (.Y (L1FirstOperands_0__15), .A0 (Instr), .A1 (
             L1_2_L2_3_G2_MINI_ALU_BoothP_16)) ;
-    nor02ii ix2243 (.Y (LoopingAndResultNotReady), .A0 (nx3233), .A1 (nx2856)) ;
-    nor04 ix3234 (.Y (nx3233), .A0 (CounterOut_0), .A1 (CounterOut_1), .A2 (
+    nor02ii ix2243 (.Y (LoopingAndResultNotReady), .A0 (nx3230), .A1 (nx2853)) ;
+    nor04 ix3231 (.Y (nx3230), .A0 (CounterOut_0), .A1 (CounterOut_1), .A2 (
           CounterOut_2), .A3 (CounterOut_3)) ;
-    oai21 ix29 (.Y (Result[0]), .A0 (nx3236), .A1 (Instr), .B0 (nx3238)) ;
-    inv01 ix3237 (.Y (nx3236), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_0)) ;
-    aoi32 ix3239 (.Y (nx3238), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_5), .A1 (
+    oai21 ix29 (.Y (Result[0]), .A0 (nx3233), .A1 (Instr), .B0 (nx3235)) ;
+    inv01 ix3234 (.Y (nx3233), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_0)) ;
+    aoi32 ix3236 (.Y (nx3235), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_5), .A1 (
           FilterSize), .A2 (Instr), .B0 (
           L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_3), .B1 (nx22)) ;
     nor02ii ix23 (.Y (nx22), .A0 (FilterSize), .A1 (Instr)) ;
-    oai21 ix41 (.Y (Result[1]), .A0 (nx3242), .A1 (Instr), .B0 (nx3244)) ;
-    inv01 ix3243 (.Y (nx3242), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_1)) ;
-    aoi32 ix3245 (.Y (nx3244), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6), .A1 (
+    oai21 ix41 (.Y (Result[1]), .A0 (nx3239), .A1 (Instr), .B0 (nx3241)) ;
+    inv01 ix3240 (.Y (nx3239), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_1)) ;
+    aoi32 ix3242 (.Y (nx3241), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6), .A1 (
           FilterSize), .A2 (Instr), .B0 (
           L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_4), .B1 (nx22)) ;
-    oai21 ix53 (.Y (Result[2]), .A0 (nx3247), .A1 (Instr), .B0 (nx3249)) ;
-    inv01 ix3248 (.Y (nx3247), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_2)) ;
-    aoi32 ix3250 (.Y (nx3249), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7), .A1 (
+    oai21 ix53 (.Y (Result[2]), .A0 (nx3244), .A1 (Instr), .B0 (nx3246)) ;
+    inv01 ix3245 (.Y (nx3244), .A (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_2)) ;
+    aoi32 ix3247 (.Y (nx3246), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7), .A1 (
           FilterSize), .A2 (Instr), .B0 (
           L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_5), .B1 (nx22)) ;
     nor02ii ix3 (.Y (Result[5]), .A0 (Instr), .A1 (
@@ -6014,46 +6022,30 @@ module accelerator ( CLK, RST, Start, FilterSize, Instr, FilterDin_0__0__7,
             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6)) ;
     nor02ii ix11 (.Y (Result[7]), .A0 (Instr), .A1 (
             L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7)) ;
-    inv01 ix1079 (.Y (Done), .A (NOT__13497)) ;
-    inv01 ix3272 (.Y (nx3273), .A (LoopingAndResultNotReady)) ;
-    inv01 ix3274 (.Y (nx3275), .A (nx3273)) ;
-    inv01 ix3276 (.Y (nx3277), .A (nx3273)) ;
-    inv01 ix3278 (.Y (nx3279), .A (nx3273)) ;
-    inv01 ix3280 (.Y (nx3281), .A (nx3273)) ;
-    inv01 ix3282 (.Y (nx3283), .A (Done)) ;
-    inv01 ix3284 (.Y (nx3285), .A (Done)) ;
-    inv01 ix3286 (.Y (nx3287), .A (Done)) ;
-    inv01 ix3288 (.Y (nx3289), .A (Done)) ;
-    and02 ix1033 (.Y (nx1032), .A0 (NOT__13497), .A1 (CLK)) ;
-    or02 ix2873 (.Y (nx2872), .A0 (nx2876), .A1 (NOT_CounterOut_0)) ;
-    xnor2 ix1047 (.Y (nx1046), .A0 (nx2876), .A1 (CounterOut_0)) ;
+    inv01 ix1079 (.Y (Done), .A (NOT__145383)) ;
+    inv01 ix3269 (.Y (nx3270), .A (LoopingAndResultNotReady)) ;
+    inv01 ix3271 (.Y (nx3272), .A (nx3270)) ;
+    inv01 ix3273 (.Y (nx3274), .A (nx3270)) ;
+    inv01 ix3275 (.Y (nx3276), .A (nx3270)) ;
+    inv01 ix3277 (.Y (nx3278), .A (nx3270)) ;
+    inv01 ix3279 (.Y (nx3280), .A (Done)) ;
+    inv01 ix3281 (.Y (nx3282), .A (Done)) ;
+    inv01 ix3283 (.Y (nx3284), .A (Done)) ;
+    inv01 ix3285 (.Y (nx3286), .A (Done)) ;
+    and02 ix1033 (.Y (nx1032), .A0 (NOT__145383), .A1 (CLK)) ;
+    or02 ix2870 (.Y (nx2869), .A0 (nx2873), .A1 (NOT_CounterOut_0)) ;
+    xnor2 ix1047 (.Y (nx1046), .A0 (nx2873), .A1 (CounterOut_0)) ;
     ao22 ix61 (.Y (Result[3]), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_6), .A1 (
-         nx22), .B0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_3), .B1 (nx3303)) ;
-    inv01 ix3302 (.Y (nx3303), .A (Instr)) ;
+         nx22), .B0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_3), .B1 (nx3292)) ;
+    inv01 ix3291 (.Y (nx3292), .A (Instr)) ;
     ao22 ix69 (.Y (Result[4]), .A0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_7), .A1 (
-         nx22), .B0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_4), .B1 (nx3303)) ;
-    latchr ACCELERATOR_COUNTER_lat_Dout_0__u1 (.QB (nx5), .D (NOT_CounterOut_0)
-           , .CLK (nx1032), .R (nx1036)) ;
-    inv01 ACCELERATOR_COUNTER_lat_Dout_0__u2 (.Y (CounterOut_0), .A (nx5)) ;
-    buf02 ACCELERATOR_COUNTER_lat_Dout_0__u3 (.Y (NOT_CounterOut_0), .A (nx5)) ;
-    latchr ACCELERATOR_COUNTER_lat_Dout_3__u1 (.QB (nx3304), .D (nx1066), .CLK (
-           nx1032), .R (nx1036)) ;
-    inv01 ACCELERATOR_COUNTER_lat_Dout_3__u2 (.Y (CounterOut_3), .A (nx3304)) ;
-    buf02 ACCELERATOR_COUNTER_lat_Dout_3__u3 (.Y (nx1), .A (nx3304)) ;
-    latchr ACCELERATOR_COUNTER_lat_Dout_2__u1 (.QB (nx3306), .D (nx1058), .CLK (
-           nx1032), .R (nx1036)) ;
-    inv01 ACCELERATOR_COUNTER_lat_Dout_2__u2 (.Y (CounterOut_2), .A (nx3306)) ;
-    buf02 ACCELERATOR_COUNTER_lat_Dout_2__u3 (.Y (nx3305), .A (nx3306)) ;
-    latchr ACCELERATOR_COUNTER_lat_Dout_1__u1 (.QB (nx3308), .D (nx1046), .CLK (
-           nx1032), .R (nx1036)) ;
-    inv01 ACCELERATOR_COUNTER_lat_Dout_1__u2 (.Y (CounterOut_1), .A (nx3308)) ;
-    buf02 ACCELERATOR_COUNTER_lat_Dout_1__u3 (.Y (nx2876), .A (nx3308)) ;
+         nx22), .B0 (L1_4_L2_4_G5_MINI_ALU_AdderResultLarge_4), .B1 (nx3292)) ;
 endmodule
 
 
-module booth_adder_17_unfolded2 ( AdderFirstOperand, AdderSecondOperand, 
-                                  BoothOperand, BoothP, SelOperand, Operation, 
-                                  AdderResult, AdderBoothResult ) ;
+module booth_adder_17_unfolded14 ( AdderFirstOperand, AdderSecondOperand, 
+                                   BoothOperand, BoothP, SelOperand, Operation, 
+                                   AdderResult, AdderBoothResult ) ;
 
     input [16:0]AdderFirstOperand ;
     input [16:0]AdderSecondOperand ;
@@ -6220,9 +6212,9 @@ module booth_adder_17_unfolded2 ( AdderFirstOperand, AdderSecondOperand,
 endmodule
 
 
-module booth_adder_17_unfolded1 ( AdderFirstOperand, AdderSecondOperand, 
-                                  BoothOperand, BoothP, SelOperand, Operation, 
-                                  AdderResult, AdderBoothResult ) ;
+module booth_adder_17_unfolded13 ( AdderFirstOperand, AdderSecondOperand, 
+                                   BoothOperand, BoothP, SelOperand, Operation, 
+                                   AdderResult, AdderBoothResult ) ;
 
     input [16:0]AdderFirstOperand ;
     input [16:0]AdderSecondOperand ;
@@ -6377,7 +6369,7 @@ module booth_adder_17_unfolded1 ( AdderFirstOperand, AdderSecondOperand,
 endmodule
 
 
-module booth_unit_17_unfolded0 ( CLK, RST, Start, Instr, 
+module booth_unit_17_unfolded4 ( CLK, RST, Start, Instr, 
                                  LoopingAndResultNotReady, Filter, Window, 
                                  AdderBoothResult, BoothXORCheck, BoothResult, 
                                  BoothAddingOperand, BoothP, LargeWindowShifted
@@ -6598,9 +6590,9 @@ module booth_unit_17_unfolded0 ( CLK, RST, Start, Instr,
 endmodule
 
 
-module booth_adder_17_unfolded0 ( AdderFirstOperand, AdderSecondOperand, 
-                                  BoothOperand, BoothP, SelOperand, Operation, 
-                                  AdderResult, AdderBoothResult ) ;
+module booth_adder_17_unfolded12 ( AdderFirstOperand, AdderSecondOperand, 
+                                   BoothOperand, BoothP, SelOperand, Operation, 
+                                   AdderResult, AdderBoothResult ) ;
 
     input [16:0]AdderFirstOperand ;
     input [16:0]AdderSecondOperand ;
@@ -6643,7 +6635,7 @@ module booth_adder_17_unfolded0 ( AdderFirstOperand, AdderSecondOperand,
     assign AdderResult[2] = AdderBoothResult[16] ;
     assign AdderResult[1] = AdderBoothResult[16] ;
     assign AdderResult[0] = AdderBoothResult[16] ;
-    adder_17_unfolded0 ADDER (.A ({FirstOperand_16,FirstOperand_15,
+    adder_17_unfolded4 ADDER (.A ({FirstOperand_16,FirstOperand_15,
                        FirstOperand_14,FirstOperand_13,FirstOperand_12,
                        FirstOperand_11,FirstOperand_10,FirstOperand_9,
                        AdderBoothResult[16],AdderBoothResult[16],
@@ -6732,7 +6724,7 @@ module booth_adder_17_unfolded0 ( AdderFirstOperand, AdderSecondOperand,
 endmodule
 
 
-module adder_17_unfolded0 ( A, B, Cin, Sum, Cout ) ;
+module adder_17_unfolded4 ( A, B, Cin, Sum, Cout ) ;
 
     input [16:0]A ;
     input [16:0]B ;
