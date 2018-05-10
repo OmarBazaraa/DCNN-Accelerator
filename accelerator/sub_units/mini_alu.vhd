@@ -28,7 +28,7 @@ ARCHITECTURE arch_mini_alu OF mini_alu IS
     -- Booth Unit Signals.
     --
     SIGNAL BoothXORCheck            : STD_LOGIC;
-    SIGNAL BoothResult              : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL BoothResult              : STD_LOGIC_VECTOR(  7 DOWNTO 0);
     SIGNAL BoothOperand             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL BoothP                   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL LargeWindowShifted       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
@@ -48,7 +48,7 @@ ARCHITECTURE arch_mini_alu OF mini_alu IS
     --
     -- Result Shift Mux Signals.
     --
-    SIGNAL ResultShiftMuxInputA     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL ResultShiftMuxInputA     : STD_LOGIC_VECTOR(  7 DOWNTO 0);
 
     --
     -- Pooling Shift Mux Signals.

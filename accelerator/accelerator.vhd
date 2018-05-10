@@ -70,14 +70,16 @@ BEGIN
     --
     -- Accelerator Counter
     --
+    CounterRST  <= RST OR Start;
+
     ACCELERATOR_COUNTER:
     ENTITY work.counter
     GENERIC MAP(n => 4)
-    PORT MAP(CounterCLK, Start, RST, CounterOut);
+    PORT MAP(CounterCLK, CounterRST, CounterOut);
 
-    CounterCLK 					<= CLK AND NOT(ResultReady) AND NOT(Instr);
-    ResultReady 				<= (CounterOut(0) AND NOT(CounterOut(1)) AND NOT(CounterOut(1)) AND CounterOut(3));
-    LoopingAndResultNotReady 	<= NOT(ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
+    CounterCLK 					<= CLK AND (NOT ResultReady) AND (NOT Instr);
+    ResultReady 				<= (CounterOut(0) AND (NOT CounterOut(1)) AND (NOT CounterOut(1)) AND CounterOut(3));
+    LoopingAndResultNotReady 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
     -- Mini ALU Units in the Tree
