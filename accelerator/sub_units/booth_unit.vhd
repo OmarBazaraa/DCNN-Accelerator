@@ -11,8 +11,8 @@ ENTITY booth_unit IS
         Instr                       : IN  STD_LOGIC;
         LoopingAndResultNotReady    : IN  STD_LOGIC;
     
-        Filter                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        Window                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        FilterCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        WindowCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
         AdderBoothResult            : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         
         BoothXORCheck               : OUT STD_LOGIC;
@@ -56,15 +56,15 @@ BEGIN
     -- A, S & P Register Signals.
     --
     RegisterPEN 	<= Start OR LoopingAndResultNotReady;
-    RegisterADin 	<= Filter & "000000000";
-    RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT Filter))) + 1, 8)) & "000000000";
+    RegisterADin 	<= FilterCell & "000000000";
+    RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
     RegisterPDin	<= PMuxOutput;
 
     --
     -- P DataIn 4-1 Mux Signals.
     --
-    PMuxInputC 	<= "00000000" & Window & '0';
-    PMuxInputD 	<= "000000000" & Window;
+    PMuxInputC 	<= "00000000" & WindowCell & '0';
+    PMuxInputD 	<= "000000000" & WindowCell;
 
     --
     -- A, S & P Registers.

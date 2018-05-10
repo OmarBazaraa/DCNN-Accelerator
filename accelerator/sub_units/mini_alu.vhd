@@ -11,8 +11,8 @@ ENTITY mini_alu IS
         Size                        : IN  STD_LOGIC;
         ResultReady                 : IN  STD_LOGIC;
         LoopingAndResultNotReady    : IN  STD_LOGIC;
-        Filter                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        Window                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        FilterCell                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        WindowCell                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
         AdderFirstOperand           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         AdderSecondOperand          : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
@@ -109,8 +109,8 @@ BEGIN
         Start                       => Start, 
         Instr                       => Instr, 
         LoopingAndResultNotReady    => LoopingAndResultNotReady, 
-        Filter                      => Filter, 
-        Window                      => Window,
+        FilterCell                  => FilterCell, 
+        WindowCell                  => WindowCell,
         AdderBoothResult            => AdderBoothResult, 
         BoothXORCheck               => BoothXORCheck, 
         BoothResult                 => BoothResult, 

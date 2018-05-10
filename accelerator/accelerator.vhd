@@ -78,7 +78,7 @@ BEGIN
     PORT MAP(CounterCLK, CounterRST, CounterOut);
 
     CounterCLK 					<= CLK AND (NOT ResultReady) AND (NOT Instr);
-    ResultReady 				<= (CounterOut(0) AND (NOT CounterOut(1)) AND (NOT CounterOut(1)) AND CounterOut(3));
+    ResultReady 				<= '1' WHEN CounterOut="1001" ELSE '0';
     LoopingAndResultNotReady 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
