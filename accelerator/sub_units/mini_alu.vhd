@@ -3,20 +3,20 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY mini_alu IS
-    GENERIC(n : INTEGER := 17);
+    GENERIC(n: INTEGER := 17);
     PORT(
-        CLK, RST                    : IN STD_LOGIC;
-        Start                       : IN STD_LOGIC;
-        Instr                       : IN STD_LOGIC;
-        Size                        : IN STD_LOGIC;
-        ResultReady                 : IN STD_LOGIC;
-        LoopingAndResultNotReady    : IN STD_LOGIC;
-        Filter                      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        Window                      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        AdderFirstOperand           : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        AdderSecondOperand          : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        CLK, RST                    : IN  STD_LOGIC;
+        Start                       : IN  STD_LOGIC;
+        Instr                       : IN  STD_LOGIC;
+        Size                        : IN  STD_LOGIC;
+        ResultReady                 : IN  STD_LOGIC;
+        LoopingAndResultNotReady    : IN  STD_LOGIC;
+        Filter                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        Window                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        AdderFirstOperand           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        AdderSecondOperand          : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
-        Result                      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        Result                      : OUT STD_LOGIC_VECTOR(  7 DOWNTO 0);
         AdderResultLarge            : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         OperationResult             : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
     );
@@ -122,25 +122,18 @@ BEGIN
     --
     -- Operation Result Mux.
     --
-    OPERATION_RESULT_MUX:
-    ENTITY work.mux_2x1
-    GENERIC MAP(n => 17)
-    PORT MAP(A => BoothP, B => LargeWindowShifted, S => Instr, Dout => OperationResultShifted);
-
+    OperationResultShifted  <=  BoothP                  WHEN Instr='0' ELSE
+                                LargeWindowShifted;
+                                
     --
     -- Result Shift Mux.
     --
-    RESULT_SHIFT_MUX:
-    ENTITY work.mux_2x1
-    GENERIC MAP(n => 8)
-    PORT MAP(A => ResultShiftMuxInputA, B => PoolingShiftMuxOutput, S => Instr, Dout => Result);
-
+    Result                  <=  ResultShiftMuxInputA    WHEN Instr='0' ELSE
+                                PoolingShiftMuxOutput;
     --
     -- Pooling Result Mux.
     --
-    POOLING_SHIFT_MUX:
-    ENTITY work.mux_2x1
-    GENERIC MAP(n => 8)
-    PORT MAP(A => PoolingShiftMuxInputA, B => PoolingShiftMuxInputB, S => Size, Dout => PoolingShiftMuxOutput);
+    PoolingShiftMuxOutput   <=  PoolingShiftMuxInputA   WHEN Size='0' ELSE
+                                PoolingShiftMuxInputB;
 
 END ARCHITECTURE;

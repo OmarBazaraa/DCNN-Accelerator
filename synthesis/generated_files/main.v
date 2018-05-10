@@ -9691,7 +9691,7 @@ module booth_unit_17_unfolded5 ( CLK, RST, Start, Instr,
     assign LargeWindowShifted[2] = LargeWindowShifted[16] ;
     assign LargeWindowShifted[1] = LargeWindowShifted[16] ;
     assign LargeWindowShifted[0] = LargeWindowShifted[16] ;
-    register_edge_17 REGISTER_P (.CLK (CLK), .RST (RST), .EN (RegisterPEN), .Din (
+    register_edge_rising_17 REGISTER_P (.CLK (CLK), .RST (RST), .EN (RegisterPEN), .Din (
                      {RegisterPDin_16,RegisterPDin_15,RegisterPDin_14,
                      RegisterPDin_13,RegisterPDin_12,RegisterPDin_11,
                      RegisterPDin_10,RegisterPDin_9,RegisterPDin_8,
@@ -10098,7 +10098,7 @@ module booth_unit_17 ( CLK, RST, Start, Instr, LoopingAndResultNotReady, Filter,
     assign LargeWindowShifted[2] = LargeWindowShifted[16] ;
     assign LargeWindowShifted[1] = LargeWindowShifted[16] ;
     assign LargeWindowShifted[0] = LargeWindowShifted[16] ;
-    register_edge_17 REGISTER_P (.CLK (CLK), .RST (RST), .EN (RegisterPEN), .Din (
+    register_edge_rising_17 REGISTER_P (.CLK (CLK), .RST (RST), .EN (RegisterPEN), .Din (
                      {RegisterPDin_16,RegisterPDin_15,RegisterPDin_14,
                      RegisterPDin_13,RegisterPDin_12,RegisterPDin_11,
                      RegisterPDin_10,RegisterPDin_9,RegisterPDin_8,
@@ -10305,7 +10305,7 @@ module mux_4x1_17 ( A, B, C, D, S, Dout ) ;
 endmodule
 
 
-module register_edge_17 ( CLK, RST, EN, Din, Dout ) ;
+module register_edge_rising_17 ( CLK, RST, EN, Din, Dout ) ;
 
     input CLK ;
     input RST ;

@@ -32,6 +32,9 @@ ARCHITECTURE arch_main OF main IS
     SIGNAL CacheFilter      : MATRIX_BYTE(0 TO 4, 0 TO 4);
     SIGNAL CacheWindow      : MATRIX_BYTE(0 TO 4, 0 TO 4);
 
+    SIGNAL Calculating      : STD_LOGIC;
+    SIGNAL CalcStarted      : STD_LOGIC;
+    SIGNAL CalcStartRST          : STD_LOGIC;
     SIGNAL AccStartCalc     : STD_LOGIC;
     SIGNAL AccFinishCalc    : STD_LOGIC;
     SIGNAL AccResult        : STD_LOGIC_VECTOR( 7 DOWNTO 0);
@@ -54,7 +57,7 @@ BEGIN
         Instr               => Instr,
         
         CalcFinished        => AccFinishCalc,
-        Calc                => AccStartCalc,
+        Calc                => Calculating,
 
         MemRD               => MemRD,
         MemWR               => MemWR,
@@ -71,6 +74,16 @@ BEGIN
     --
     -- Accelerator
     --
+
+    CalcStartRST    <= RST OR CalcStarted;
+
+    CALC_FLIP_FLOP_1:
+    ENTITY work.flip_flop_rising
+    PORT MAP(CLK => Calculating, RST => CalcStartRST, Din => '1', Dout => AccStartCalc);
+
+    CALC_FLIP_FLOP_2:
+    ENTITY work.flip_flop_falling
+    PORT MAP(CLK => CLK, RST => RST, Din => AccStartCalc, Dout => CalcStarted);
 
     ACCELERATOR:
     ENTITY work.accelerator

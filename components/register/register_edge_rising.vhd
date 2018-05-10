@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY register_edge IS
+ENTITY register_edge_rising IS
     GENERIC(n: INTEGER := 32);
     PORT(
         CLK, RST, EN    : IN  STD_LOGIC;
@@ -10,7 +10,7 @@ ENTITY register_edge IS
     );
 END ENTITY;
 
-ARCHITECTURE arch_register_edge OF register_edge IS
+ARCHITECTURE arch_register_edge_rising OF register_edge_rising IS
 BEGIN
 
     PROCESS(CLK, RST)

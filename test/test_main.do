@@ -24,6 +24,9 @@ sim:/main/CacheWindowWR \
 sim:/main/CacheResultWR \
 sim:/main/CacheFilter \
 sim:/main/CacheWindow \
+sim:/main/Calculating \
+sim:/main/CalcStarted \
+sim:/main/CalcStartRST \
 sim:/main/AccStartCalc \
 sim:/main/AccFinishCalc \
 sim:/main/AccResult \
@@ -49,10 +52,10 @@ force -freeze sim:/main/CLK 0 0, 1 {50 ns} -r 100
 #
 force -freeze sim:/main/RST 1 0
 force -freeze sim:/main/Start 1 0
-force -freeze sim:/main/FilterSize 1 0
-force -freeze sim:/main/Stride 1 0
+force -freeze sim:/main/FilterSize 0 0
+force -freeze sim:/main/Stride 0 0
 force -freeze sim:/main/Instr 0 0
 run
 
 force -freeze sim:/main/RST 0 0
-force -freeze sim:/main/Start 0 0
+# force -freeze sim:/main/Start 0 0

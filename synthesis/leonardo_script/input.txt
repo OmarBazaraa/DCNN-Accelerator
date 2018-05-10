@@ -2,7 +2,9 @@
 /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder full_adder arch_full_adder
 /home/ayman/Desktop/repo/DCNN-Accelerator/components/adder adder arch_adder
 /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units booth_adder arch_booth_adder
-/home/ayman/Desktop/repo/DCNN-Accelerator/components/register register_edge arch_register_edge
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/register register_edge_rising arch_register_edge_rising
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/flip_flop_rising flip_flop_rising arch_flip_flop_rising
+/home/ayman/Desktop/repo/DCNN-Accelerator/components/flip_flop_falling flip_flop_falling arch_flip_flop_falling
 /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer mux_4x1 arch_mux_4x1
 /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units booth_unit arch_booth_unit
 /home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units mini_alu arch_mini_alu

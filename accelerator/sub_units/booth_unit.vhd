@@ -78,33 +78,32 @@ BEGIN
     -- A, S & P Registers.
     --
     REGISTER_A:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_falling
     GENERIC MAP(n => 17)
     PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterADin, Dout => RegisterADout);
 
     REGISTER_S:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_falling
     GENERIC MAP(n => 17)
     PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterSDin, Dout => RegisterSDout);
 
     REGISTER_P:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_falling
     GENERIC MAP(n => 17)
     PORT MAP(CLK => CLK, RST => RST, EN => RegisterPEN, Din => RegisterPDin, Dout => RegisterPDout);
 
     --
     -- Booth Operands (A/S) Mux.
     --
-    BOOTH_OPERAND_MUX:
-    ENTITY work.mux_2x1
-    GENERIC MAP(n => 17)
-    PORT MAP(A => RegisterADout, B => RegisterSDout, S => SelBoothOperand, Dout => BoothAddingOperand);
+    BoothAddingOperand      <=  RegisterADout       WHEN SelBoothOperand='0'    ELSE
+                                RegisterSDout;
 
     --
     -- P DataIn 4-1 Mux.
     --
-    P_INPUT_DATA_MUX:
-    ENTITY work.mux_4x1
-    GENERIC MAP(n => 17)
-    PORT MAP(A => AdderBoothResult, B => AdderBoothResult, C => PMuxInputC, D => PMuxInputD, S => SelPInput, Dout => PMuxOutput);
+    PMuxOutput              <=  AdderBoothResult    WHEN SelPInput="00"         ELSE
+                                AdderBoothResult    WHEN SelPInput="01"         ELSE
+                                PMuxInputC          WHEN SelPInput="10"         ELSE
+                                PMuxInputD;
+
 END ARCHITECTURE;

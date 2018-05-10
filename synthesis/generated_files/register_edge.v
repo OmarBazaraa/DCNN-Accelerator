@@ -1,12 +1,12 @@
 //
-// Verilog description for cell register_edge, 
+// Verilog description for cell register_edge_rising, 
 // Wed May  9 07:35:57 2018
 //
 // LeonardoSpectrum Level 3, 2017a.2 
 //
 
 
-module register_edge ( CLK, RST, EN, Din, Dout ) ;
+module register_edge_rising ( CLK, RST, EN, Din, Dout ) ;
 
     input CLK ;
     input RST ;

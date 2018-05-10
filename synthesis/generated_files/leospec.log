@@ -186,33 +186,33 @@ Timing characterization done, time = 0 CPU secs.
 Info: setting novendor_constraint_file to FALSE
 AutoWrite args are : -format Verilog booth_adder.v
 -- Writing file booth_adder.v
--- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd into library work
--- Loading entity register_edge into library work
--- Loading architecture arch_register_edge of register_edge into library work
--- Compiling root entity register_edge(arch_register_edge)
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd into library work
+-- Loading entity register_edge_rising into library work
+-- Loading architecture arch_register_edge_rising of register_edge_rising into library work
+-- Compiling root entity register_edge_rising(arch_register_edge_rising)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge.arch_register_edge
--- Start pre-optimization for design .work.register_edge.arch_register_edge
--- Compiling root entity register_edge(arch_register_edge)
--- Info, replacing register_edge(arch_register_edge)
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
+-- Compiling root entity register_edge_rising(arch_register_edge_rising)
+-- Info, replacing register_edge_rising(arch_register_edge_rising)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge.arch_register_edge
--- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
--- Start timing optimization for design .work.register_edge.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising.arch_register_edge_rising
 No critical paths to optimize at this level
 Info: setting novendor_constraint_file to FALSE
-AutoWrite args are : -format Verilog register_edge.v
--- Writing file register_edge.v
+AutoWrite args are : -format Verilog register_edge_rising.v
+-- Writing file register_edge_rising.v
 -- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd into library work
 -- Loading entity mux_4x1 into library work
 -- Loading architecture arch_mux_4x1 of mux_4x1 into library work
@@ -246,7 +246,7 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Loading entity booth_unit into library work
 -- Loading architecture arch_booth_unit of booth_unit into library work
 -- Compiling root entity booth_unit(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge) as black box
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising) as black box
 -- Compiling entity mux_4x1_17(arch_mux_4x1) as black box
 -- Boundary optimization.
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
@@ -254,8 +254,8 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
 -- Compiling root entity booth_unit(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_2x1_17(arch_mux_2x1)
 -- Info, replacing mux_2x1_17(arch_mux_2x1)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
@@ -264,24 +264,24 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
 Info, Instances dissolved by autodissolve in View .work.booth_unit.arch_booth_unit
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -302,7 +302,7 @@ Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing 
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
 Re-checking DRC after adjustments
--- Start timing optimization for design .work.register_edge_17.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 Starting Timing Characterization...
 Starting Timing Analysis...
 NO wire table is found
@@ -332,8 +332,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Info, replacing full_adder(arch_full_adder)
 -- Info, replacing booth_adder_17(arch_booth_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Info, replacing booth_unit_17(arch_booth_unit)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
@@ -352,8 +352,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -369,8 +369,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -385,8 +385,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2303
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu.arch_mini_alu
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -405,7 +405,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -521,8 +521,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Info, replacing mux_2x1_17(arch_mux_2x1)
 -- Compiling entity adder_17(arch_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
 -- Info, replacing mini_alu_17(arch_mini_alu)
@@ -550,8 +550,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -587,8 +587,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -625,8 +625,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406_0
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2762_0
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -648,8 +648,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2766
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -682,7 +682,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -751,18 +751,18 @@ AutoWrite args are : -format Verilog accelerator.v
 -- Loading entity cache into library work
 -- Loading architecture arch_cache of cache into library work
 -- Compiling root entity cache(arch_cache)
--- Compiling entity register_edge_8(arch_register_edge) as black box
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising) as black box
 -- Boundary optimization.
 -- Start pre-optimization for design .work.cache.arch_cache
 -- Start pre-optimization for design .work.cache.arch_cache
 -- Compiling root entity cache(arch_cache)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Info, replacing cache(arch_cache)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.cache.arch_cache
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.cache.arch_cache
 Info, Instances dissolved by autodissolve in View .work.cache.arch_cache
 Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
@@ -794,18 +794,18 @@ AutoWrite args are : -format Verilog cache.v
 -- Loading entity controller into library work
 -- Loading architecture arch_controller of controller into library work
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge) as black box
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising) as black box
 -- Compiling entity adder_8(arch_adder) as black box
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge)
--- Info, replacing register_edge_5(arch_register_edge)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_5(arch_register_edge_rising)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Compiling entity adder_8(arch_adder)
 -- Compiling entity full_adder(arch_full_adder)
 -- Info, replacing full_adder(arch_full_adder)
@@ -815,8 +815,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -824,8 +824,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1989
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_1980
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -852,10 +852,10 @@ Info, Instances dissolved by autodissolve in View .work.adder_8.arch_adder_unfol
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
 Info, Instances dissolved by autodissolve in View .work.controller.arch_controller
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_5)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_rising_5)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 161: ROW_ADDER (adder_8)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 174: COL_ADDER (adder_8)
 ->set wire_table "" 
 Info: setting wire_table to 
@@ -1122,11 +1122,11 @@ Timing characterization done, time = 0 CPU secs.
 Info: setting novendor_constraint_file to FALSE
 AutoWrite args are : -format Verilog booth_adder.v
 -- Writing file booth_adder.v
--- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd into library work
--- Loading entity register_edge into library work
-"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd",line 4: Warning, replacing register_edge in HDL library work.
--- Loading architecture arch_register_edge of register_edge into library work
-"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd",line 13: Warning, replacing arch_register_edge of entity register_edge.
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd into library work
+-- Loading entity register_edge_rising into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd",line 4: Warning, replacing register_edge_rising in HDL library work.
+-- Loading architecture arch_register_edge_rising of register_edge_rising into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd",line 13: Warning, replacing arch_register_edge_rising of entity register_edge_rising.
 -- Compiling root entity RAM(arch_RAM)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 22: Warning, initial value for Mem is ignored for synthesis.
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 26: Warning, index value 1 TO 32 could be out of prefix index constraint 0 TO 31.
@@ -1137,26 +1137,26 @@ AutoWrite args are : -format Verilog booth_adder.v
 -- Boundary optimization.
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Start pre-optimization for design .work.RAM.arch_RAM
--- Compiling root entity register_edge(arch_register_edge)
--- Info, replacing register_edge(arch_register_edge)
+-- Compiling root entity register_edge_rising(arch_register_edge_rising)
+-- Info, replacing register_edge_rising(arch_register_edge_rising)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge.arch_register_edge
--- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
--- Start timing optimization for design .work.register_edge.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising.arch_register_edge_rising
 No critical paths to optimize at this level
 Info: setting novendor_constraint_file to FALSE
-AutoWrite args are : -format Verilog register_edge.v
--- Writing file register_edge.v
+AutoWrite args are : -format Verilog register_edge_rising.v
+-- Writing file register_edge_rising.v
 -- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd into library work
 -- Loading entity mux_4x1 into library work
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd",line 4: Warning, replacing mux_4x1 in HDL library work.
@@ -1208,8 +1208,8 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Compiling root entity booth_unit(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_2x1_17(arch_mux_2x1)
 -- Info, replacing mux_2x1_17(arch_mux_2x1)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
@@ -1217,24 +1217,24 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461_0
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461_0
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
 Info, Instances dissolved by autodissolve in View .work.booth_unit.arch_booth_unit
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -1255,7 +1255,7 @@ Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing 
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
 Re-checking DRC after adjustments
--- Start timing optimization for design .work.register_edge_17.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 Starting Timing Characterization...
 Starting Timing Analysis...
 NO wire table is found
@@ -1288,8 +1288,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Info, replacing full_adder(arch_full_adder)
 -- Info, replacing booth_adder_17(arch_booth_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Info, replacing booth_unit_17(arch_booth_unit)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
@@ -1308,8 +1308,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -1325,8 +1325,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -1341,8 +1341,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2303
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu.arch_mini_alu
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -1361,7 +1361,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -1478,8 +1478,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Info, replacing mux_2x1_17(arch_mux_2x1)
 -- Compiling entity adder_17(arch_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
 -- Info, replacing mini_alu_17(arch_mini_alu)
@@ -1507,8 +1507,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -1544,8 +1544,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -1582,8 +1582,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406_0
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2762_0
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -1605,8 +1605,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2766
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -1639,7 +1639,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -1713,23 +1713,23 @@ AutoWrite args are : -format Verilog accelerator.v
 -- Info, replacing cache(arch_cache)
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244
 -- Start pre-optimization for design .work.cache.arch_cache
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244
 -- Start pre-optimization for design .work.cache.arch_cache
 -- Compiling root entity cache(arch_cache)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Info, replacing cache(arch_cache)
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244_1
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244_1
 -- Start pre-optimization for design .work.cache.arch_cache
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244_1
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244_1
 -- Start pre-optimization for design .work.cache.arch_cache
 Info, Instances dissolved by autodissolve in View .work.cache.arch_cache
 Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
@@ -1757,19 +1757,19 @@ AutoWrite args are : -format Verilog cache.v
 -- Loading architecture arch_controller of controller into library work
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd",line 29: Warning, replacing arch_controller of entity controller.
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge) as black box
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising) as black box
 -- Compiling entity adder_8(arch_adder) as black box
 -- Info, replacing controller(arch_controller)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge)
--- Info, replacing register_edge_5(arch_register_edge)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_5(arch_register_edge_rising)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Compiling entity adder_8(arch_adder)
 -- Compiling entity full_adder(arch_full_adder)
 -- Info, replacing full_adder(arch_full_adder)
@@ -1779,8 +1779,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -1788,8 +1788,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1989
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_1980
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -1816,10 +1816,10 @@ Info, Instances dissolved by autodissolve in View .work.adder_8.arch_adder_unfol
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
 Info, Instances dissolved by autodissolve in View .work.controller.arch_controller
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_5)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_rising_5)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 161: ROW_ADDER (adder_8)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 174: COL_ADDER (adder_8)
 ->set wire_table "" 
 Info: setting wire_table to 
@@ -2091,11 +2091,11 @@ Timing characterization done, time = 0 CPU secs.
 Info: setting novendor_constraint_file to FALSE
 AutoWrite args are : -format Verilog booth_adder.v
 -- Writing file booth_adder.v
--- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd into library work
--- Loading entity register_edge into library work
-"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd",line 4: Warning, replacing register_edge in HDL library work.
--- Loading architecture arch_register_edge of register_edge into library work
-"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd",line 13: Warning, replacing arch_register_edge of entity register_edge.
+-- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd into library work
+-- Loading entity register_edge_rising into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd",line 4: Warning, replacing register_edge_rising in HDL library work.
+-- Loading architecture arch_register_edge_rising of register_edge_rising into library work
+"/home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd",line 13: Warning, replacing arch_register_edge_rising of entity register_edge_rising.
 -- Compiling root entity RAM(arch_RAM)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 22: Warning, initial value for Mem is ignored for synthesis.
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/memory/RAM.vhd",line 26: Warning, index value 1 TO 32 could be out of prefix index constraint 0 TO 31.
@@ -2106,26 +2106,26 @@ AutoWrite args are : -format Verilog booth_adder.v
 -- Boundary optimization.
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Start pre-optimization for design .work.RAM.arch_RAM
--- Compiling root entity register_edge(arch_register_edge)
--- Info, replacing register_edge(arch_register_edge)
+-- Compiling root entity register_edge_rising(arch_register_edge_rising)
+-- Info, replacing register_edge_rising(arch_register_edge_rising)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge.arch_register_edge
--- Start pre-optimization for design .work.register_edge.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising.arch_register_edge_rising
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
--- Start timing optimization for design .work.register_edge.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising.arch_register_edge_rising
 No critical paths to optimize at this level
 Info: setting novendor_constraint_file to FALSE
-AutoWrite args are : -format Verilog register_edge.v
--- Writing file register_edge.v
+AutoWrite args are : -format Verilog register_edge_rising.v
+-- Writing file register_edge_rising.v
 -- Reading vhdl file /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd into library work
 -- Loading entity mux_4x1 into library work
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd",line 4: Warning, replacing mux_4x1 in HDL library work.
@@ -2177,8 +2177,8 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Start pre-optimization for design .work.RAM.arch_RAM
 -- Compiling root entity booth_unit(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_2x1_17(arch_mux_2x1)
 -- Info, replacing mux_2x1_17(arch_mux_2x1)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
@@ -2186,24 +2186,24 @@ AutoWrite args are : -format Verilog mux_4x1.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2644_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2644_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2471
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2461
 -- Start pre-optimization for design .work.booth_unit.arch_booth_unit
 Info, Instances dissolved by autodissolve in View .work.booth_unit.arch_booth_unit
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 ->set wire_table "" 
 Info: setting wire_table to 
 NO wire table is found
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -2224,7 +2224,7 @@ Info, Merging parallel DFF, RegisterADout(9) and RegisterSDout(9).-- Optimizing 
 Re-checking DRC after adjustments
 -- Final Design Rule Check..
 Re-checking DRC after adjustments
--- Start timing optimization for design .work.register_edge_17.arch_register_edge
+-- Start timing optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 Starting Timing Characterization...
 Starting Timing Analysis...
 NO wire table is found
@@ -2257,8 +2257,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Info, replacing full_adder(arch_full_adder)
 -- Info, replacing booth_adder_17(arch_booth_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Info, replacing booth_unit_17(arch_booth_unit)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
@@ -2277,8 +2277,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -2294,8 +2294,8 @@ AutoWrite args are : -format Verilog booth_unit.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2335
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2303
@@ -2310,8 +2310,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2303
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu.arch_mini_alu
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -2330,7 +2330,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -2426,8 +2426,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Compiling entity full_adder(arch_full_adder)
 -- Info, replacing full_adder(arch_full_adder)
 -- Compiling entity booth_unit_17(arch_booth_unit)
--- Compiling entity register_edge_17(arch_register_edge)
--- Info, replacing register_edge_17(arch_register_edge)
+-- Compiling entity register_edge_rising_17(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_17(arch_register_edge_rising)
 -- Compiling entity mux_4x1_17(arch_mux_4x1)
 -- Compiling entity mux_2x1_8(arch_mux_2x1)
 -- Info, replacing mini_alu_17(arch_mini_alu)
@@ -2452,8 +2452,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -2485,8 +2485,8 @@ AutoWrite args are : -format Verilog counter.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_2021
 -- Start pre-optimization for design .work.adder_17.arch_adder_unfold_1917_0
 -- Start pre-optimization for design .work.booth_adder_17.arch_booth_adder_unfold_2438_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge_unfold_2747_0
--- Start pre-optimization for design .work.register_edge_17.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising_unfold_2747_0
+-- Start pre-optimization for design .work.register_edge_rising_17.arch_register_edge_rising
 -- Start pre-optimization for design .work.mux_2x1_17.arch_mux_2x1_unfold_2574_0
 -- Start pre-optimization for design .work.mux_4x1_17.arch_mux_4x1_unfold_2564_1
 -- Start pre-optimization for design .work.booth_unit_17.arch_booth_unit_unfold_2406_0
@@ -2516,8 +2516,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406_0
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2762_0
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -2539,8 +2539,8 @@ Info, Instances dissolved by autodissolve in View .work.booth_adder_17.arch_boot
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 38: SECOND_OPERAND_MUX (mux_2x1_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_adder.vhd", line 43: BOOTH_P_OUTPUT_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.booth_unit_17.arch_booth_unit_unfold_2406
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_17)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 80: REGISTER_A (register_edge_rising_17)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 85: REGISTER_S (register_edge_rising_17)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/booth_unit.vhd", line 98: BOOTH_OPERAND_MUX (mux_2x1_17)
 Info, Instances dissolved by autodissolve in View .work.mini_alu_17.arch_mini_alu_unfold_2766
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/sub_units/mini_alu.vhd", line 122: OPERATION_RESULT_MUX (mux_2x1_17)
@@ -2573,7 +2573,7 @@ NO wire table is found
 -- Matching non-combinational logic..
 -- Covering..
 -- CPU Time used :   00:00 Mapping
--- Optimizing netlist .work.register_edge_17.arch_register_edge
+-- Optimizing netlist .work.register_edge_rising_17.arch_register_edge_rising
 -- Matching combinational logic..
 -- Matching non-combinational logic..
 -- Covering..
@@ -2647,23 +2647,23 @@ AutoWrite args are : -format Verilog accelerator.v
 -- Info, replacing cache(arch_cache)
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244
 -- Start pre-optimization for design .work.cache.arch_cache
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244
 -- Start pre-optimization for design .work.cache.arch_cache
 -- Compiling root entity cache(arch_cache)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Info, replacing cache(arch_cache)
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244_1
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244_1
 -- Start pre-optimization for design .work.cache.arch_cache
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge_unfold_2244_1
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising_unfold_2244_1
 -- Start pre-optimization for design .work.cache.arch_cache
 Info, Instances dissolved by autodissolve in View .work.cache.arch_cache
 Info, Many instances (>16) were flattened in this view. Not printing all the instance names....
@@ -2691,19 +2691,19 @@ AutoWrite args are : -format Verilog cache.v
 -- Loading architecture arch_controller of controller into library work
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd",line 29: Warning, replacing arch_controller of entity controller.
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge) as black box
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising) as black box
 -- Compiling entity adder_8(arch_adder) as black box
 -- Info, replacing controller(arch_controller)
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.controller.arch_controller
 -- Compiling root entity controller(arch_controller)
--- Compiling entity register_edge_5(arch_register_edge)
--- Info, replacing register_edge_5(arch_register_edge)
--- Compiling entity register_edge_8(arch_register_edge)
--- Info, replacing register_edge_8(arch_register_edge)
+-- Compiling entity register_edge_rising_5(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_5(arch_register_edge_rising)
+-- Compiling entity register_edge_rising_8(arch_register_edge_rising)
+-- Info, replacing register_edge_rising_8(arch_register_edge_rising)
 -- Compiling entity adder_8(arch_adder)
 -- Compiling entity full_adder(arch_full_adder)
 -- Info, replacing full_adder(arch_full_adder)
@@ -2713,8 +2713,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Boundary optimization.
 -- Boundary optimization.
 -- Boundary optimization.
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -2722,8 +2722,8 @@ AutoWrite args are : -format Verilog cache.v
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1989
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_1980
 -- Start pre-optimization for design .work.controller.arch_controller
--- Start pre-optimization for design .work.register_edge_5.arch_register_edge_unfold_2425
--- Start pre-optimization for design .work.register_edge_8.arch_register_edge
+-- Start pre-optimization for design .work.register_edge_rising_5.arch_register_edge_rising_unfold_2425
+-- Start pre-optimization for design .work.register_edge_rising_8.arch_register_edge_rising
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1982
 -- Start pre-optimization for design .work.full_adder.arch_full_adder_unfold_1983
 -- Start pre-optimization for design .work.adder_8.arch_adder_unfold_2006
@@ -2750,10 +2750,10 @@ Info, Instances dissolved by autodissolve in View .work.adder_8.arch_adder_unfol
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_6_FAi (full_adder)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/components/adder/adder.vhd", line 24: L0_7_FAi (full_adder)
 Info, Instances dissolved by autodissolve in View .work.controller.arch_controller
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_5)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 95: STATE (register_edge_rising_5)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 155: ROW (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 161: ROW_ADDER (adder_8)
-"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_8)
+"/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 168: COL (register_edge_rising_8)
 "/home/ayman/Desktop/repo/DCNN-Accelerator/accelerator/controller.vhd", line 174: COL_ADDER (adder_8)
 ->set wire_table "" 
 Info: setting wire_table to 

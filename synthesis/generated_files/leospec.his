@@ -46,16 +46,16 @@ optimize .work.booth_adder.arch_booth_adder -target tsmc035_typ -macro -area -ef
 optimize_timing .work.booth_adder.arch_booth_adder 
 set novendor_constraint_file FALSE
 auto_write -format Verilog booth_adder.v
-read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd }
+read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
-elaborate register_edge -architecture arch_register_edge 
-pre_optimize .work.register_edge.arch_register_edge -common_logic -unused_logic -boundary -xor_comparator_optimize 
-pre_optimize .work.register_edge.arch_register_edge -extract 
-optimize .work.register_edge.arch_register_edge -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
-optimize_timing .work.register_edge.arch_register_edge 
+elaborate register_edge_rising -architecture arch_register_edge_rising 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -common_logic -unused_logic -boundary -xor_comparator_optimize 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -extract 
+optimize .work.register_edge_rising.arch_register_edge_rising -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
+optimize_timing .work.register_edge_rising.arch_register_edge_rising 
 set novendor_constraint_file FALSE
-auto_write -format Verilog register_edge.v
+auto_write -format Verilog register_edge_rising.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -197,16 +197,16 @@ optimize .work.booth_adder.arch_booth_adder -target tsmc035_typ -macro -area -ef
 optimize_timing .work.booth_adder.arch_booth_adder 
 set novendor_constraint_file FALSE
 auto_write -format Verilog booth_adder.v
-read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd }
+read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
-elaborate register_edge -architecture arch_register_edge 
-pre_optimize .work.register_edge.arch_register_edge -common_logic -unused_logic -boundary -xor_comparator_optimize 
-pre_optimize .work.register_edge.arch_register_edge -extract 
-optimize .work.register_edge.arch_register_edge -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
-optimize_timing .work.register_edge.arch_register_edge 
+elaborate register_edge_rising -architecture arch_register_edge_rising 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -common_logic -unused_logic -boundary -xor_comparator_optimize 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -extract 
+optimize .work.register_edge_rising.arch_register_edge_rising -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
+optimize_timing .work.register_edge_rising.arch_register_edge_rising 
 set novendor_constraint_file FALSE
-auto_write -format Verilog register_edge.v
+auto_write -format Verilog register_edge_rising.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
@@ -348,16 +348,16 @@ optimize .work.booth_adder.arch_booth_adder -target tsmc035_typ -macro -area -ef
 optimize_timing .work.booth_adder.arch_booth_adder 
 set novendor_constraint_file FALSE
 auto_write -format Verilog booth_adder.v
-read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge.vhd }
+read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/register/register_edge_rising.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 
-elaborate register_edge -architecture arch_register_edge 
-pre_optimize .work.register_edge.arch_register_edge -common_logic -unused_logic -boundary -xor_comparator_optimize 
-pre_optimize .work.register_edge.arch_register_edge -extract 
-optimize .work.register_edge.arch_register_edge -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
-optimize_timing .work.register_edge.arch_register_edge 
+elaborate register_edge_rising -architecture arch_register_edge_rising 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -common_logic -unused_logic -boundary -xor_comparator_optimize 
+pre_optimize .work.register_edge_rising.arch_register_edge_rising -extract 
+optimize .work.register_edge_rising.arch_register_edge_rising -target tsmc035_typ -macro -area -effort quick -hierarchy auto 
+optimize_timing .work.register_edge_rising.arch_register_edge_rising 
 set novendor_constraint_file FALSE
-auto_write -format Verilog register_edge.v
+auto_write -format Verilog register_edge_rising.v
 read -technology "tsmc035_typ"  { /home/ayman/Desktop/repo/DCNN-Accelerator/components/multiplexer/mux_4x1.vhd }
 pre_optimize -common_logic -unused_logic -boundary -xor_comparator_optimize 
 pre_optimize -extract 

@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY counter IS
-    GENERIC(n : INTEGER := 4);
+    GENERIC(n: INTEGER := 4);
     PORT(
         CLK     : IN    STD_LOGIC;
         RST     : IN    STD_LOGIC;
@@ -18,7 +18,7 @@ BEGIN
     BEGIN
         IF RST='1' THEN
             Dout <= (OTHERS => '0');
-        ELSIF RISING_EDGE(CLK) THEN
+        ELSIF FALLING_EDGE(CLK) THEN
             Dout <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(Dout)) + 1, n));
         END IF;
     END PROCESS;

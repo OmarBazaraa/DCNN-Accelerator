@@ -91,7 +91,7 @@ BEGIN
 
     -- State Register
     STATE:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_rising
     GENERIC MAP(n => 5)
     PORT MAP(CLK => CLK, RST => Restart, EN => '1', Din => NxtState, Dout => CurState);
 
@@ -153,7 +153,7 @@ BEGIN
     
     -- Row Register
     ROW:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_rising
     GENERIC MAP(n => 8)
     PORT MAP(CLK => CLK, RST => CntRST, EN => CntEN, Din => NxtRow, Dout => CurRow);
 
@@ -166,7 +166,7 @@ BEGIN
 
     -- Col Register
     COL:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_rising
     GENERIC MAP(n => 8)
     PORT MAP(CLK => CLK, RST => CntRST, EN => CntEN, Din => NxtCol, Dout => CurCol);
 

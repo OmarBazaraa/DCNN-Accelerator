@@ -68,13 +68,13 @@ BEGIN
 
             -- Filter 
             Fij:
-            ENTITY work.register_edge
+            ENTITY work.register_edge_rising
             GENERIC MAP(n => 8)
             PORT MAP(CLK, RST, FilterEN(i, j), FilterDin(i, j), Filter(i, j));
 
             -- Window 
             Wij:
-            ENTITY work.register_edge
+            ENTITY work.register_edge_rising
             GENERIC MAP(n => 8)
             PORT MAP(CLK, RST, WindowEN(i, j), WindowDin(i, j), Window(i, j));
 
@@ -83,7 +83,7 @@ BEGIN
 
     -- Result 
     RESULT_REG:
-    ENTITY work.register_edge
+    ENTITY work.register_edge_rising
     GENERIC MAP(n => 8)
     PORT MAP(CLK, RST, ResultWR, ResultDin, ResultDout);
 
