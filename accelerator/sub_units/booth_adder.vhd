@@ -27,7 +27,7 @@ ARCHITECTURE arch_booth_adder OF booth_adder IS
     SIGNAL Result           : STD_LOGIC_VECTOR(n-1 DOWNTO 0);   
 BEGIN
 
-    AdderBoothResult    <=  '0' & PBeforeShift(n-1 DOWNTO 1);
+    AdderBoothResult    <=  PBeforeShift(n-1) & PBeforeShift(n-1 DOWNTO 1);
     AdderResult         <=  Result;
 
     FirstOperand        <=  AdderFirstOperand       WHEN SelOperand='0' ELSE

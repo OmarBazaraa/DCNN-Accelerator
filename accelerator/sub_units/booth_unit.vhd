@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_unit IS
-    GENERIC(n : INTEGER := 17);
+    GENERIC(n : INTEGER := 19);
     PORT(
         CLK                         : IN  STD_LOGIC;
         RST                         : IN  STD_LOGIC;
@@ -71,17 +71,17 @@ BEGIN
     --
     REGISTER_A:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => 17)
+    GENERIC MAP(n => n)
     PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterADin, Dout => RegisterADout);
 
     REGISTER_S:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => 17)
+    GENERIC MAP(n => n)
     PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterSDin, Dout => RegisterSDout);
 
     REGISTER_P:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => 17)
+    GENERIC MAP(n => n)
     PORT MAP(CLK => CLK, RST => RST, EN => RegisterPEN, Din => RegisterPDin, Dout => RegisterPDout);
 
     --
