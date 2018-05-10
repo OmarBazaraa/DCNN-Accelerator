@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_unit IS
-    GENERIC(n : INTEGER := 19);
+    GENERIC(n : INTEGER := 17);
     PORT(
         CLK                         : IN  STD_LOGIC;
         RST                         : IN  STD_LOGIC;
