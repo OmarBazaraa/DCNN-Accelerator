@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY mini_alu IS
-    GENERIC(n: INTEGER := 17);
+    GENERIC(n: INTEGER := 19);
     PORT(
         CLK, RST                    : IN  STD_LOGIC;
         Start                       : IN  STD_LOGIC;

@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_adder IS
-    GENERIC(n : INTEGER := 17);
+    GENERIC(n : INTEGER := 19);
     PORT(
         AdderFirstOperand   : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         AdderSecondOperand  : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);

@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_unit IS
-    GENERIC(n : INTEGER := 17);
+    GENERIC(n : INTEGER := 19);
     PORT(
         CLK                         : IN  STD_LOGIC;
         RST                         : IN  STD_LOGIC;
@@ -37,8 +37,8 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     --
     -- Muxes Signals.
     --
-    SIGNAL PMuxInputC	    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL PMuxInputD    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxInputC       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxInputD       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
 BEGIN
 
@@ -47,19 +47,20 @@ BEGIN
     --
     BoothXORCheck       <= RegisterPDout(0) XOR RegisterPDout(1);
     BoothP              <= RegisterPDout;
-
+    LargeWindowShifted  <= PMuxInputC;
+    
     --
     -- A, S & P Register Signals.
     --
-    RegisterPEN 	<= Start OR LoopingAndResultNotReady;
-    RegisterADin 	<= FilterCell & "000000000";
-    RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
+    RegisterPEN     <= Start OR LoopingAndResultNotReady;
+    RegisterADin    <= '0' & FilterCell & "0000000000";
+    RegisterSDin    <= '1' & STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "0000000000";
 
     --
     -- P DataIn 4-1 Mux Signals.
     --
-    PMuxInputC 	<= "00000000" & WindowCell & '0';
-    PMuxInputD 	<= "000000000" & WindowCell;
+    PMuxInputC  <= "0000000000" & WindowCell & '0';
+    PMuxInputD  <= "00000000000" & WindowCell;
 
     --
     -- A, S & P Registers.
