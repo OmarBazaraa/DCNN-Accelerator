@@ -152,7 +152,7 @@ BEGIN
 
         IF_2:
         IF i = 1 OR i = 5 OR i = 9 GENERATE
-            L1FirstOperands(i)  <= L2OperationResults((i-1)/4);
+            L1FirstOperands(i)  <= L3OperationResults((i-1)/4);
         END GENERATE;
 
         IF_3:
