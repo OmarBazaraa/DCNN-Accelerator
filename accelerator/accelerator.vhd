@@ -73,12 +73,11 @@ BEGIN
     ACCELERATOR_COUNTER:
     ENTITY work.counter
     GENERIC MAP(n => 4)
-    PORT MAP(CounterCLK, CounterRST, CounterOut);
+    PORT MAP(CounterCLK, Start, RST, CounterOut);
 
-    CounterCLK                  <= CLK AND (NOT ResultReady) AND (NOT Instr);
-    CounterRST                  <= Start OR RST;
-    ResultReady                 <= (CounterOut(0) AND (NOT CounterOut(1)) AND (NOT CounterOut(1)) AND CounterOut(3));
-    LoopingAndResultNotReady    <= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
+    CounterCLK 					<= CLK AND NOT(ResultReady) AND NOT(Instr);
+    ResultReady 				<= (CounterOut(0) AND NOT(CounterOut(1)) AND NOT(CounterOut(1)) AND CounterOut(3));
+    LoopingAndResultNotReady 	<= NOT(ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
     -- Mini ALU Units in the Tree
@@ -191,9 +190,9 @@ BEGIN
 
     -- Level 5 Connections in the Tree
     C5:
-    L5FirstOperands(0)      <= L4ResultsLarge(0);
-    L5SecondOperands(0)     <= L3ResultsLarge(2);
-    L5FirstOperands(1)      <= L5ResultsLarge(0);
-    L5SecondOperands(1)     <= L5OperationResults(1);
-    
+    L5FirstOperands(0) 		<= L4ResultsLarge(0);
+    L5SecondOperands(0) 	<= L3ResultsLarge(2);
+    L5FirstOperands(1) 		<= L5ResultsLarge(0);
+    L5SecondOperands(1) 	<= L5OperationResults(1);
+
 END ARCHITECTURE;

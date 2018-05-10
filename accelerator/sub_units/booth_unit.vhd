@@ -38,11 +38,13 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     --
     -- Muxes Signals.
     --
-    SIGNAL SelBoothOperand  : STD_LOGIC;
-    SIGNAL SelPInput        : STD_LOGIC_VECTOR(1 DOWNTO 0);
-    SIGNAL PMuxInputC       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL PMuxInputD       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL PMuxOutput       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL SelBoothOperand	: STD_LOGIC;
+    SIGNAL SelPInput		: STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL PMuxInputC	    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxInputD    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL PMuxOutput    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    
+    SIGNAL StartRising		: STD_LOGIC;
 
 BEGIN
 
@@ -57,10 +59,10 @@ BEGIN
     --
     -- A, S & P Register Signals.
     --
-    RegisterPEN     <= Start OR LoopingAndResultNotReady;
-    RegisterADin    <= Filter & "000000000";
-    RegisterSDin    <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT Filter))) + 1, 8)) & "000000000";
-    RegisterPDin    <= PMuxOutput;
+    RegisterPEN 	<= StartRising OR LoopingAndResultNotReady;
+    RegisterADin 	<= Filter & "000000000";
+    RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(NOT(Filter))) + 1, 8)) & "000000000";
+    RegisterPDin	<= PMuxOutput;
 
     --
     -- Booth Operands (A/S) Mux Signals.
@@ -70,9 +72,10 @@ BEGIN
     --
     -- P DataIn 4-1 Mux Signals.
     --
-    PMuxInputC      <= "00000000" & Window & '0';
-    PMuxInputD      <= "000000000" & Window;
-    SelPInput       <= Start & Instr;
+    StartRising <= Start AND NOT(LoopingAndResultNotReady);
+    PMuxInputC 	<= "00000000" & Window & '0';
+    PMuxInputD 	<= "000000000" & Window;
+    SelPInput	<= StartRising & Instr;
 
     --
     -- A, S & P Registers.
@@ -80,12 +83,12 @@ BEGIN
     REGISTER_A:
     ENTITY work.register_edge_falling
     GENERIC MAP(n => 17)
-    PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterADin, Dout => RegisterADout);
+    PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterADin, Dout => RegisterADout);
 
     REGISTER_S:
     ENTITY work.register_edge_falling
     GENERIC MAP(n => 17)
-    PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterSDin, Dout => RegisterSDout);
+    PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterSDin, Dout => RegisterSDout);
 
     REGISTER_P:
     ENTITY work.register_edge_falling

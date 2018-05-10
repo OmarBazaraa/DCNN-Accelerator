@@ -16,6 +16,13 @@ sim:/accelerator/L5Results \
 sim:/accelerator/L5ResultsLarge \
 sim:/accelerator/L5OperationResults \
 sim:/accelerator/L1Results
+
+add wave -position insertpoint  \
+sim:/accelerator/CounterCLK \
+sim:/accelerator/CounterRST \
+sim:/accelerator/ResultReady \
+sim:/accelerator/LoopingAndResultNotReady
+
 add wave -position insertpoint sim:/accelerator/L1(0)/L2(0)/G1/MINI_ALU/Filter
 add wave -position insertpoint sim:/accelerator/L1(0)/L2(1)/G1/MINI_ALU/Filter
 add wave -position insertpoint sim:/accelerator/L1(0)/L2(2)/G1/MINI_ALU/Filter
@@ -34,8 +41,7 @@ add wave -position insertpoint sim:/accelerator/L1(2)/L2(2)/G1/MINI_ALU/Filter
 add wave -position insertpoint sim:/accelerator/L1(2)/L2(3)/G2/MINI_ALU/Filter
 add wave -position insertpoint sim:/accelerator/L1(2)/L2(4)/G2/MINI_ALU/Filter
 
-
-force -freeze sim:/accelerator/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/accelerator/CLK 1 0, 0 {50 ps} -r 100
 force -freeze sim:/accelerator/RST 1 0
 force -freeze sim:/accelerator/Start 0 0
 force -freeze sim:/accelerator/FilterSize 0 0
@@ -106,5 +112,3 @@ force -freeze sim:/accelerator/FilterDin(4)(4) x\"00\" 0
 run
 force -freeze sim:/accelerator/RST 0 0
 force -freeze sim:/accelerator/Start 1 0
-run
-force -freeze sim:/accelerator/Start 0 0
