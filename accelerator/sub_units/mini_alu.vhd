@@ -61,7 +61,7 @@ BEGIN
     --
     -- Outputs.
     --
-    OperationResult         <= '0' & OperationResultShifted(n-1 DOWNTO 1);
+    OperationResult         <= OperationResultShifted(n-1) & OperationResultShifted(n-1 DOWNTO 1);
     AdderResultLarge        <= AdderResult;
 
     --
@@ -83,7 +83,7 @@ BEGIN
 
     BOOTH_ADDER:
     ENTITY work.booth_adder
-    GENERIC MAP(n => 17)
+    GENERIC MAP(n => n)
     PORT MAP( 
         AdderFirstOperand           => AdderFirstOperand,
         AdderSecondOperand          => AdderSecondOperand,
@@ -102,7 +102,7 @@ BEGIN
     --
     BOOTH_UNIT:
     ENTITY work.booth_unit
-    GENERIC MAP(n => 17)
+    GENERIC MAP(n => n)
     PORT MAP(
         CLK                         => CLK,
         RST                         => RST, 
