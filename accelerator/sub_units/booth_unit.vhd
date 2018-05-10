@@ -16,7 +16,6 @@ ENTITY booth_unit IS
         AdderBoothResult            : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         
         BoothXORCheck               : OUT STD_LOGIC;
-        BoothResult                 : OUT STD_LOGIC_VECTOR(  7 DOWNTO 0);
         BoothAddingOperand          : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         BoothP                      : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         LargeWindowShifted          : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
@@ -40,7 +39,6 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     --
     SIGNAL PMuxInputC	    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL PMuxInputD    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL PMuxOutput    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
 BEGIN
 
@@ -48,9 +46,7 @@ BEGIN
     -- Output
     --
     BoothXORCheck       <= RegisterPDout(0) XOR RegisterPDout(1);
-    BoothResult         <= RegisterPDout(8 DOWNTO 1);
     BoothP              <= RegisterPDout;
-    LargeWindowShifted  <= PMuxInputC;
 
     --
     -- A, S & P Register Signals.
@@ -58,7 +54,6 @@ BEGIN
     RegisterPEN 	<= Start OR LoopingAndResultNotReady;
     RegisterADin 	<= FilterCell & "000000000";
     RegisterSDin 	<= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
-    RegisterPDin	<= PMuxOutput;
 
     --
     -- P DataIn 4-1 Mux Signals.
@@ -93,7 +88,7 @@ BEGIN
     --
     -- P DataIn 4-1 Mux.
     --
-    PMuxOutput              <=  PMuxInputC          WHEN Start='1' AND Instr='0'    ELSE
+    RegisterPDin            <=  PMuxInputC          WHEN Start='1' AND Instr='0'    ELSE
                                 PMuxInputD          WHEN Start='1' AND Instr='1'    ELSE
                                 AdderBoothResult;
 
