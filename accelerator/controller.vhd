@@ -182,8 +182,8 @@ BEGIN
     WindRow     <= (CurRow - SizePlusOne);
     WindCol     <= (CurCol + SizePlusOne);
 
-    StoreRow    <= '0' & WindRow(6 DOWNTO 0) WHEN Stride='1' ELSE WindRow(7 DOWNTO 0);
-    StoreCol    <= '0' & WindCol(6 DOWNTO 0) WHEN Stride='1' ELSE WindCol(7 DOWNTO 0);
+    StoreRow    <= '0' & WindRow(7 DOWNTO 1) WHEN Stride='1' ELSE WindRow(7 DOWNTO 0);
+    StoreCol    <= '0' & WindCol(7 DOWNTO 1) WHEN Stride='1' ELSE WindCol(7 DOWNTO 0);
 
     --===================================================================================
     --
