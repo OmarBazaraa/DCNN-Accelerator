@@ -45,8 +45,8 @@ force -freeze sim:/main/CLK 0 0, 1 {50 ns} -r 100
 force -freeze sim:/main/RST 1 0
 force -freeze sim:/main/Start 1 0
 force -freeze sim:/main/FilterSize 0 0
-force -freeze sim:/main/Stride 1 0
-force -freeze sim:/main/Instr 1 0
+force -freeze sim:/main/Stride 0 0
+force -freeze sim:/main/Instr 0 0
 run
 
 force -freeze sim:/main/RST 0 0
@@ -54,4 +54,4 @@ run
 
 force -freeze sim:/main/Start 0 0
 
-run 83920934
+run 83922300
