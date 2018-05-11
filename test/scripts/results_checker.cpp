@@ -20,15 +20,17 @@ bool instruction;       // instruction type:    0 => convolution,   1 => pooling
 // ==================================================================================
 
 /**
- * Reads memory data and fill in & out images and the filter.
+ * Reads memory data and fills in & out images and the filter.
+ *
+ * @param: fileName     the RAM file name to read
  */
-void read(string fileName) {
+void readMemory(string fileName) {
     // Member variables
     string s;
     int idx, val;
 
     // Read RAM file
-    ifstream fin("RESULT.mem");
+    ifstream fin(fileName);
 
     // Skip intial lines
     getline(fin, s);
@@ -61,7 +63,38 @@ void read(string fileName) {
 }
 
 /**
- * Applies convolution to the input image and fill
+ * Reads user options and fills the corresponding global variables.
+ */
+void readUserOptions() {
+    int option;
+
+    // Filter size
+    cout << "Please choose filter size: " << endl;
+    cout << "1. 3x3" << endl;
+    cout << "2. 5x5" << endl;
+
+    cin >> option;
+    filterSize = (option == 2 ? 5 : 3);
+
+    // Filter stride step size
+    cout << "Please choose filter stride step: " << endl;
+    cout << "1. Step=1" << endl;
+    cout << "2. Step=2" << endl;
+
+    cin >> option;
+    stride = (option == 2);
+
+    // Instruction type
+    cout << "Please choose operation type: " << endl;
+    cout << "1. Convolution" << endl;
+    cout << "2. Pooling" << endl;
+
+    cin >> option;
+    instruction = (option == 2);
+}
+
+/**
+ * Applies convolution to the input image and fills
  * the results in the expected image array.
  */
 void applyConvolution() {
@@ -86,7 +119,7 @@ void applyConvolution() {
 }
 
 /**
- * Applies pooling to the input image and fill
+ * Applies pooling to the input image and fills
  * the results in the expected image array.
  */
 void applyPooling() {
@@ -138,38 +171,10 @@ int compareResults() {
  */
 int main(int argc, char *argv[]) {
     // Read memory
-    read(argc > 1 ? argv[1] : "RESULT.mem");
+    readMemory(argc > 1 ? argv[1] : "RAM_RESULT.mem");
 
-    //
     // Choose options
-    //
-    int option;
-
-    // Filter size
-    cout << "Please choose filter size: " << endl;
-    cout << "1. 3x3" << endl;
-    cout << "2. 5x5" << endl;
-
-    cin >> option;
-    filterSize = (option == 2 ? 5 : 3);
-
-    // Filter stride step size
-    cout << "Please choose filter stride step: " << endl;
-    cout << "1. Step=1" << endl;
-    cout << "2. Step=2" << endl;
-
-    cin >> option;
-    stride = (option == 2);
-
-    // Instruction type
-    cout << "Please choose operation type: " << endl;
-    cout << "1. Convolution" << endl;
-    cout << "2. Pooling" << endl;
-
-    cin >> option;
-    instruction = (option == 2);
-
-    // -------------------------------------------------------
+    readUserOptions();
     
     // Perform operation
     instruction ? applyPooling() : applyConvolution();
