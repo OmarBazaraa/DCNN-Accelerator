@@ -1,13 +1,13 @@
-
 #include <bits/stdc++.h>
-#include<string>
-
+#include <string>
 using namespace std;
 
-/*virtual signal -install /accelerator { (context /accelerator )&{FilterDin_0__0__0 , FilterDin_0__0__1 , FilterDin_0__0__2 , FilterDin_0__0__3 , FilterDin_0__0__4 , FilterDin_0__0__5 , FilterDin_0__0__6 , FilterDin_0__0__7 }} FilterDin_0__0_1w1w1w
+/*
+virtual signal -install /accelerator { (context /accelerator )&{FilterDin_0__0__0 , FilterDin_0__0__1 , FilterDin_0__0__2 , FilterDin_0__0__3 , FilterDin_0__0__4 , FilterDin_0__0__5 , FilterDin_0__0__6 , FilterDin_0__0__7 }} FilterDin_0__0_1w1w1w
 # /accelerator/FilterDin_0__0_1w1w1w
 add wave -position insertpoint  \
-sim:/accelerator/FilterDin_0__0_1w1w1w*/
+sim:/accelerator/FilterDin_0__0_1w1w1w
+*/
 
 string convertToBinFlipped(int x) {
     string ret;
@@ -21,9 +21,11 @@ string convertToBinFlipped(int x) {
 }
 
 string hexa = "0123456789ABCDEF";
+
 string convertToHex(int x) {
-    string s; s += hexa[x/16];
-    return s + hexa[x%16];
+    string s;
+    s += hexa[x / 16];
+    return s + hexa[x % 16];
 }
 
 int main() {
