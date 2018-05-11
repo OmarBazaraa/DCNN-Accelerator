@@ -22,7 +22,7 @@ bool instruction;       // instruction type:    0 => convolution,   1 => pooling
 /**
  * Reads memory data and fills in & out images and the filter.
  *
- * @param: fileName     the RAM file name to read
+ * @param fileName the RAM file name to read
  */
 void readMemory(string fileName) {
     // Member variables
@@ -38,28 +38,19 @@ void readMemory(string fileName) {
     getline(fin, s);
 
     // Read input image
-    idx = 0;
-    while (idx < N * N) {
-        fin >> s >> val;
-        imgIn[idx / N][idx % N] = val;
-        idx++;
-    }
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j < N; ++j)
+            fin >> s >> imgIn[i][j];
 
     // Read output image
-    idx = 0;
-    while (idx < N * N) {
-        fin >> s >> val;
-        imgOut[idx / N][idx % N] = val;
-        idx++;
-    }
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j < N; ++j)
+            fin >> s >> imgOut[i][j];
 
     // Read filter
-    idx = 0;
-    while (idx < M * M) {
-        fin >> s >> val;
-        filter[idx / M][idx % M] = val;
-        idx++;
-    }
+    for (int i = 0; i < M; ++i)
+        for (int j = 0; j < M; ++j)
+            fin >> s >> filter[i][j];
 }
 
 /**
@@ -77,7 +68,7 @@ void readUserOptions() {
     filterSize = (option == 2 ? 5 : 3);
 
     // Filter stride step size
-    cout << "Please choose filter stride step: " << endl;
+    cout << "Please choose filter stride step size: " << endl;
     cout << "1. Step=1" << endl;
     cout << "2. Step=2" << endl;
 
@@ -147,7 +138,7 @@ void applyPooling() {
 /**
  * Compares expected output with the actual output.
  *
- * @return: the number of mis matched cells in the output image
+ * @return the number of mis-matching cells in the output image
  */
 int compareResults() {
     int cnt = 0;
@@ -175,7 +166,7 @@ int main(int argc, char *argv[]) {
 
     // Choose options
     readUserOptions();
-    
+
     // Perform operation
     instruction ? applyPooling() : applyConvolution();
 
@@ -183,9 +174,10 @@ int main(int argc, char *argv[]) {
     int cnt = compareResults();
 
     if (cnt > 0) {
-        printf("Total mis-matched cells\t: %d\n", cnt);
+        printf("Total mis-matching cells\t: %d\n", cnt);
     } else {
-        cout << "Test succeeded ^_^" << endl;
+        printf("\n");
+        printf("Test succeeded ^_^\n");
     }
 
     return 0;

@@ -18,7 +18,7 @@ BEGIN
     BEGIN
         IF RST='1' THEN
             Dout <= (OTHERS => '0');
-        ELSIF FALLING_EDGE(CLK) THEN
+        ELSIF RISING_EDGE(CLK) THEN
             Dout <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(Dout)) + 1, n));
         END IF;
     END PROCESS;

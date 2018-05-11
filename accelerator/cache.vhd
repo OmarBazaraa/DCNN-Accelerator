@@ -13,11 +13,7 @@ ENTITY cache IS
         Din             : IN  STD_LOGIC_VECTOR(39 DOWNTO 0);
 
         FilterDout      : OUT MATRIX_BYTE(0 TO 4, 0 TO 4);
-        WindowDout      : OUT MATRIX_BYTE(0 TO 4, 0 TO 4);
-
-        ResultWR        : IN  STD_LOGIC;
-        ResultDin       : IN  STD_LOGIC_VECTOR( 7 DOWNTO 0);
-        ResultDout      : OUT STD_LOGIC_VECTOR( 7 DOWNTO 0)
+        WindowDout      : OUT MATRIX_BYTE(0 TO 4, 0 TO 4)
     );
 END ENTITY;
 
@@ -80,11 +76,5 @@ BEGIN
 
         END GENERATE;
     END GENERATE;
-
-    -- Result 
-    RESULT_REG:
-    ENTITY work.register_edge_rising
-    GENERIC MAP(n => 8)
-    PORT MAP(CLK, RST, ResultWR, ResultDin, ResultDout);
 
 END ARCHITECTURE;

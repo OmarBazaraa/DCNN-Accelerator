@@ -27,7 +27,6 @@ ARCHITECTURE arch_main OF main IS
 
     SIGNAL CacheFilterWR    : STD_LOGIC;
     SIGNAL CacheWindowWR    : STD_LOGIC;
-    SIGNAL CacheResultWR    : STD_LOGIC;
 
     SIGNAL CacheFilter      : MATRIX_BYTE(0 TO 4, 0 TO 4);
     SIGNAL CacheWindow      : MATRIX_BYTE(0 TO 4, 0 TO 4);
@@ -113,12 +112,11 @@ BEGIN
         CLK                 => CLK,
         WR                  => MemWR,
         Address             => MemAddr,
-        Din                 => MemDin,
+        Din                 => AccResult,
         Dout                => MemDout
     );
 
     CacheRST                <= RST OR FirstCycle;
-    CacheResultWR           <= AccFinishCalc;
 
     CACHE:
     ENTITY work.cache
@@ -132,11 +130,7 @@ BEGIN
         Din                 => MemDout,
 
         FilterDout          => CacheFilter,
-        WindowDout          => CacheWindow,
-
-        ResultWR            => CacheResultWR,
-        ResultDin           => AccResult,
-        ResultDout          => MemDin
+        WindowDout          => CacheWindow
     );
 
 END ARCHITECTURE;
