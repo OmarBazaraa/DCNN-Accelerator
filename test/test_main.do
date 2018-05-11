@@ -12,30 +12,22 @@ sim:/main/FilterSize \
 sim:/main/Stride \
 sim:/main/Instr \
 sim:/main/Done \
-sim:/main/FirstCycle \
 sim:/main/MemRD \
 sim:/main/MemWR \
 sim:/main/MemAddr \
 sim:/main/MemDin \
 sim:/main/MemDout \
-sim:/main/CacheRST \
 sim:/main/CacheFilterWR \
 sim:/main/CacheWindowWR \
-sim:/main/CacheResultWR \
 sim:/main/CacheFilter \
 sim:/main/CacheWindow \
 sim:/main/Calculating \
-sim:/main/CalcStarted \
-sim:/main/CalcStartRST \
-sim:/main/AccStartCalc \
 sim:/main/AccFinishCalc \
 sim:/main/AccResult \
 sim:/main/CONTROLLER/CurRow \
 sim:/main/CONTROLLER/CurCol \
 sim:/main/CONTROLLER/WindRow \
-sim:/main/CONTROLLER/WindCol \
-sim:/main/CONTROLLER/StoreRow \
-sim:/main/CONTROLLER/StoreCol \
+sim:/main/CONTROLLER/WindCol
 
 #
 # Load Memory
@@ -58,4 +50,8 @@ force -freeze sim:/main/Instr 0 0
 run
 
 force -freeze sim:/main/RST 0 0
-# force -freeze sim:/main/Start 0 0
+run
+
+force -freeze sim:/main/Start 0 0
+
+run 83920934

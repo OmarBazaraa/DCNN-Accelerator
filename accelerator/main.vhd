@@ -34,7 +34,7 @@ ARCHITECTURE arch_main OF main IS
 
     SIGNAL Calculating      : STD_LOGIC;
     SIGNAL CalcStarted      : STD_LOGIC;
-    SIGNAL CalcStartRST          : STD_LOGIC;
+    SIGNAL CalcStartRST     : STD_LOGIC;
     SIGNAL AccStartCalc     : STD_LOGIC;
     SIGNAL AccFinishCalc    : STD_LOGIC;
     SIGNAL AccResult        : STD_LOGIC_VECTOR( 7 DOWNTO 0);

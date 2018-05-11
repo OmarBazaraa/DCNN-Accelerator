@@ -77,6 +77,7 @@ BEGIN
     GENERIC MAP(n => 4)
     PORT MAP(CounterCLK, CounterRST, CounterOut);
 
+    -- TODO: use EN instead of changing the clock
     CounterCLK 					<= CLK AND (NOT ResultReady) AND (NOT Instr);
     ResultReady 				<= '1' WHEN CounterOut="1010" ELSE '0';
     LoopingAndResultNotReady 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
