@@ -32,12 +32,12 @@ sim:/main/CONTROLLER/WindCol
 #
 # Load Memory
 #
-mem load -i {test/DATA.mem} /main/RAM/Mem
+mem load -i {test/scripts/data/RAM_DATA.mem} /main/RAM/Mem
 
 #
 # Adjust clock
 #
-force -freeze sim:/main/CLK 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/CLK 0 0, 1 {50 ns} -r 100
 
 #
 # Initial values
@@ -54,4 +54,4 @@ run
 
 force -freeze sim:/main/Start 0 0
 
-run 83920934
+run 83922300
