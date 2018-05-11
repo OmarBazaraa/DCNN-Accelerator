@@ -44,7 +44,7 @@ force -freeze sim:/main/CLK 0 0, 1 {50 ns} -r 100
 #
 force -freeze sim:/main/RST 1 0
 force -freeze sim:/main/Start 1 0
-force -freeze sim:/main/FilterSize 0 0
+force -freeze sim:/main/FilterSize 1 0
 force -freeze sim:/main/Stride 0 0
 force -freeze sim:/main/Instr 0 0
 run
