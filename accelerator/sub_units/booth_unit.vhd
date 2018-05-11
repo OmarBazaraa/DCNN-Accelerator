@@ -53,7 +53,7 @@ BEGIN
     -- A, S & P Register Signals.
     --
     RegisterPEN     <= Start OR LoopingAndResultNotReady;
-    RegisterADin    <= '0' & FilterCell & "0000000000";
+    RegisterADin    <= FilterCell(7) & FilterCell & "0000000000";
     RegisterSDin    <= '1' & STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "0000000000";
 
     --
