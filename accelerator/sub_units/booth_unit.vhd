@@ -9,14 +9,14 @@ ENTITY booth_unit IS
         RST                         : IN  STD_LOGIC;
         Start                       : IN  STD_LOGIC;
         Instr                       : IN  STD_LOGIC;
-        CalculatingBooth    		: IN  STD_LOGIC;
+        CalculatingBooth            : IN  STD_LOGIC;
     
         FilterCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
         WindowCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        NewBoothP            		: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        NewBoothP                   : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         
         AddPToBoothOperand          : OUT STD_LOGIC;
-        BoothOperand          		: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        BoothOperand                : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         BoothP                      : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         WindowCellShiftedLeft       : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
     );
@@ -24,18 +24,18 @@ END ENTITY;
 
 ARCHITECTURE arch_booth_unit OF booth_unit IS
     
-	--
+    --
     -- A, S & P Register Signals.
     --
-    SIGNAL RegisterPEN      		: STD_LOGIC;
-			
-	SIGNAL RegisterADin     		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDin     		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDin     		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-			
-	SIGNAL RegisterADout    		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDout    		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDout    		: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPEN              : STD_LOGIC;
+            
+    SIGNAL RegisterADin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterSDin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPDin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+            
+    SIGNAL RegisterADout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterSDout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterPDout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
     --
     -- Muxes Signals.
@@ -47,16 +47,16 @@ BEGIN
     --
     -- Output
     --
-    AddPToBoothOperand  	  <= RegisterPDout(0) XOR RegisterPDout(1);
-    BoothP              	  <= RegisterPDout;
+    AddPToBoothOperand        <= RegisterPDout(0) XOR RegisterPDout(1);
+    BoothP                    <= RegisterPDout;
     WindowCellShiftedLeft     <= TmpWindowCellShiftedLeft;
     
     --
     -- A, S & P Register Signals.
     --
-    RegisterPEN     		  <= Start OR CalculatingBooth;
-    RegisterADin    		  <= FilterCell & "000000000";
-    RegisterSDin    		  <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
+    RegisterPEN               <= Start OR CalculatingBooth;
+    RegisterADin              <= FilterCell & "000000000";
+    RegisterSDin              <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
 
     --
     -- P DataIn 4-1 Mux Signals.
@@ -84,13 +84,13 @@ BEGIN
     --
     -- Booth Operands (A/S) Mux.
     --
-    BoothOperand    <=  RegisterADout       WHEN RegisterPDout(0)='1'       ELSE
+    BoothOperand    <=  RegisterADout               WHEN RegisterPDout(0)='1'       ELSE
                         RegisterSDout;
 
     --
     -- P DataIn 4-1 Mux.
     --
-    RegisterPDin    <=  TmpWindowCellShiftedLeft          WHEN Start='1' AND Instr='0'    ELSE
+    RegisterPDin    <=  TmpWindowCellShiftedLeft    WHEN Start='1' AND Instr='0'    ELSE
                         NewBoothP;
 
 END ARCHITECTURE;

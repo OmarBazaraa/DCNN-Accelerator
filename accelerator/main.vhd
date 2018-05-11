@@ -105,6 +105,8 @@ BEGIN
     -- RAM & Cache
     --
 
+    MemDin      <=  AccResult;
+
     RAM:
     ENTITY work.RAM
     GENERIC MAP(n => 8, m => 18)
@@ -116,7 +118,7 @@ BEGIN
         Dout                => MemDout
     );
 
-    CacheRST                <= RST OR FirstCycle;
+    CacheRST    <= RST OR FirstCycle;
 
     CACHE:
     ENTITY work.cache

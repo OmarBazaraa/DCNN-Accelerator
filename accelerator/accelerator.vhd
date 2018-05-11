@@ -20,10 +20,10 @@ END ENTITY;
 ARCHITECTURE arch_accelerator OF accelerator IS
 
     -- Counter Signals
-    SIGNAL CounterCLK             : STD_LOGIC;
+    SIGNAL CounterEN              : STD_LOGIC;
     SIGNAL CounterRST             : STD_LOGIC;
     SIGNAL ResultReady            : STD_LOGIC;
-    SIGNAL CalculatingBooth    	  : STD_LOGIC;
+    SIGNAL CalculatingBooth       : STD_LOGIC;
     SIGNAL CounterOut             : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
     -- Level 1 Signals.  
@@ -65,22 +65,24 @@ BEGIN
     --
     -- Outputs
     --
-    Done    <= ResultReady OR Instr;
-    Result  <= L5Results(1);
+    Done            <= ResultReady OR Instr;
+    Result          <= L5Results(1);
+
     --
     -- Accelerator Counter
     --
-    CounterRST  <= RST OR Start;
+    CounterEN       <= ResultReady NOR Instr;
+    CounterRST      <= RST OR Start;
 
     ACCELERATOR_COUNTER:
     ENTITY work.counter
     GENERIC MAP(n => 4)
-    PORT MAP(CounterCLK, CounterRST, CounterOut);
+    PORT MAP(CLK, CounterRST, CounterEN, CounterOut);
 
     -- TODO: use EN instead of changing the clock
-    CounterCLK 			<= CLK AND (NOT ResultReady) AND (NOT Instr);
-    ResultReady 		<= '1' WHEN CounterOut="1001" ELSE '0';
-    CalculatingBooth 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
+    
+    ResultReady         <= '1' WHEN CounterOut="1001" ELSE '0';
+    CalculatingBooth    <= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
     -- Mini ALU Units in the Tree
@@ -193,9 +195,9 @@ BEGIN
 
     -- Level 5 Connections in the Tree
     C5:
-    L5FirstOperands(0) 		<= L4ResultsLarge(0);
-    L5SecondOperands(0) 	<= L3ResultsLarge(2);
-    L5FirstOperands(1) 		<= L5ResultsLarge(0);
-    L5SecondOperands(1) 	<= L5OperationResults(1);
+    L5FirstOperands(0)      <= L4ResultsLarge(0);
+    L5SecondOperands(0)     <= L3ResultsLarge(2);
+    L5FirstOperands(1)      <= L5ResultsLarge(0);
+    L5SecondOperands(1)     <= L5OperationResults(1);
 
 END ARCHITECTURE;
