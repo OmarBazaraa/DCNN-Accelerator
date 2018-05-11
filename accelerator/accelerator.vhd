@@ -79,7 +79,7 @@ BEGIN
 
     -- TODO: use EN instead of changing the clock
     CounterCLK 					<= CLK AND (NOT ResultReady) AND (NOT Instr);
-    ResultReady 				<= '1' WHEN CounterOut="1010" ELSE '0';
+    ResultReady 				<= '1' WHEN CounterOut="1001" ELSE '0';
     LoopingAndResultNotReady 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
@@ -93,7 +93,7 @@ BEGIN
             IF (i*5+j) <= 12 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 19)
+                GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
                          FilterDin(i, j), WindowDin(i, j), L1FirstOperands(i*5+j), L1SecondOperands(i*5+j),
                          L1Results(i*5+j), L1ResultsLarge(i*5+j), L1OperationResults(i*5+j));    
@@ -103,7 +103,7 @@ BEGIN
             IF (i*5+j) > 12 AND (i*5+j) <= 18 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 19)
+                GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
                          FilterDin(i, j), WindowDin(i, j), L2FirstOperands(i*5+j-13), L2SecondOperands(i*5+j-13),
                          L2Results(i*5+j-13), L2ResultsLarge(i*5+j-13), L2OperationResults(i*5+j-13));        
@@ -113,7 +113,7 @@ BEGIN
             IF (i*5+j) > 18 AND (i*5+j) <= 21 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 19)
+                GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
                          FilterDin(i, j), WindowDin(i, j), L3FirstOperands(i*5+j-19), L3SecondOperands(i*5+j-19),
                          L3Results(i*5+j-19), L3ResultsLarge(i*5+j-19), L3OperationResults(i*5+j-19));  
@@ -123,7 +123,7 @@ BEGIN
             IF (i*5+j) = 22 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 19)
+                GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
                          FilterDin(i, j), WindowDin(i, j), L4FirstOperands(i*5+j-22), L4SecondOperands(i*5+j-22),
                          L4Results(i*5+j-22), L4ResultsLarge(i*5+j-22), L4OperationResults(i*5+j-22));   
@@ -133,7 +133,7 @@ BEGIN
             IF (i*5+j) > 22 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 19)
+                GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
                          FilterDin(i, j), WindowDin(i, j), L5FirstOperands(i*5+j-23), L5SecondOperands(i*5+j-23),
                          L5Results(i*5+j-23), L5ResultsLarge(i*5+j-23), L5OperationResults(i*5+j-23));    
