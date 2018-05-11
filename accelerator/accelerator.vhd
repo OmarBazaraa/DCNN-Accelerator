@@ -72,7 +72,7 @@ BEGIN
     --
     -- Outputs
     --
-    Done            	<= ResultReady OR Instr;
+    Done                <= ResultReady OR Instr;
 	
     ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
 
