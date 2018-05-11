@@ -139,7 +139,7 @@ BEGIN
 
     SizePlusOne         <=  (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
     SizeMaxIdx          <=  (SizePlusOne(6 DOWNTO 0) & '0');
-    SizePlusCol         <=  (('0' & NxtCol) + ('0' & SizeMaxIdx));
+    SizePlusCol         <=  (('0' & CurCol) + ('0' & SizeMaxIdx));
 
     --===================================================================================
     --
