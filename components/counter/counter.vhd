@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY counter IS
@@ -19,7 +20,7 @@ BEGIN
             Dout <= (OTHERS => '0');
         ELSIF RISING_EDGE(CLK) THEN
             IF EN='1' THEN
-                Dout <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(Dout)) + 1, n));
+                Dout <= Dout + 1;
             END IF;
         END IF;
     END PROCESS;

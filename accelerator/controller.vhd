@@ -66,10 +66,10 @@ ARCHITECTURE arch_controller OF controller IS
     --
     -- Row/Col Signals
     --
-    SIGNAL NxtRow, NxtCol       : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL NxtRow               : STD_LOGIC_VECTOR(8 DOWNTO 0);
+    SIGNAL NxtCol               : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL CurRow, CurCol       : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL RowCout              : STD_LOGIC;
-    SIGNAL ColInc               : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL WindRow, WindCol     : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL StoreRow, StoreCol   : STD_LOGIC_VECTOR(7 DOWNTO 0);
     
@@ -157,8 +157,6 @@ BEGIN
     CntRST              <=  (Restart OR (LoadFilterState AND NxtLoadWindowState));
     CntEN               <=  (Load AND (NOT IsCalcTurn)) OR StoreState;
 
-    ZeroByte            <=  (OTHERS => '0');
-
     --===================================================================================
     --
     -- Interfacing Signals
@@ -180,13 +178,11 @@ BEGIN
     ROW:
     ENTITY work.register_edge_falling
     GENERIC MAP(n => 8)
-    PORT MAP(CLK => CLK, RST => CntRST, EN => CntEN, Din => NxtRow, Dout => CurRow);
+    PORT MAP(CLK => CLK, RST => CntRST, EN => CntEN, Din => NxtRow(7 DOWNTO 0), Dout => CurRow);
 
-    -- Row Adder
-    ROW_ADDER:
-    ENTITY work.adder
-    GENERIC MAP(n => 8)
-    PORT MAP(A => CurRow, B => ZeroByte, Cin => '1', Sum => NxtRow, Cout => RowCout);
+    NxtRow      <=  ('0' & CurRow + 1);
+    RowCout     <=  NxtRow(8);
+
     -------------------------------------------------------
 
     -- Col Register
@@ -195,14 +191,9 @@ BEGIN
     GENERIC MAP(n => 8)
     PORT MAP(CLK => CLK, RST => CntRST, EN => CntEN, Din => NxtCol, Dout => CurCol);
 
-    -- Col Adder
-    COL_ADDER:
-    ENTITY work.adder
-    GENERIC MAP(n => 8)
-    PORT MAP(A => CurCol, B => ColInc, Cin => RowCout, Sum => NxtCol);
-    -------------------------------------------------------
+    NxtCol      <=  (CurCol + (Stride AND RowCout) + RowCout);
 
-    ColInc      <=  ((7 DOWNTO 1 => '0') & (Stride AND RowCout));
+    -------------------------------------------------------
 
     WindRow     <=  (CurRow - SizePlusOne);
     WindCol     <=  (CurCol + SizePlusOne);

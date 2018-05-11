@@ -22,7 +22,7 @@ bool instruction;       // instruction type:    0 => convolution,   1 => pooling
 /**
  * Reads memory data and fills in & out images and the filter.
  *
- * @param fileName the RAM file name to read
+ * @param fileName  the RAM file name to read
  */
 void readMemory(string fileName) {
     // Member variables
@@ -174,10 +174,9 @@ int main(int argc, char *argv[]) {
     int cnt = compareResults();
 
     if (cnt > 0) {
-        printf("Total mis-matching cells\t: %d\n", cnt);
+        printf("\nTotal mis-matching cells\t: %d\n", cnt);
     } else {
-        printf("\n");
-        printf("Test succeeded ^_^\n");
+        printf("\nTest succeeded ^_^\n");
     }
 
     return 0;

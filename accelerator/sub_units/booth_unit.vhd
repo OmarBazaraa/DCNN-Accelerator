@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_unit IS
@@ -56,7 +57,7 @@ BEGIN
     --
     RegisterPEN               <= Start OR CalculatingBooth;
     RegisterADin              <= FilterCell & "000000000";
-    RegisterSDin              <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED((NOT FilterCell))) + 1, 8)) & "000000000";
+    RegisterSDin              <= ((NOT FilterCell) + 1) & "000000000";
 
     --
     -- P DataIn 4-1 Mux Signals.
@@ -69,12 +70,12 @@ BEGIN
     REGISTER_A:
     ENTITY work.register_edge_falling
     GENERIC MAP(n => n)
-    PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterADin, Dout => RegisterADout);
+    PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterADin, Dout => RegisterADout);
 
     REGISTER_S:
     ENTITY work.register_edge_falling
     GENERIC MAP(n => n)
-    PORT MAP(CLK => START, RST => RST, EN => '1', Din => RegisterSDin, Dout => RegisterSDout);
+    PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterSDin, Dout => RegisterSDout);
 
     REGISTER_P:
     ENTITY work.register_edge_falling
