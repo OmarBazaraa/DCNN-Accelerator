@@ -80,9 +80,7 @@ ARCHITECTURE arch_controller OF controller IS
     SIGNAL FilterAddr           : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL LoadAddr             : STD_LOGIC_VECTOR(17 DOWNTO 0);
     SIGNAL StoreAddr            : STD_LOGIC_VECTOR(17 DOWNTO 0);
-
-    SIGNAL ZeroByte             : STD_LOGIC_VECTOR(7 DOWNTO 0);
-
+    
 BEGIN
 
     --===================================================================================
