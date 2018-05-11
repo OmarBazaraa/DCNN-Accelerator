@@ -56,29 +56,25 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     SIGNAL L5ResultsLarge         : ARRAY_CLEN(0 TO 1); 
     SIGNAL L5OperationResults     : ARRAY_CLEN(0 TO 1);    
 
-    --  
-    -- Result Shift Mux Signals.    
-    --  
+    -- Results Signals.
     SIGNAL ConvolutionResult      : STD_LOGIC_VECTOR(  7 DOWNTO 0);
     
-    --  
-    -- Pooling Shift Mux Signals. 
-    --  
     SIGNAL PoolingSmallWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL PoolingLargeWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL PoolingResult          : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	
+    
 BEGIN
+
     --
     -- Outputs
     --
     Done                <= ResultReady OR Instr;
-	
+    
     ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
 
     PoolingSmallWindow  <= "000"   & L5ResultsLarge(1)(7 DOWNTO 3);
     PoolingLargeWindow  <= "00000" & L5ResultsLarge(1)(7 DOWNTO 5);
-	
+    
     PoolingResult       <= PoolingSmallWindow      WHEN FilterSize='0' ELSE
                            PoolingLargeWindow;
 
