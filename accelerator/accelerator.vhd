@@ -29,44 +29,61 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     -- Level 1 Signals.  
     SIGNAL L1FirstOperands        : ARRAY_CLEN(0 TO 12);   
     SIGNAL L1SecondOperands       : ARRAY_CLEN(0 TO 12);   
-    SIGNAL L1Results              : ARRAY_BYTE(0 TO 12); -- Left for Debugging TODO @Samir55 Remove
     SIGNAL L1ResultsLarge         : ARRAY_CLEN(0 TO 12);
     SIGNAL L1OperationResults     : ARRAY_CLEN(0 TO 12);  
 
     -- Level 2 Signals.  
     SIGNAL L2FirstOperands        : ARRAY_CLEN(0 TO 5);   
     SIGNAL L2SecondOperands       : ARRAY_CLEN(0 TO 5);   
-    SIGNAL L2Results              : ARRAY_BYTE(0 TO 5); -- Left for Debugging TODO @Samir55 Remove
     SIGNAL L2ResultsLarge         : ARRAY_CLEN(0 TO 5); 
     SIGNAL L2OperationResults     : ARRAY_CLEN(0 TO 5); 
 
     -- Level 3 Signals. 
     SIGNAL L3FirstOperands        : ARRAY_CLEN(0 TO 2);   
     SIGNAL L3SecondOperands       : ARRAY_CLEN(0 TO 2);   
-    SIGNAL L3Results              : ARRAY_BYTE(0 TO 2); -- Left for Debugging TODO @Samir55 Remove
     SIGNAL L3ResultsLarge         : ARRAY_CLEN(0 TO 2); 
     SIGNAL L3OperationResults     : ARRAY_CLEN(0 TO 2); 
 
     -- Level 4 Signals. 
     SIGNAL L4FirstOperands        : ARRAY_CLEN(0 TO 0);   
     SIGNAL L4SecondOperands       : ARRAY_CLEN(0 TO 0); 
-    SIGNAL L4Results              : ARRAY_BYTE(0 TO 0); -- Left for Debugging TODO @Samir55 Remove   
     SIGNAL L4ResultsLarge         : ARRAY_CLEN(0 TO 0);   
     SIGNAL L4OperationResults     : ARRAY_CLEN(0 TO 0);  
 
     -- Level 5 Signals.
     SIGNAL L5FirstOperands        : ARRAY_CLEN(0 TO 1); 
     SIGNAL L5SecondOperands       : ARRAY_CLEN(0 TO 1);     
-    SIGNAL L5Results              : ARRAY_BYTE(0 TO 1); 
     SIGNAL L5ResultsLarge         : ARRAY_CLEN(0 TO 1); 
     SIGNAL L5OperationResults     : ARRAY_CLEN(0 TO 1);    
 
+    --  
+    -- Result Shift Mux Signals.    
+    --  
+    SIGNAL ConvolutionResult      : STD_LOGIC_VECTOR(  7 DOWNTO 0);
+    
+    --  
+    -- Pooling Shift Mux Signals. 
+    --  
+    SIGNAL PoolingSmallWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL PoolingLargeWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL PoolingResult          : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
 BEGIN
     --
     -- Outputs
     --
-    Done            <= ResultReady OR Instr;
-    Result          <= L5Results(1);
+    Done            	<= ResultReady OR Instr;
+	
+	ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
+
+    PoolingSmallWindow  <= "000"   & L5ResultsLarge(1)(7 DOWNTO 3);
+    PoolingLargeWindow  <= "00000" & L5ResultsLarge(1)(7 DOWNTO 5);
+	
+    PoolingResult       <= PoolingSmallWindow      WHEN FilterSize='0' ELSE
+                           PoolingLargeWindow;
+
+    Result              <= ConvolutionResult       WHEN Instr='0' ELSE
+                           PoolingResult;
 
     --
     -- Accelerator Counter
@@ -98,7 +115,7 @@ BEGIN
                 GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L1FirstOperands(i*5+j), L1SecondOperands(i*5+j),
-                         L1Results(i*5+j), L1ResultsLarge(i*5+j), L1OperationResults(i*5+j));    
+                         L1ResultsLarge(i*5+j), L1OperationResults(i*5+j));    
             END GENERATE;
 
             G2:
@@ -108,7 +125,7 @@ BEGIN
                 GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L2FirstOperands(i*5+j-13), L2SecondOperands(i*5+j-13),
-                         L2Results(i*5+j-13), L2ResultsLarge(i*5+j-13), L2OperationResults(i*5+j-13));        
+                         L2ResultsLarge(i*5+j-13), L2OperationResults(i*5+j-13));        
             END GENERATE;
 
             G3:
@@ -118,7 +135,7 @@ BEGIN
                 GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L3FirstOperands(i*5+j-19), L3SecondOperands(i*5+j-19),
-                         L3Results(i*5+j-19), L3ResultsLarge(i*5+j-19), L3OperationResults(i*5+j-19));  
+                         L3ResultsLarge(i*5+j-19), L3OperationResults(i*5+j-19));  
             END GENERATE;
 
             G4:
@@ -128,7 +145,7 @@ BEGIN
                 GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L4FirstOperands(i*5+j-22), L4SecondOperands(i*5+j-22),
-                         L4Results(i*5+j-22), L4ResultsLarge(i*5+j-22), L4OperationResults(i*5+j-22));   
+                         L4ResultsLarge(i*5+j-22), L4OperationResults(i*5+j-22));   
             END GENERATE;
 
             G5:
@@ -138,7 +155,7 @@ BEGIN
                 GENERIC MAP(n => 17)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L5FirstOperands(i*5+j-23), L5SecondOperands(i*5+j-23),
-                         L5Results(i*5+j-23), L5ResultsLarge(i*5+j-23), L5OperationResults(i*5+j-23));    
+                         L5ResultsLarge(i*5+j-23), L5OperationResults(i*5+j-23));    
             END GENERATE;
         END GENERATE;
     END GENERATE;
