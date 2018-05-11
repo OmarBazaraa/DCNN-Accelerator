@@ -5,20 +5,20 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY mini_alu IS
     GENERIC(n: INTEGER := 17);
     PORT(
-        CLK, RST                    : IN  STD_LOGIC;
-        Start                       : IN  STD_LOGIC;
-        Instr                       : IN  STD_LOGIC;
-        Size                        : IN  STD_LOGIC;
-        ResultReady                 : IN  STD_LOGIC;
-        LoopingAndResultNotReady    : IN  STD_LOGIC;
-        FilterCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        WindowCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        AdderFirstOperand           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        AdderSecondOperand          : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-
-        Result                      : OUT STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        AdderResultLarge            : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        OperationResult             : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+        CLK, RST                    	: IN  STD_LOGIC;
+        Start                       	: IN  STD_LOGIC;
+        Instr                       	: IN  STD_LOGIC;
+        Size                        	: IN  STD_LOGIC;
+        ResultReady                 	: IN  STD_LOGIC;
+        CalculatingBooth    			: IN  STD_LOGIC;
+        FilterCell                  	: IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        WindowCell                  	: IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        AdderFirstOperand           	: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        AdderSecondOperand          	: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+	
+        Result                      	: OUT STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        AdderResult            			: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        OperationResult             	: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
     );
 END ENTITY;
 
@@ -27,57 +27,58 @@ ARCHITECTURE arch_mini_alu OF mini_alu IS
     --
     -- Booth Unit Signals.
     --
-    SIGNAL BoothXORCheck            : STD_LOGIC;
-    SIGNAL BoothOperand             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL BoothP                   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL LargeWindowShifted       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-
-    --
-    -- Booth Adder Signals.
-    --
-    SIGNAL SelOperand               : STD_LOGIC;
-    SIGNAL AdderBoothResult         : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL AdderResult              : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-
-    --
-    -- Operation Result Mux Signals.
-    --
-    SIGNAL OperationResultShifted   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-
-    --
-    -- Result Shift Mux Signals.
-    --
-    SIGNAL ResultShiftMuxInputA     : STD_LOGIC_VECTOR(  7 DOWNTO 0);
-
-    --
-    -- Pooling Shift Mux Signals.
-    --
-    SIGNAL PoolingShiftMuxInputA    : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL PoolingShiftMuxInputB    : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL PoolingShiftMuxOutput    : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL AddPToBoothOperand       	: STD_LOGIC;
+    SIGNAL BoothOperand             	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL BoothP                   	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL WindowCellShiftedLeft    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+	
+    --	
+    -- Booth Adder Signals.	
+    --	
+    SIGNAL SelectBoothOperandsForAdder  : STD_LOGIC;
+    SIGNAL NewBoothP         			: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL TmpAdderResult           	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+	
+    --	
+    -- Operation Result Mux Signals.	
+    --	
+    SIGNAL OperationResultBeforeShift   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+	
+    --	
+    -- Result Shift Mux Signals.	
+    --	
+    SIGNAL ConvolutionResult     		: STD_LOGIC_VECTOR(  7 DOWNTO 0);
+	
+    --	
+    -- Pooling Shift Mux Signals.	
+    --	
+    SIGNAL PoolingSmallWindow    		: STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL PoolingLargeWindow    		: STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL PoolingResult    			: STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
+
     --
     -- Outputs.
     --
-    OperationResult         <= OperationResultShifted(n-1) & OperationResultShifted(n-1 DOWNTO 1);
-    AdderResultLarge        <= AdderResult;
-
-    --
-    -- Result Shift Mux.
-    --
-    ResultShiftMuxInputA    <= AdderResult(7 DOWNTO 0);
-
-    --
-    -- Pooling Shift Mux.
-    --
-    PoolingShiftMuxInputA   <= "000"   & AdderResult(7 DOWNTO 3);
-    PoolingShiftMuxInputB   <= "00000" & AdderResult(7 DOWNTO 5);
+    OperationResult     	<= OperationResultBeforeShift(n-1) & OperationResultBeforeShift(n-1 DOWNTO 1);
+    AdderResult         	<= TmpAdderResult;
+	
+    --	
+    -- Result Shift Mux.	
+    --	
+    ConvolutionResult   	<= TmpAdderResult(7 DOWNTO 0);
+	
+    --	
+    -- Pooling Shift Mux
+    --	
+    PoolingSmallWindow  	<= "000"   & TmpAdderResult(7 DOWNTO 3);
+    PoolingLargeWindow  	<= "00000" & TmpAdderResult(7 DOWNTO 5);
 
     --
     -- Booth Adder.
     --
-    SelOperand  <= Instr NOR ResultReady;
+    SelectBoothOperandsForAdder <= Instr NOR ResultReady;
 
 
     BOOTH_ADDER:
@@ -89,11 +90,11 @@ BEGIN
         BoothOperand                => BoothOperand,
         BoothP                      => BoothP,
 
-        SelOperand                  => SelOperand,
-        BoothXORCheck               => BoothXORCheck,
+        SelectBoothOperandsForAdder => SelectBoothOperandsForAdder,
+        AddPToBoothOperand          => AddPToBoothOperand,
 
-        AdderResult                 => AdderResult,
-        AdderBoothResult            => AdderBoothResult
+        AdderResult                 => TmpAdderResult,
+        NewBoothP          			=> NewBoothP
     );
 
     --
@@ -107,31 +108,31 @@ BEGIN
         RST                         => RST, 
         Start                       => Start, 
         Instr                       => Instr, 
-        LoopingAndResultNotReady    => LoopingAndResultNotReady, 
+        CalculatingBooth   			=> CalculatingBooth, 
         FilterCell                  => FilterCell, 
         WindowCell                  => WindowCell,
-        AdderBoothResult            => AdderBoothResult, 
-        BoothXORCheck               => BoothXORCheck, 
-        BoothAddingOperand          => BoothOperand,
+        NewBoothP         			=> NewBoothP, 
+        AddPToBoothOperand          => AddPToBoothOperand, 
+        BoothOperand          		=> BoothOperand,
         BoothP                      => BoothP, 
-        LargeWindowShifted          => LargeWindowShifted
+        WindowCellShiftedLeft       => WindowCellShiftedLeft
     );
 
     --
     -- Operation Result Mux.
     --
-    OperationResultShifted  <=  BoothP                  WHEN Instr='0' ELSE
-                                LargeWindowShifted;
+    OperationResultBeforeShift  <=  BoothP                  WHEN Instr='0' ELSE
+									WindowCellShiftedLeft;
                                 
     --
     -- Result Shift Mux.
     --
-    Result                  <=  ResultShiftMuxInputA    WHEN Instr='0' ELSE
-                                PoolingShiftMuxOutput;
+    Result          <=  ConvolutionResult    WHEN Instr='0' ELSE
+						PoolingResult;
     --
     -- Pooling Result Mux.
     --
-    PoolingShiftMuxOutput   <=  PoolingShiftMuxInputA   WHEN Size='0' ELSE
-                                PoolingShiftMuxInputB;
+    PoolingResult   <=  PoolingSmallWindow   WHEN Size='0' ELSE
+						PoolingLargeWindow;
 
 END ARCHITECTURE;

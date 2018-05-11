@@ -6,40 +6,41 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY booth_adder IS
     GENERIC(n : INTEGER := 17);
     PORT(
-        AdderFirstOperand   : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        AdderSecondOperand  : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        BoothOperand        : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        BoothP              : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-
-        SelOperand          : IN  STD_LOGIC;
-        BoothXORCheck       : IN  STD_LOGIC;
-
-        AdderResult         : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        AdderBoothResult    : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+        AdderFirstOperand   			: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        AdderSecondOperand  			: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+				
+		BoothOperand        			: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        BoothP              			: IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+			
+        SelectBoothOperandsForAdder 	: IN  STD_LOGIC;
+        AddPToBoothOperand  			: IN  STD_LOGIC;
+			
+        AdderResult         			: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        NewBoothP  						: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
     );
 END ENTITY;
 
 ARCHITECTURE arch_booth_adder OF booth_adder IS
 
-    SIGNAL FirstOperand     : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL SecondOperand    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL PBeforeShift     : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL Result           : STD_LOGIC_VECTOR(n-1 DOWNTO 0);  
+    SIGNAL FirstOperand     	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL SecondOperand    	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL BoothPBeforeShift	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL TmpResult        	: STD_LOGIC_VECTOR(n-1 DOWNTO 0);  
 
 BEGIN
 
-    AdderBoothResult    <=  PBeforeShift(n-1) & PBeforeShift(n-1 DOWNTO 1);
-    AdderResult         <=  Result;
+    NewBoothP  			<=  BoothPBeforeShift(n-1) & BoothPBeforeShift(n-1 DOWNTO 1);
+    AdderResult         <=  TmpResult;
 
-    FirstOperand        <=  AdderFirstOperand       WHEN SelOperand='0' ELSE
+    FirstOperand        <=  AdderFirstOperand       WHEN SelectBoothOperandsForAdder='0' ELSE
                             BoothOperand;
 
-    SecondOperand       <=  AdderSecondOperand      WHEN SelOperand='0' ELSE
+    SecondOperand       <=  AdderSecondOperand      WHEN SelectBoothOperandsForAdder='0' ELSE
                             BoothP;
 
-    PBeforeShift        <=  BoothP                  WHEN BoothXORCheck='0'  ELSE
-                            Result;
+    BoothPBeforeShift   <=  BoothP                  WHEN AddPToBoothOperand='0'  ELSE
+                            TmpResult;
 
-    Result              <=  FirstOperand + SecondOperand;
+    TmpResult           <=  FirstOperand + SecondOperand;
 
 END ARCHITECTURE;

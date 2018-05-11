@@ -20,46 +20,46 @@ END ENTITY;
 ARCHITECTURE arch_accelerator OF accelerator IS
 
     -- Counter Signals
-    SIGNAL CounterCLK                   : STD_LOGIC;
-    SIGNAL CounterRST                   : STD_LOGIC;
-    SIGNAL ResultReady                  : STD_LOGIC;
-    SIGNAL LoopingAndResultNotReady     : STD_LOGIC;
-    SIGNAL CounterOut                   : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL CounterCLK             : STD_LOGIC;
+    SIGNAL CounterRST             : STD_LOGIC;
+    SIGNAL ResultReady            : STD_LOGIC;
+    SIGNAL CalculatingBooth    	  : STD_LOGIC;
+    SIGNAL CounterOut             : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
     -- Level 1 Signals.  
-    SIGNAL L1FirstOperands              : ARRAY_CLEN(0 TO 12);   
-    SIGNAL L1SecondOperands             : ARRAY_CLEN(0 TO 12);   
-    SIGNAL L1Results                    : ARRAY_BYTE(0 TO 12); -- Left for Debugging TODO @Samir55 Remove
-    SIGNAL L1ResultsLarge               : ARRAY_CLEN(0 TO 12);
-    SIGNAL L1OperationResults           : ARRAY_CLEN(0 TO 12);  
+    SIGNAL L1FirstOperands        : ARRAY_CLEN(0 TO 12);   
+    SIGNAL L1SecondOperands       : ARRAY_CLEN(0 TO 12);   
+    SIGNAL L1Results              : ARRAY_BYTE(0 TO 12); -- Left for Debugging TODO @Samir55 Remove
+    SIGNAL L1ResultsLarge         : ARRAY_CLEN(0 TO 12);
+    SIGNAL L1OperationResults     : ARRAY_CLEN(0 TO 12);  
 
     -- Level 2 Signals.  
-    SIGNAL L2FirstOperands              : ARRAY_CLEN(0 TO 5);   
-    SIGNAL L2SecondOperands             : ARRAY_CLEN(0 TO 5);   
-    SIGNAL L2Results                    : ARRAY_BYTE(0 TO 5); -- Left for Debugging TODO @Samir55 Remove
-    SIGNAL L2ResultsLarge               : ARRAY_CLEN(0 TO 5); 
-    SIGNAL L2OperationResults           : ARRAY_CLEN(0 TO 5); 
+    SIGNAL L2FirstOperands        : ARRAY_CLEN(0 TO 5);   
+    SIGNAL L2SecondOperands       : ARRAY_CLEN(0 TO 5);   
+    SIGNAL L2Results              : ARRAY_BYTE(0 TO 5); -- Left for Debugging TODO @Samir55 Remove
+    SIGNAL L2ResultsLarge         : ARRAY_CLEN(0 TO 5); 
+    SIGNAL L2OperationResults     : ARRAY_CLEN(0 TO 5); 
 
     -- Level 3 Signals. 
-    SIGNAL L3FirstOperands              : ARRAY_CLEN(0 TO 2);   
-    SIGNAL L3SecondOperands             : ARRAY_CLEN(0 TO 2);   
-    SIGNAL L3Results                    : ARRAY_BYTE(0 TO 2); -- Left for Debugging TODO @Samir55 Remove
-    SIGNAL L3ResultsLarge               : ARRAY_CLEN(0 TO 2); 
-    SIGNAL L3OperationResults           : ARRAY_CLEN(0 TO 2); 
+    SIGNAL L3FirstOperands        : ARRAY_CLEN(0 TO 2);   
+    SIGNAL L3SecondOperands       : ARRAY_CLEN(0 TO 2);   
+    SIGNAL L3Results              : ARRAY_BYTE(0 TO 2); -- Left for Debugging TODO @Samir55 Remove
+    SIGNAL L3ResultsLarge         : ARRAY_CLEN(0 TO 2); 
+    SIGNAL L3OperationResults     : ARRAY_CLEN(0 TO 2); 
 
     -- Level 4 Signals. 
-    SIGNAL L4FirstOperands              : ARRAY_CLEN(0 TO 0);   
-    SIGNAL L4SecondOperands             : ARRAY_CLEN(0 TO 0); 
-    SIGNAL L4Results                    : ARRAY_BYTE(0 TO 0); -- Left for Debugging TODO @Samir55 Remove   
-    SIGNAL L4ResultsLarge               : ARRAY_CLEN(0 TO 0);   
-    SIGNAL L4OperationResults           : ARRAY_CLEN(0 TO 0);  
+    SIGNAL L4FirstOperands        : ARRAY_CLEN(0 TO 0);   
+    SIGNAL L4SecondOperands       : ARRAY_CLEN(0 TO 0); 
+    SIGNAL L4Results              : ARRAY_BYTE(0 TO 0); -- Left for Debugging TODO @Samir55 Remove   
+    SIGNAL L4ResultsLarge         : ARRAY_CLEN(0 TO 0);   
+    SIGNAL L4OperationResults     : ARRAY_CLEN(0 TO 0);  
 
     -- Level 5 Signals.
-    SIGNAL L5FirstOperands              : ARRAY_CLEN(0 TO 1); 
-    SIGNAL L5SecondOperands             : ARRAY_CLEN(0 TO 1);     
-    SIGNAL L5Results                    : ARRAY_BYTE(0 TO 1); 
-    SIGNAL L5ResultsLarge               : ARRAY_CLEN(0 TO 1); 
-    SIGNAL L5OperationResults           : ARRAY_CLEN(0 TO 1);    
+    SIGNAL L5FirstOperands        : ARRAY_CLEN(0 TO 1); 
+    SIGNAL L5SecondOperands       : ARRAY_CLEN(0 TO 1);     
+    SIGNAL L5Results              : ARRAY_BYTE(0 TO 1); 
+    SIGNAL L5ResultsLarge         : ARRAY_CLEN(0 TO 1); 
+    SIGNAL L5OperationResults     : ARRAY_CLEN(0 TO 1);    
 
 BEGIN
     --
@@ -78,9 +78,9 @@ BEGIN
     PORT MAP(CounterCLK, CounterRST, CounterOut);
 
     -- TODO: use EN instead of changing the clock
-    CounterCLK 					<= CLK AND (NOT ResultReady) AND (NOT Instr);
-    ResultReady 				<= '1' WHEN CounterOut="1001" ELSE '0';
-    LoopingAndResultNotReady 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
+    CounterCLK 			<= CLK AND (NOT ResultReady) AND (NOT Instr);
+    ResultReady 		<= '1' WHEN CounterOut="1001" ELSE '0';
+    CalculatingBooth 	<= (NOT ResultReady) AND (CounterOut(0) OR CounterOut(1) OR CounterOut(2) OR CounterOut(3));
 
     --
     -- Mini ALU Units in the Tree
@@ -94,7 +94,7 @@ BEGIN
                 MINI_ALU:
                 ENTITY work.mini_alu
                 GENERIC MAP(n => 17)
-                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
+                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L1FirstOperands(i*5+j), L1SecondOperands(i*5+j),
                          L1Results(i*5+j), L1ResultsLarge(i*5+j), L1OperationResults(i*5+j));    
             END GENERATE;
@@ -104,7 +104,7 @@ BEGIN
                 MINI_ALU:
                 ENTITY work.mini_alu
                 GENERIC MAP(n => 17)
-                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
+                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L2FirstOperands(i*5+j-13), L2SecondOperands(i*5+j-13),
                          L2Results(i*5+j-13), L2ResultsLarge(i*5+j-13), L2OperationResults(i*5+j-13));        
             END GENERATE;
@@ -114,7 +114,7 @@ BEGIN
                 MINI_ALU:
                 ENTITY work.mini_alu
                 GENERIC MAP(n => 17)
-                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
+                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L3FirstOperands(i*5+j-19), L3SecondOperands(i*5+j-19),
                          L3Results(i*5+j-19), L3ResultsLarge(i*5+j-19), L3OperationResults(i*5+j-19));  
             END GENERATE;
@@ -124,7 +124,7 @@ BEGIN
                 MINI_ALU:
                 ENTITY work.mini_alu
                 GENERIC MAP(n => 17)
-                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
+                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L4FirstOperands(i*5+j-22), L4SecondOperands(i*5+j-22),
                          L4Results(i*5+j-22), L4ResultsLarge(i*5+j-22), L4OperationResults(i*5+j-22));   
             END GENERATE;
@@ -134,7 +134,7 @@ BEGIN
                 MINI_ALU:
                 ENTITY work.mini_alu
                 GENERIC MAP(n => 17)
-                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, LoopingAndResultNotReady,
+                PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L5FirstOperands(i*5+j-23), L5SecondOperands(i*5+j-23),
                          L5Results(i*5+j-23), L5ResultsLarge(i*5+j-23), L5OperationResults(i*5+j-23));    
             END GENERATE;
