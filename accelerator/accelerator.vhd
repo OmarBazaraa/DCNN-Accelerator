@@ -74,7 +74,7 @@ BEGIN
     --
     Done            	<= ResultReady OR Instr;
 	
-	ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
+    ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
 
     PoolingSmallWindow  <= "000"   & L5ResultsLarge(1)(7 DOWNTO 3);
     PoolingLargeWindow  <= "00000" & L5ResultsLarge(1)(7 DOWNTO 5);
