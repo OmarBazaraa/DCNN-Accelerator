@@ -67,18 +67,18 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     SIGNAL PoolingSmallWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL PoolingLargeWindow     : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL PoolingResult          : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	
+    
 BEGIN
     --
     -- Outputs
     --
-    Done            	<= ResultReady OR Instr;
-	
-	ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
+    Done                <= ResultReady OR Instr;
+    
+    ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
 
     PoolingSmallWindow  <= "000"   & L5ResultsLarge(1)(7 DOWNTO 3);
     PoolingLargeWindow  <= "00000" & L5ResultsLarge(1)(7 DOWNTO 5);
-	
+    
     PoolingResult       <= PoolingSmallWindow      WHEN FilterSize='0' ELSE
                            PoolingLargeWindow;
 
