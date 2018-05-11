@@ -103,29 +103,40 @@ BEGIN
     CalcState           <=  CurState(3);
     DoneState           <=  CurState(4);
 
+    --
     -- Next state
-    NxtLoadFilterState  <=  (IsFirstCycle AND (NOT Instr)) OR
-                            (LoadFilterState AND (NOT IsWindowLoaded));
+    --
+    NxtLoadFilterState  <=  (NOT IsDone) AND (
+                                (IsFirstCycle AND (NOT Instr)) OR
+                                (LoadFilterState AND (NOT IsWindowLoaded))
+                            );
 
-    NxtLoadWindowState  <=  (IsFirstCycle AND Instr) OR
-                            (LoadFilterState AND IsWindowLoaded) OR
-                            (StoreState AND (NOT IsDone)) OR
-                            (LoadWindowState AND (NOT IsCalcTurn));
+    NxtLoadWindowState  <=  (NOT IsDone) AND (
+                                (IsFirstCycle AND Instr) OR
+                                (LoadFilterState AND IsWindowLoaded) OR
+                                (StoreState AND (NOT IsDone)) OR
+                                (LoadWindowState AND (NOT IsCalcTurn))
+                            );
 
-    NxtCalcState        <=  (LoadWindowState AND IsCalcTurn) OR
-                            (CalcState AND (NOT CalcFinished));
+    NxtCalcState        <=  (NOT IsDone) AND (
+                                (LoadWindowState AND IsCalcTurn) OR
+                                (CalcState AND (NOT CalcFinished))
+                            );
 
-    NxtStoreState       <=  (CalcState AND CalcFinished);
+    NxtStoreState       <=  (NOT IsDone) AND (
+                                (CalcState AND CalcFinished)
+                            );
 
-    IsDone              <=  (StoreState AND SizePlusCol(8)) OR
-                            (DoneState AND (NOT Start));
-
+    --
+    -- Concatenate state bits
+    --
     NxtState            <=  (IsDone & NxtCalcState & NxtStoreState & NxtLoadWindowState & NxtLoadFilterState);
 
     --===================================================================================
     --
     -- General Signal
     --
+
     SizePlusOne         <=  (7 DOWNTO 2 => '0') & (FilterSize & (NOT FilterSize));
     SizeMaxIdx          <=  (SizePlusOne(6 DOWNTO 0) & '0');
     SizePlusCol         <=  (('0' & NxtCol) + ('0' & SizeMaxIdx));
@@ -137,6 +148,7 @@ BEGIN
 
     IsFirstCycle        <=  Start AND (NOT IsRunning);
     FirstCycle          <=  IsFirstCycle;
+    IsDone              <=  SizePlusCol(8);
     IsRunning           <=  Load OR StoreState OR CalcState;
     IsWindowLoaded      <=  '1' WHEN (CurRow >= SizeMaxIdx) ELSE '0';
     IsCalcTurn          <=  IsWindowLoaded AND (Stride NAND CurRow(0)); -- IsCalcTurn = (Stride=0 OR Even Row)
