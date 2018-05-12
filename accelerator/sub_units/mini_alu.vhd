@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY mini_alu IS
-    GENERIC(n: INTEGER := 17);
+    GENERIC(n: INTEGER := 8);
     PORT(
         CLK, RST                        : IN  STD_LOGIC;
         Start                           : IN  STD_LOGIC;
@@ -12,8 +12,8 @@ ENTITY mini_alu IS
         Size                            : IN  STD_LOGIC;
         ResultReady                     : IN  STD_LOGIC;
         CalculatingBooth                : IN  STD_LOGIC;
-        FilterCell                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        WindowCell                      : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
+        FilterCell                      : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        WindowCell                      : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         AdderFirstOperand               : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
         AdderSecondOperand              : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
@@ -28,26 +28,26 @@ ARCHITECTURE arch_mini_alu OF mini_alu IS
     -- Booth Unit Signals.
     --
     SIGNAL AddPToBoothOperand           : STD_LOGIC;
-    SIGNAL BoothOperand                 : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL BoothPBeforeShift            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL BoothP                       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL WindowCellShiftedLeft        : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL BoothOperand                 : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL BoothPBeforeShift            : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL BoothP                       : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL WindowCellShiftedLeft        : STD_LOGIC_VECTOR(2*n DOWNTO 0);
     
-    SIGNAL NewBoothP                    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL NewBoothP                    : STD_LOGIC_VECTOR(2*n DOWNTO 0);
     
-    SIGNAL OperationResultBeforeShift   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL OperationResultBeforeShift   : STD_LOGIC_VECTOR(2*n DOWNTO 0);
 
 BEGIN
 
     --
     -- Outputs.
     --
-    OperationResult         <= OperationResultBeforeShift(n-1) & OperationResultBeforeShift(n-1 DOWNTO 1);
+    OperationResult     <=  OperationResultBeforeShift(n DOWNTO 1);
 
     -- Booth Adder
-    BoothPBeforeShift   <=  BoothP              WHEN AddPToBoothOperand='0'  ELSE
+    BoothPBeforeShift   <=  BoothP                  WHEN AddPToBoothOperand='0'  ELSE
                             BoothP + BoothOperand;
-    NewBoothP           <=  BoothPBeforeShift(n-1) & BoothPBeforeShift(n-1 DOWNTO 1);
+    NewBoothP           <=  BoothPBeforeShift(2*n) & BoothPBeforeShift(2*n DOWNTO 1);
     
     -- Pooling Adder
     AdderResult         <=  AdderFirstOperand + AdderSecondOperand;

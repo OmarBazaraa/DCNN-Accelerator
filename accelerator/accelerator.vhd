@@ -27,34 +27,34 @@ ARCHITECTURE arch_accelerator OF accelerator IS
     SIGNAL CounterOut             : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
     -- Level 1 Signals.  
-    SIGNAL L1FirstOperands        : ARRAY_CLEN(0 TO 12);   
-    SIGNAL L1SecondOperands       : ARRAY_CLEN(0 TO 12);   
-    SIGNAL L1ResultsLarge         : ARRAY_CLEN(0 TO 12);
-    SIGNAL L1OperationResults     : ARRAY_CLEN(0 TO 12);  
+    SIGNAL L1FirstOperands        : ARRAY_BYTE(0 TO 12);   
+    SIGNAL L1SecondOperands       : ARRAY_BYTE(0 TO 12);   
+    SIGNAL L1Results              : ARRAY_BYTE(0 TO 12);
+    SIGNAL L1OperationResults     : ARRAY_BYTE(0 TO 12);  
 
     -- Level 2 Signals.  
-    SIGNAL L2FirstOperands        : ARRAY_CLEN(0 TO 5);   
-    SIGNAL L2SecondOperands       : ARRAY_CLEN(0 TO 5);   
-    SIGNAL L2ResultsLarge         : ARRAY_CLEN(0 TO 5); 
-    SIGNAL L2OperationResults     : ARRAY_CLEN(0 TO 5); 
+    SIGNAL L2FirstOperands        : ARRAY_BYTE(0 TO 5);   
+    SIGNAL L2SecondOperands       : ARRAY_BYTE(0 TO 5);   
+    SIGNAL L2Results              : ARRAY_BYTE(0 TO 5); 
+    SIGNAL L2OperationResults     : ARRAY_BYTE(0 TO 5); 
 
     -- Level 3 Signals. 
-    SIGNAL L3FirstOperands        : ARRAY_CLEN(0 TO 2);   
-    SIGNAL L3SecondOperands       : ARRAY_CLEN(0 TO 2);   
-    SIGNAL L3ResultsLarge         : ARRAY_CLEN(0 TO 2); 
-    SIGNAL L3OperationResults     : ARRAY_CLEN(0 TO 2); 
+    SIGNAL L3FirstOperands        : ARRAY_BYTE(0 TO 2);   
+    SIGNAL L3SecondOperands       : ARRAY_BYTE(0 TO 2);   
+    SIGNAL L3Results              : ARRAY_BYTE(0 TO 2); 
+    SIGNAL L3OperationResults     : ARRAY_BYTE(0 TO 2); 
 
     -- Level 4 Signals. 
-    SIGNAL L4FirstOperands        : ARRAY_CLEN(0 TO 0);   
-    SIGNAL L4SecondOperands       : ARRAY_CLEN(0 TO 0); 
-    SIGNAL L4ResultsLarge         : ARRAY_CLEN(0 TO 0);   
-    SIGNAL L4OperationResults     : ARRAY_CLEN(0 TO 0);  
+    SIGNAL L4FirstOperands        : ARRAY_BYTE(0 TO 0);   
+    SIGNAL L4SecondOperands       : ARRAY_BYTE(0 TO 0); 
+    SIGNAL L4Results              : ARRAY_BYTE(0 TO 0);   
+    SIGNAL L4OperationResults     : ARRAY_BYTE(0 TO 0);  
 
     -- Level 5 Signals.
-    SIGNAL L5FirstOperands        : ARRAY_CLEN(0 TO 1); 
-    SIGNAL L5SecondOperands       : ARRAY_CLEN(0 TO 1);     
-    SIGNAL L5ResultsLarge         : ARRAY_CLEN(0 TO 1); 
-    SIGNAL L5OperationResults     : ARRAY_CLEN(0 TO 1);    
+    SIGNAL L5FirstOperands        : ARRAY_BYTE(0 TO 1); 
+    SIGNAL L5SecondOperands       : ARRAY_BYTE(0 TO 1);     
+    SIGNAL L5Results              : ARRAY_BYTE(0 TO 1); 
+    SIGNAL L5OperationResults     : ARRAY_BYTE(0 TO 1);    
 
     -- Results Signals.
     SIGNAL ConvolutionResult      : STD_LOGIC_VECTOR(  7 DOWNTO 0);
@@ -70,10 +70,10 @@ BEGIN
     --
     Done                <= ResultReady OR Instr;
 
-    ConvolutionResult   <= L5ResultsLarge(1)(7 DOWNTO 0);
+    ConvolutionResult   <= L5Results(1)(7 DOWNTO 0);
 
-    PoolingSmallWindow  <= "000"   & L5ResultsLarge(1)(7 DOWNTO 3);
-    PoolingLargeWindow  <= "00000" & L5ResultsLarge(1)(7 DOWNTO 5);
+    PoolingSmallWindow  <= "000"   & L5Results(1)(7 DOWNTO 3);
+    PoolingLargeWindow  <= "00000" & L5Results(1)(7 DOWNTO 5);
     
     PoolingResult       <= PoolingSmallWindow      WHEN FilterSize='0' ELSE
                            PoolingLargeWindow;
@@ -108,50 +108,50 @@ BEGIN
             IF (i*5+j) <= 12 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 17)
+                GENERIC MAP(n => 8)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L1FirstOperands(i*5+j), L1SecondOperands(i*5+j),
-                         L1ResultsLarge(i*5+j), L1OperationResults(i*5+j));    
+                         L1Results(i*5+j), L1OperationResults(i*5+j));    
             END GENERATE;
 
             G2:
             IF (i*5+j) > 12 AND (i*5+j) <= 18 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 17)
+                GENERIC MAP(n => 8)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L2FirstOperands(i*5+j-13), L2SecondOperands(i*5+j-13),
-                         L2ResultsLarge(i*5+j-13), L2OperationResults(i*5+j-13));        
+                         L2Results(i*5+j-13), L2OperationResults(i*5+j-13));        
             END GENERATE;
 
             G3:
             IF (i*5+j) > 18 AND (i*5+j) <= 21 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 17)
+                GENERIC MAP(n => 8)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L3FirstOperands(i*5+j-19), L3SecondOperands(i*5+j-19),
-                         L3ResultsLarge(i*5+j-19), L3OperationResults(i*5+j-19));  
+                         L3Results(i*5+j-19), L3OperationResults(i*5+j-19));  
             END GENERATE;
 
             G4:
             IF (i*5+j) = 22 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 17)
+                GENERIC MAP(n => 8)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L4FirstOperands(i*5+j-22), L4SecondOperands(i*5+j-22),
-                         L4ResultsLarge(i*5+j-22), L4OperationResults(i*5+j-22));   
+                         L4Results(i*5+j-22), L4OperationResults(i*5+j-22));   
             END GENERATE;
 
             G5:
             IF (i*5+j) > 22 GENERATE
                 MINI_ALU:
                 ENTITY work.mini_alu
-                GENERIC MAP(n => 17)
+                GENERIC MAP(n => 8)
                 PORT MAP(CLK, RST, Start, Instr, FilterSize, ResultReady, CalculatingBooth,
                          FilterDin(i, j), WindowDin(i, j), L5FirstOperands(i*5+j-23), L5SecondOperands(i*5+j-23),
-                         L5ResultsLarge(i*5+j-23), L5OperationResults(i*5+j-23));    
+                         L5Results(i*5+j-23), L5OperationResults(i*5+j-23));    
             END GENERATE;
         END GENERATE;
     END GENERATE;
@@ -190,27 +190,27 @@ BEGIN
     -- Level 2 Connections in the Tree
     C2:
     FOR i IN 0 TO 5 GENERATE
-        L2FirstOperands(i)  <= L1ResultsLarge(i*2);
-        L2SecondOperands(i) <= L1ResultsLarge(i*2+1);
+        L2FirstOperands(i)  <= L1Results(i*2);
+        L2SecondOperands(i) <= L1Results(i*2+1);
     END GENERATE;
 
     -- Level 3 Connections in the Tree
     C3:
     FOR i IN 0 TO 2 GENERATE
-        L3FirstOperands(i)  <= L2ResultsLarge(i*2);
-        L3SecondOperands(i) <= L2ResultsLarge(i*2+1);
+        L3FirstOperands(i)  <= L2Results(i*2);
+        L3SecondOperands(i) <= L2Results(i*2+1);
     END GENERATE;
 
     -- Level 4 Connections in the Tree
     C4:
-    L4FirstOperands(0)      <= L3ResultsLarge(0);
-    L4SecondOperands(0)     <= L3ResultsLarge(1);
+    L4FirstOperands(0)      <= L3Results(0);
+    L4SecondOperands(0)     <= L3Results(1);
 
     -- Level 5 Connections in the Tree
     C5:
-    L5FirstOperands(0)      <= L4ResultsLarge(0);
-    L5SecondOperands(0)     <= L3ResultsLarge(2);
-    L5FirstOperands(1)      <= L5ResultsLarge(0);
+    L5FirstOperands(0)      <= L4Results(0);
+    L5SecondOperands(0)     <= L3Results(2);
+    L5FirstOperands(1)      <= L5Results(0);
     L5SecondOperands(1)     <= L5OperationResults(1);
 
 END ARCHITECTURE;

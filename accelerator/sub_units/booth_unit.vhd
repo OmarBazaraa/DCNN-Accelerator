@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY booth_unit IS
-    GENERIC(n : INTEGER := 17);
+    GENERIC(n : INTEGER := 8);
     PORT(
         CLK                         : IN  STD_LOGIC;
         RST                         : IN  STD_LOGIC;
@@ -12,14 +12,14 @@ ENTITY booth_unit IS
         Instr                       : IN  STD_LOGIC;
         CalculatingBooth            : IN  STD_LOGIC;
     
-        FilterCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        WindowCell                  : IN  STD_LOGIC_VECTOR(  7 DOWNTO 0);
-        NewBoothP                   : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        FilterCell                  : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        WindowCell                  : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+        NewBoothP                   : IN  STD_LOGIC_VECTOR(2*n DOWNTO 0);
         
         AddPToBoothOperand          : OUT STD_LOGIC;
-        BoothOperand                : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        BoothP                      : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-        WindowCellShiftedLeft       : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+        BoothOperand                : OUT STD_LOGIC_VECTOR(2*n DOWNTO 0);
+        BoothP                      : OUT STD_LOGIC_VECTOR(2*n DOWNTO 0);
+        WindowCellShiftedLeft       : OUT STD_LOGIC_VECTOR(2*n DOWNTO 0)
     );
 END ENTITY;
 
@@ -30,18 +30,18 @@ ARCHITECTURE arch_booth_unit OF booth_unit IS
     --
     SIGNAL RegisterPEN              : STD_LOGIC;
             
-    SIGNAL RegisterADin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDin             : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterADin             : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL RegisterSDin             : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL RegisterPDin             : STD_LOGIC_VECTOR(2*n DOWNTO 0);
             
-    SIGNAL RegisterADout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterSDout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL RegisterPDout            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL RegisterADout            : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL RegisterSDout            : STD_LOGIC_VECTOR(2*n DOWNTO 0);
+    SIGNAL RegisterPDout            : STD_LOGIC_VECTOR(2*n DOWNTO 0);
 
     --
     -- Muxes Signals.
     --
-    SIGNAL TmpWindowCellShiftedLeft : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL TmpWindowCellShiftedLeft : STD_LOGIC_VECTOR(2*n DOWNTO 0);
     
 BEGIN
 
@@ -69,17 +69,17 @@ BEGIN
     --
     REGISTER_A:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => n)
+    GENERIC MAP(n => 2*n+1)
     PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterADin, Dout => RegisterADout);
 
     REGISTER_S:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => n)
+    GENERIC MAP(n => 2*n+1)
     PORT MAP(CLK => CLK, RST => RST, EN => Start, Din => RegisterSDin, Dout => RegisterSDout);
 
     REGISTER_P:
     ENTITY work.register_edge_falling
-    GENERIC MAP(n => n)
+    GENERIC MAP(n => 2*n+1)
     PORT MAP(CLK => CLK, RST => RST, EN => RegisterPEN, Din => RegisterPDin, Dout => RegisterPDout);
 
     --
