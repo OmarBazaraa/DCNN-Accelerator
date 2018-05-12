@@ -7,6 +7,8 @@
 *.mpf
 *.wlf
 *.mem
+*.exe
+*.out
 *.DS_Store
 work
 transcript
