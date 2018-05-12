@@ -16,16 +16,8 @@ sim:/main/MemRD \
 sim:/main/MemWR \
 sim:/main/MemAddr \
 sim:/main/MemDin \
-sim:/main/MemDout \
-sim:/main/CacheFilterWR \
-sim:/main/CacheWindowWR \
-sim:/main/CacheFilter \
-sim:/main/CacheWindow \
-sim:/main/Calculating \
-sim:/main/AccFinishCalc \
-sim:/main/AccResult \
-sim:/main/CONTROLLER/CurRow \
-sim:/main/CONTROLLER/CurCol
+sim:/main/MemDout
+
 #
 # Load Memory
 #
