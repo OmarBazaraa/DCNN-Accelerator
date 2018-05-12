@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY RAM IS
-    GENERIC(n: INTEGER := 8; m: INTEGER := 4);
+    GENERIC(n: INTEGER := 8; m: INTEGER := 18);
     PORT(
         CLK             : IN  STD_LOGIC;
         WR              : IN  STD_LOGIC;
@@ -15,24 +15,24 @@ END ENTITY;
 
 ARCHITECTURE arch_RAM OF RAM IS
 
-    TYPE memory IS ARRAY(0 TO (2**m)-1) OF STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    TYPE memory IS ARRAY(0 TO (2**5)-1) OF STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
     SIGNAL Mem : memory := (
        OTHERS => "00000000"
     );
 BEGIN
 
-    Dout <= Mem(to_integer(unsigned(Address)) + 4) & 
-            Mem(to_integer(unsigned(Address)) + 3) &
-            Mem(to_integer(unsigned(Address)) + 2) &
-            Mem(to_integer(unsigned(Address)) + 1) &
-            Mem(to_integer(unsigned(Address)) + 0);
+    Dout <= Mem(to_integer(unsigned(Address(4 downto 0))) + 4) & 
+            Mem(to_integer(unsigned(Address(9 downto 5))) + 3) &
+            Mem(to_integer(unsigned(Address(14 downto 10))) + 2) &
+            Mem(to_integer(unsigned(Address(17 downto 15))) + 1) &
+            Mem(to_integer(unsigned(Address(17 downto 15))) + 0);
     
     PROCESS(CLK)
     BEGIN
         IF RISING_EDGE(CLK) THEN
             IF WR='1' THEN
-                Mem(to_integer(unsigned(Address))) <= Din;
+                Mem(to_integer(unsigned(Address(4 downto 0)))) <= Din;
             END IF;
         END IF;
     END PROCESS;
