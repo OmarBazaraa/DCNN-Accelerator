@@ -13,7 +13,7 @@ END ENTITY;
 ARCHITECTURE arch_register_edge_rising OF register_edge_rising IS
 BEGIN
 
-    PROCESS(CLK, RST)
+    PROCESS(CLK)
     BEGIN
         IF RISING_EDGE(CLK) THEN
             IF RST='1' THEN

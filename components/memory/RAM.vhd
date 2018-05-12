@@ -25,7 +25,7 @@ BEGIN
     Dout <= Mem(to_integer(unsigned(Address(4 downto 0))) + 4) & 
             Mem(to_integer(unsigned(Address(9 downto 5))) + 3) &
             Mem(to_integer(unsigned(Address(14 downto 10))) + 2) &
-            Mem(to_integer(unsigned(Address(17 downto 15))) + 1) &
+            Mem(to_integer(unsigned(Address(16 downto 14))) + 1) &
             Mem(to_integer(unsigned(Address(17 downto 15))) + 0);
     
     PROCESS(CLK)
@@ -33,6 +33,10 @@ BEGIN
         IF RISING_EDGE(CLK) THEN
             IF WR='1' THEN
                 Mem(to_integer(unsigned(Address(4 downto 0)))) <= Din;
+		Mem(to_integer(unsigned(Address(17 downto 13)))) <= Din;
+		Mem(to_integer(unsigned(Address(12 downto 8)))) <= Din;
+		Mem(to_integer(unsigned(Address(5 downto 1)))) <= Din;
+		Mem(to_integer(unsigned(Address(6 downto 2)))) <= Din;
             END IF;
         END IF;
     END PROCESS;

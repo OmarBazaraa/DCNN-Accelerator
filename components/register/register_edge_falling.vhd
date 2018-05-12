@@ -13,7 +13,7 @@ END ENTITY;
 ARCHITECTURE arch_register_edge_falling OF register_edge_falling IS
 BEGIN
 
-    PROCESS(CLK, RST)
+    PROCESS(CLK)
     BEGIN
         IF FALLING_EDGE(CLK) THEN
             IF RST='1' THEN
