@@ -12,34 +12,27 @@ sim:/accelerator/FilterDin \
 sim:/accelerator/WindowDin \
 sim:/accelerator/Done \
 sim:/accelerator/Result \
-sim:/accelerator/CounterCLK \
 sim:/accelerator/CounterRST \
 sim:/accelerator/ResultReady \
-sim:/accelerator/LoopingAndResultNotReady \
 sim:/accelerator/CounterOut \
 sim:/accelerator/L1FirstOperands \
 sim:/accelerator/L1SecondOperands \
-sim:/accelerator/L1Results \
 sim:/accelerator/L1ResultsLarge \
 sim:/accelerator/L1OperationResults \
 sim:/accelerator/L2FirstOperands \
 sim:/accelerator/L2SecondOperands \
-sim:/accelerator/L2Results \
 sim:/accelerator/L2ResultsLarge \
 sim:/accelerator/L2OperationResults \
 sim:/accelerator/L3FirstOperands \
 sim:/accelerator/L3SecondOperands \
-sim:/accelerator/L3Results \
 sim:/accelerator/L3ResultsLarge \
 sim:/accelerator/L3OperationResults \
 sim:/accelerator/L4FirstOperands \
 sim:/accelerator/L4SecondOperands \
-sim:/accelerator/L4Results \
 sim:/accelerator/L4ResultsLarge \
 sim:/accelerator/L4OperationResults \
 sim:/accelerator/L5FirstOperands \
 sim:/accelerator/L5SecondOperands \
-sim:/accelerator/L5Results \
 sim:/accelerator/L5ResultsLarge \
 sim:/accelerator/L5OperationResults
 

@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY mini_alu IS
@@ -28,19 +29,12 @@ ARCHITECTURE arch_mini_alu OF mini_alu IS
     --
     SIGNAL AddPToBoothOperand           : STD_LOGIC;
     SIGNAL BoothOperand                 : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+    SIGNAL BoothPBeforeShift            : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL BoothP                       : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     SIGNAL WindowCellShiftedLeft        : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
-    --  
-    -- Booth Adder Signals. 
-    --  
-    SIGNAL SelectBoothOperandsForAdder  : STD_LOGIC;
     SIGNAL NewBoothP                    : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-    SIGNAL TmpAdderResult               : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
     
-    --  
-    -- Operation Result Mux Signals.    
-    --  
     SIGNAL OperationResultBeforeShift   : STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 
 BEGIN
@@ -49,29 +43,14 @@ BEGIN
     -- Outputs.
     --
     OperationResult         <= OperationResultBeforeShift(n-1) & OperationResultBeforeShift(n-1 DOWNTO 1);
-    AdderResult             <= TmpAdderResult;
+
+    -- Booth Adder
+    BoothPBeforeShift   <=  BoothP              WHEN AddPToBoothOperand='0'  ELSE
+                            BoothP + BoothOperand;
+    NewBoothP           <=  BoothPBeforeShift(n-1) & BoothPBeforeShift(n-1 DOWNTO 1);
     
-    --
-    -- Booth Adder.
-    --
-    SelectBoothOperandsForAdder <= Instr NOR ResultReady;
-
-
-    BOOTH_ADDER:
-    ENTITY work.booth_adder
-    GENERIC MAP(n => n)
-    PORT MAP( 
-        AdderFirstOperand           => AdderFirstOperand,
-        AdderSecondOperand          => AdderSecondOperand,
-        BoothOperand                => BoothOperand,
-        BoothP                      => BoothP,
-
-        SelectBoothOperandsForAdder => SelectBoothOperandsForAdder,
-        AddPToBoothOperand          => AddPToBoothOperand,
-
-        AdderResult                 => TmpAdderResult,
-        NewBoothP                   => NewBoothP
-    );
+    -- Pooling Adder
+    AdderResult         <=  AdderFirstOperand + AdderSecondOperand;
 
     --
     -- Booth Unit.
