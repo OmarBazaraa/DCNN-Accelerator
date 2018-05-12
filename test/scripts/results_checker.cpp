@@ -176,7 +176,13 @@ int main(int argc, char *argv[]) {
     if (cnt > 0) {
         printf("\nTotal mis-matching cells\t: %d\n", cnt);
     } else {
-        printf("\nTest succeeded ^_^\n");
+        printf("\nTest succeeded ^_^\n\n\n");
+
+        printf("         #       ###################       _   _  \n");
+        printf("        #        #                 #       *   *  \n");
+        printf("   #   #         #     CORRECT     #         |    \n");
+        printf("    # #          #                 #       \\___/ \n");
+        printf("     #           ###################              \n");
     }
 
     return 0;
