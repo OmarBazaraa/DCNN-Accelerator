@@ -1,0 +1,37 @@
+
+
+
+                        Clock Frequency Report
+
+	Clock                : Frequency
+      ------------------------------------
+
+	CLK                  : 527.3 MHz
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                                          GATE              ARRIVAL              LOAD
+-----------------------------------------------------------------------------------------
+FilterWR/                                                 0.00  0.00 dn             0.14
+ix3/Y                                         and02       0.19  0.19 dn             0.01
+ix940/Y                                       inv01       0.26  0.45 up             0.04
+ix948/Y                                       inv01       0.23  0.68 dn             0.04
+L0_1_L1_1_Fij_ix330/Y                         buf02       0.28  0.96 dn             0.03
+L0_1_L1_1_Fij_ix297/Y                         nor02_2x    0.16  1.12 up             0.03
+ix2803/Y                                      inv02       0.25  1.37 dn             0.11
+L0_1_L1_1_Fij_ix233/Y                         oai32       0.32  1.69 up             0.02
+L0_1_L1_1_Fij_reg_Dout(2)/D                   dff         0.00  1.69 up             0.00
+data arrival time                                               1.69
+
+
+data required time                                           not specified
+-----------------------------------------------------------------------------------------
+data required time                                           not specified
+data arrival time                                               1.69
+                                                             ----------
+                                                          unconstrained path
+-----------------------------------------------------------------------------------------
+
+

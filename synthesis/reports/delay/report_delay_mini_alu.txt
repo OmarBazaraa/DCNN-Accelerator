@@ -1,0 +1,75 @@
+
+
+
+                        Clock Frequency Report
+
+	Clock                : Frequency
+      ------------------------------------
+
+	CLK                  : 102.8 MHz
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                                            GATE              ARRIVAL              LOAD
+-------------------------------------------------------------------------------------------
+clock information not specified
+delay thru clock network                                          0.00 (ideal)
+
+
+BOOTH_UNIT_REGISTER_P_reg_Dout(0)/Q             dff         0.00  0.44 up             0.01
+BOOTH_UNIT_ix383/Y                              inv02       0.14  0.58 dn             0.06
+ix967/Y                                         inv02       0.30  0.88 up             0.10
+BOOTH_UNIT_ix197/Y                              mux21       0.23  1.11 dn             0.03
+ix384/Y                                         xnor2       0.25  1.37 up             0.03
+ix155/Y                                         inv01       0.11  1.48 dn             0.01
+ix392/Y                                         aoi32       0.50  1.97 up             0.03
+ix711/Y                                         inv01       0.13  2.10 dn             0.01
+ix404/Y                                         mux21       0.34  2.44 up             0.03
+ix713/Y                                         inv01       0.12  2.56 dn             0.01
+ix414/Y                                         mux21       0.33  2.89 up             0.03
+ix715/Y                                         inv01       0.12  3.01 dn             0.01
+ix424/Y                                         mux21       0.33  3.34 up             0.03
+ix717/Y                                         inv01       0.12  3.46 dn             0.01
+ix434/Y                                         mux21       0.33  3.79 up             0.03
+ix719/Y                                         inv01       0.12  3.91 dn             0.01
+ix444/Y                                         mux21       0.33  4.25 up             0.03
+ix721/Y                                         inv01       0.12  4.37 dn             0.01
+ix454/Y                                         mux21       0.33  4.70 up             0.03
+ix723/Y                                         inv01       0.12  4.82 dn             0.01
+ix462/Y                                         mux21       0.33  5.15 up             0.03
+ix725/Y                                         inv01       0.12  5.27 dn             0.01
+ix468/Y                                         mux21       0.33  5.61 up             0.03
+ix727/Y                                         inv01       0.12  5.73 dn             0.01
+ix476/Y                                         mux21       0.33  6.06 up             0.03
+ix729/Y                                         inv01       0.12  6.18 dn             0.01
+ix484/Y                                         mux21       0.33  6.51 up             0.03
+ix731/Y                                         inv01       0.12  6.63 dn             0.01
+ix492/Y                                         mux21       0.33  6.96 up             0.03
+ix733/Y                                         inv01       0.12  7.08 dn             0.01
+ix500/Y                                         mux21       0.33  7.42 up             0.03
+ix735/Y                                         inv01       0.12  7.54 dn             0.01
+ix508/Y                                         mux21       0.33  7.87 up             0.03
+ix737/Y                                         inv01       0.12  7.99 dn             0.01
+ix516/Y                                         mux21       0.30  8.29 up             0.02
+ix457/Y                                         xnor2       0.20  8.49 dn             0.01
+ix757/Y                                         inv01       0.16  8.66 up             0.01
+ix461/Y                                         mux21       0.14  8.80 dn             0.01
+ix805/Y                                         inv01       0.26  9.06 up             0.03
+BOOTH_UNIT_ix117/Y                              nor02_2x    0.09  9.15 dn             0.01
+ix957/Y                                         inv01       0.16  9.30 up             0.02
+BOOTH_UNIT_REGISTER_P_ix553/Y                   oai32       0.21  9.51 dn             0.02
+BOOTH_UNIT_REGISTER_P_reg_Dout(16)/D            dff         0.00  9.51 dn             0.00
+data arrival time                                                 9.51
+
+
+data required time                                             not specified
+-------------------------------------------------------------------------------------------
+data required time                                             not specified
+data arrival time                                                 9.51
+                                                               ----------
+                                                            unconstrained path
+-------------------------------------------------------------------------------------------
+
+

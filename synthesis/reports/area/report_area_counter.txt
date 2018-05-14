@@ -1,0 +1,25 @@
+
+*******************************************************
+
+Cell: counter    View: arch_counter    Library: work
+
+*******************************************************
+
+
+ Cell       Library  References     Total Area
+
+dffr        tsmc035_typ     4 x      6     22 gates
+mux21_ni    tsmc035_typ     3 x      2      5 gates
+nand02      tsmc035_typ     1 x      1      1 gates
+nand03      tsmc035_typ     1 x      1      1 gates
+xnor2       tsmc035_typ     2 x      2      4 gates
+xor2        tsmc035_typ     2 x      2      4 gates
+
+ Number of ports :                       7
+ Number of nets :                       16
+ Number of instances :                  13
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of gates :                      38
+ Number of accumulated instances :      13

@@ -1,0 +1,26 @@
+
+*******************************************************
+
+Cell: main    View: arch_main    Library: work
+
+*******************************************************
+
+
+ Cell          Library  References     Total Area
+
+RAM_8_18       work            1 x   3264   3264 gates
+accelerator    work            1 x     26     26 fake_gnd
+                                    19964  19964 gates
+                                        2      2 fake_vcc
+buf02          tsmc035_typ     1 x      1      1 gates
+
+ Number of ports :                       7
+ Number of nets :                       74
+ Number of instances :                   3
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_gnd :                   26
+ Number of fake_vcc :                    2
+ Number of gates :                   23229
+ Number of accumulated instances :   11163

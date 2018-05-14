@@ -1,0 +1,33 @@
+
+*******************************************************
+
+Cell: booth_unit    View: arch_booth_unit    Library: work
+
+*******************************************************
+
+
+ Cell                       Library  References     Total Area
+
+and02                       tsmc035_typ     9 x      1     11 gates
+aoi21                       tsmc035_typ     2 x      1      2 gates
+fake_gnd                    tsmc035_typ     1 x      1      1 fake_gnd
+inv01                       tsmc035_typ     1 x      1      1 gates
+inv02                       tsmc035_typ     6 x      1      5 gates
+mux21_ni                    tsmc035_typ    25 x      2     45 gates
+nor02_2x                    tsmc035_typ     1 x      1      1 gates
+nor02ii                     tsmc035_typ     4 x      1      5 gates
+nor03_2x                    tsmc035_typ     1 x      1      1 gates
+nor04                       tsmc035_typ     1 x      1      1 gates
+or02                        tsmc035_typ     1 x      1      1 gates
+register_edge_falling_17    work            3 x    126    377 gates
+xnor2                       tsmc035_typ     6 x      2     11 gates
+
+ Number of ports :                      90
+ Number of nets :                      147
+ Number of instances :                  61
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_gnd :                    1
+ Number of gates :                     463
+ Number of accumulated instances :     199

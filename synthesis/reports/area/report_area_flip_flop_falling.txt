@@ -1,0 +1,21 @@
+
+*******************************************************
+
+Cell: flip_flop_falling    View: arch_flip_flop_falling    Library: work
+
+*******************************************************
+
+
+ Cell    Library  References     Total Area
+
+dffr     tsmc035_typ     1 x      6      6 gates
+inv01    tsmc035_typ     1 x      1      1 gates
+
+ Number of ports :                       4
+ Number of nets :                        5
+ Number of instances :                   2
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of gates :                       6
+ Number of accumulated instances :       2

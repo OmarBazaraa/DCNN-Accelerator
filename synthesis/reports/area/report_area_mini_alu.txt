@@ -1,0 +1,31 @@
+
+*******************************************************
+
+Cell: mini_alu    View: arch_mini_alu    Library: work
+
+*******************************************************
+
+
+ Cell           Library  References     Total Area
+
+aoi22           tsmc035_typ     5 x      1      7 gates
+aoi32           tsmc035_typ     2 x      2      3 gates
+booth_unit_8    work            1 x      1      1 fake_gnd
+                                       463    463 gates
+inv01           tsmc035_typ    27 x      1     21 gates
+inv02           tsmc035_typ     3 x      1      2 gates
+mux21           tsmc035_typ     7 x      2     13 gates
+mux21_ni        tsmc035_typ    31 x      2     56 gates
+nand02          tsmc035_typ     2 x      1      2 gates
+xnor2           tsmc035_typ    31 x      2     59 gates
+xor2            tsmc035_typ    16 x      2     34 gates
+
+ Number of ports :                      55
+ Number of nets :                      196
+ Number of instances :                 125
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_gnd :                    1
+ Number of gates :                     661
+ Number of accumulated instances :     323

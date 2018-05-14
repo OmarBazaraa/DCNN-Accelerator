@@ -1,0 +1,30 @@
+
+*******************************************************
+
+Cell: accelerator    View: arch_accelerator    Library: work
+
+*******************************************************
+
+
+ Cell                Library  References     Total Area
+
+cache                work            1 x   2977   2977 gates
+calculator           work            1 x     26     26 fake_gnd
+                                          16609  16609 gates
+controller           work            1 x      1      1 fake_vcc
+                                            364    364 gates
+fake_vcc             tsmc035_typ     1 x      1      1 fake_vcc
+flip_flop_falling    work            1 x      6      6 gates
+flip_flop_rising     work            1 x      6      6 gates
+or02                 tsmc035_typ     2 x      1      2 gates
+
+ Number of ports :                      75
+ Number of nets :                      484
+ Number of instances :                   8
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_gnd :                   26
+ Number of fake_vcc :                    2
+ Number of gates :                   19964
+ Number of accumulated instances :    9473

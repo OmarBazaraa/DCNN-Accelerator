@@ -1,0 +1,24 @@
+
+*******************************************************
+
+Cell: register_edge_rising    View: arch_register_edge_rising    Library: work
+
+*******************************************************
+
+
+ Cell       Library  References     Total Area
+
+ao32        tsmc035_typ    32 x      2     63 gates
+dff         tsmc035_typ    32 x      5    153 gates
+inv01       tsmc035_typ     1 x      1      1 gates
+inv02       tsmc035_typ    10 x      1      8 gates
+nor02_2x    tsmc035_typ     1 x      1      1 gates
+
+ Number of ports :                      67
+ Number of nets :                      111
+ Number of instances :                  76
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of gates :                     226
+ Number of accumulated instances :      76

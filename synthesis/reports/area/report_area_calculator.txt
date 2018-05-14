@@ -1,0 +1,33 @@
+
+*******************************************************
+
+Cell: calculator    View: arch_calculator    Library: work
+
+*******************************************************
+
+
+ Cell         Library  References     Total Area
+
+ao22          tsmc035_typ     2 x      2      4 gates
+aoi32         tsmc035_typ     3 x      2      5 gates
+counter_4     work            1 x     38     38 gates
+fake_gnd      tsmc035_typ     1 x      1      1 fake_gnd
+inv01         tsmc035_typ    12 x      1      9 gates
+inv02         tsmc035_typ     1 x      1      1 gates
+mini_alu_8    work           25 x    661  16514 gates
+                                       1     25 fake_gnd
+nand04        tsmc035_typ     1 x      1      1 gates
+nor02ii       tsmc035_typ     6 x      1      7 gates
+nor04         tsmc035_typ     1 x      1      1 gates
+oai21         tsmc035_typ     3 x      1      4 gates
+or02          tsmc035_typ     1 x      1      1 gates
+
+ Number of ports :                     414
+ Number of nets :                      832
+ Number of instances :                  57
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_gnd :                   26
+ Number of gates :                   16587
+ Number of accumulated instances :    8119

@@ -1,0 +1,45 @@
+
+*******************************************************
+
+Cell: controller    View: arch_controller    Library: work
+
+*******************************************************
+
+
+ Cell                      Library  References     Total Area
+
+ao21                       tsmc035_typ     3 x      2      5 gates
+ao22                       tsmc035_typ     1 x      2      2 gates
+aoi21                      tsmc035_typ    10 x      1     12 gates
+aoi22                      tsmc035_typ    12 x      1     18 gates
+buf02                      tsmc035_typ     4 x      1      4 gates
+fake_vcc                   tsmc035_typ     1 x      1      1 fake_vcc
+inv01                      tsmc035_typ    25 x      1     19 gates
+inv02                      tsmc035_typ    12 x      1      9 gates
+nand02                     tsmc035_typ    14 x      1     14 gates
+nand03                     tsmc035_typ     1 x      1      1 gates
+nand04                     tsmc035_typ     3 x      1      4 gates
+nor02_2x                   tsmc035_typ     7 x      1      7 gates
+nor02ii                    tsmc035_typ    13 x      1     16 gates
+nor03_2x                   tsmc035_typ     1 x      1      1 gates
+nor04                      tsmc035_typ     1 x      1      1 gates
+nor04_2x                   tsmc035_typ     1 x      2      2 gates
+oai21                      tsmc035_typ     7 x      1      9 gates
+oai221                     tsmc035_typ     4 x      2      8 gates
+oai222                     tsmc035_typ     6 x      2     13 gates
+oai321                     tsmc035_typ     3 x      2      7 gates
+or02                       tsmc035_typ     2 x      1      2 gates
+register_edge_falling_5    work            1 x     36     36 gates
+register_edge_falling_8    work            2 x     60    120 gates
+xnor2                      tsmc035_typ    18 x      2     34 gates
+xor2                       tsmc035_typ     8 x      2     17 gates
+
+ Number of ports :                      32
+ Number of nets :                      185
+ Number of instances :                 160
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of fake_vcc :                    1
+ Number of gates :                     364
+ Number of accumulated instances :     216

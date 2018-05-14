@@ -1,0 +1,51 @@
+
+
+
+                        Clock Frequency Report
+
+	Clock                : Frequency
+      ------------------------------------
+
+	CLK                  : 192.6 MHz
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                                    GATE              ARRIVAL              LOAD
+-----------------------------------------------------------------------------------
+clock information not specified
+delay thru clock network                                  0.00 (ideal)
+
+
+ROW_reg_Dout(0)/Q                       dff         0.00  0.58 dn             0.06
+ix619/Y                                 inv01       0.35  0.94 up             0.06
+ix802/Y                                 inv01       0.27  1.21 dn             0.05
+ix584/Y                                 nand04      0.27  1.48 up             0.01
+ix9/Y                                   nor02ii     0.27  1.75 dn             0.04
+ix578/Y                                 nand02      0.21  1.96 up             0.01
+ix13/Y                                  nor02ii     0.25  2.21 dn             0.04
+ix572/Y                                 nand02      0.29  2.50 up             0.03
+ix15/Y                                  inv01       0.10  2.60 dn             0.01
+ix594/Y                                 oai21       0.28  2.88 up             0.03
+ix71/Y                                  nor02ii     0.25  3.14 dn             0.04
+ix603/Y                                 nand02      0.27  3.41 up             0.03
+ix75/Y                                  nor02ii     0.23  3.64 dn             0.04
+ix610/Y                                 nand02      0.26  3.90 up             0.03
+ix79/Y                                  nor02ii     0.23  4.14 dn             0.04
+ix89/Y                                  xor2        0.48  4.62 up             0.01
+ix960/Y                                 inv01       0.11  4.73 dn             0.02
+COL_ix273/Y                             oai32       0.25  4.98 up             0.02
+COL_reg_Dout(6)/D                       dff         0.00  4.98 up             0.00
+data arrival time                                         4.98
+
+
+data required time                                     not specified
+-----------------------------------------------------------------------------------
+data required time                                     not specified
+data arrival time                                         4.98
+                                                       ----------
+                                                    unconstrained path
+-----------------------------------------------------------------------------------
+
+
